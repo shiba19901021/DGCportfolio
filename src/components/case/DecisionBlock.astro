@@ -1,0 +1,18 @@
+---
+import type { CaseBlock } from '../../data/case-blocks';
+import type { Work } from '../../lib/works';
+import { renderCaseMarkdown } from '../../lib/case-markdown';
+import NarrativeBlock from './NarrativeBlock.astro';
+interface Props { block: Extract<CaseBlock, { type: 'narrative' }>; work: Work; }
+const { block, work } = Astro.props;
+// Wrap the original rendered heading/paragraph pairs without rewriting text or IDs.
+// Other structures fall back to the original narrative renderer.
+const html = await renderCaseMarkdown(block.markdown, block.id);
+const cards = html.trim().split(/(?=<h3\b)/);
+const canGroup = !block.useBody && !block.paragraphs.length && cards.length === 3
+  && cards.every(card => /^<h3\b[^>]*>[\s\S]*?<\/h3>\s*<p>[\s\S]*?<\/p>\s*$/.test(card));
+---
+{canGroup ? <section id={block.id} class="case-block case-narrative case-decisions" data-module="narrative">
+  {block.title && <h2>{block.title}</h2>}
+  <div class="case-decision-grid">{cards.map(card => <div class="case-decision-card" set:html={card} />)}</div>
+</section> : <NarrativeBlock block={block} work={work} />}

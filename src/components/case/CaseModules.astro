@@ -1,5 +1,6 @@
 ---
 import type { Work } from '../../lib/works';
+import type { CaseBlock } from '../../data/case-blocks';
 import { visibleBlocks } from '../../lib/case-blocks';
 import SummaryBlock from './SummaryBlock.astro';
 import NarrativeBlock from './NarrativeBlock.astro';
@@ -7,9 +8,9 @@ import GalleryBlock from './GalleryBlock.astro';
 import TimelineBlock from './TimelineBlock.astro';
 import ComparisonBlock from './ComparisonBlock.astro';
 import ResultsBlock from './ResultsBlock.astro';
-interface Props { work: Work; }
+interface Props { work: Work; blocks?: CaseBlock[]; }
 const { work } = Astro.props;
-const blocks = visibleBlocks(work);
+const blocks = Astro.props.blocks ?? visibleBlocks(work);
 ---
 {blocks.map(block => <>
   {block.type === 'summary' && <SummaryBlock block={block} work={work} />}

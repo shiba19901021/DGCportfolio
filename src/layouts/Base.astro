@@ -3,8 +3,8 @@ import '../styles/global.css';
 import '../styles/site-chrome.css';
 import { site } from '../data/site';
 import { pathFor } from '../lib/works';
-interface Props { title?: string; description?: string; activeCategory?: string; previewVersion?: string; homeVisual?: boolean; }
-const { title = site.title, description = site.positioning, previewVersion = 'V0.6', homeVisual = false } = Astro.props;
+interface Props { title?: string; description?: string; activeCategory?: string; previewVersion?: string; homeVisual?: boolean; caseVisual?: boolean; }
+const { title = site.title, description = site.positioning, previewVersion = 'V0.6', homeVisual = false, caseVisual = false } = Astro.props;
 const publicRelease = import.meta.env.PORTFOLIO_PUBLIC_ONLY === '1';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const current = Astro.url.pathname.replace(base, '');
@@ -21,14 +21,14 @@ const links = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     {!publicRelease && <meta name="robots" content="noindex, nofollow" />}
-    <meta name="theme-color" content={homeVisual ? '#fbf9f4' : '#f4f1e7'} />
+    <meta name="theme-color" content={homeVisual || caseVisual ? '#fbf9f4' : '#f4f1e7'} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet" />
     <link rel="icon" href="data:," />
     <title>{title}</title>
   </head>
-  <body class:list={{ 'home-page': homeVisual }}>
+  <body class:list={{ 'home-page': homeVisual, 'case-page-v2': caseVisual }}>
     <a class="skip-link" href="#main">跳至主要內容</a>
     <header class="site-header site-chrome-header">
       <div class="site-chrome-inner wrap">
