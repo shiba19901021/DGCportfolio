@@ -1,0 +1,46 @@
+/* Shared chrome only. Keep the case pages' existing content palette and layout. */
+.site-chrome-header {
+  display: block;
+  padding: 0;
+  background: #fbf9f4;
+  border-bottom: 1px solid #e5dfd7;
+  color: #1b1c19;
+}
+.site-chrome-header .site-chrome-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 88px;
+  padding-block: .9rem;
+}
+.site-chrome-header, .site-chrome-footer { font-family: "Plus Jakarta Sans", system-ui, sans-serif; }
+.site-chrome-header .brand { font-family: "Noto Serif", serif; }
+.site-chrome-header .brand { color: #1b1c19; font-size: 1.25rem; }
+.site-chrome-header .brand span { color: #5a5f63; font-size: .6875rem; font-family: "Plus Jakarta Sans", system-ui, sans-serif; }
+.site-chrome-header nav ul { gap: .15rem 1.4rem; }
+.site-chrome-header nav a { color: #4f5559; font-size: 1rem; line-height: 1.5; font-weight: 500; letter-spacing: .01em; }
+.site-chrome-header nav a:hover,
+.site-chrome-header nav a[aria-current=page] { color: #864e29; }
+.site-chrome-header nav a[aria-current=page] { text-underline-offset: .5rem; }
+.site-chrome-header a:focus-visible { outline-color: #864e29; }
+.site-chrome-footer {
+  display: block;
+  padding: 0;
+  background: #B9784F;
+  border-top: 0;
+  color: #fbf9f4;
+}
+.site-chrome-footer .site-chrome-inner {
+  padding-block: 1.5rem;
+}
+.site-chrome-footer p { margin: 0; font-size: 1.1875rem; font-weight: 700; line-height: 1.65; overflow-wrap: anywhere; }
+.site-chrome-footer .preview-label { color: inherit; margin-top: .75rem; }
+@media (max-width: 850px) {
+  .site-chrome-header .site-chrome-inner { align-items: flex-start; flex-direction: column; gap: .35rem; }
+  .site-chrome-header nav { max-width: 100%; }
+  .site-chrome-header nav ul { gap: 0 1.2rem; }
+}
+@media (max-width: 380px) {
+  .site-chrome-header nav ul { gap: 0 .9rem; }
+}

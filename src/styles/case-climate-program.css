@@ -1,0 +1,36 @@
+/* Case-specific arrangements; typography, figures and comparisons use case-v2.css. */
+.case-climate-program .case-summary-grid.columns-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.case-climate-program .case-summary-grid.columns-three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; border-block: 1px solid var(--line); padding-block: 1.5rem; }
+.case-climate-program .case-statistics .case-stat-value { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: .5rem; line-height: 1.4; }
+.case-climate-program .case-statistics .case-stat-number { color: var(--copper); font-size: 1.75rem; font-weight: 600; }
+.case-climate-program .case-statistics .case-stat-unit { color: var(--ink); font-size: 1.0625rem; font-weight: 600; }
+.case-climate-program .case-statistics .case-stat-note { display: block; margin-top: .625rem; color: var(--muted); font-size: .9375rem; line-height: 1.8; }
+
+/* Preserve the six source links, descriptions and row-by-row reading order. */
+.case-climate-program #original-section-2 .case-reading ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 2rem; list-style: none; padding: 0; margin: 2rem 0; }
+.case-climate-program #original-section-2 .case-reading li { min-width: 0; border-top: 1px solid var(--line); padding-top: 1rem; margin: 0; }
+
+/* Four complete stages read vertically; no dates, steps or outcomes are added. */
+.case-climate-program .case-timeline > ol { grid-template-columns: minmax(0, 1fr); max-width: 54rem; gap: 0; }
+.case-climate-program .case-timeline > ol > li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 2rem; border: 0; padding: 0 0 2.5rem; }
+.case-climate-program .case-timeline > ol > li:last-child { padding-bottom: 0; }
+.case-climate-program .case-step { font-size: 2.75rem; font-weight: 400; line-height: 1.2; letter-spacing: -.04em; }
+.case-climate-program .case-timeline > ol > li > div { min-width: 0; border-left: 1px solid var(--line); padding-left: 2rem; }
+.case-climate-program .case-timeline h3 { font-size: 1.25rem; line-height: 1.65; margin: 0 0 1rem; }
+.case-climate-program .case-timeline p { font-size: 1.0625rem; line-height: 1.95; margin: 0; }
+.case-climate-program #original-section-4,
+.case-climate-program #original-section-5 { margin-top: 5.5rem; }
+.case-climate-program .case-v03-end .related { border-left: 0; border-top: 1px solid var(--line); padding: 1.5rem 0 0; }
+
+@media (max-width: 900px) {
+  .case-climate-program #original-section-2 .case-reading ul,
+  .case-climate-program .case-summary-grid.columns-three { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 700px) {
+  .case-climate-program .case-summary-grid.columns-two { grid-template-columns: minmax(0, 1fr); }
+  .case-climate-program .case-timeline > ol > li { grid-template-columns: 2.75rem minmax(0, 1fr); gap: 1rem; padding-bottom: 2rem; }
+  .case-climate-program .case-timeline > ol > li > div { padding-left: 1rem; }
+  .case-climate-program .case-step { font-size: 2.5rem; }
+  .case-climate-program #original-section-4,
+  .case-climate-program #original-section-5 { margin-top: 4.25rem; }
+}

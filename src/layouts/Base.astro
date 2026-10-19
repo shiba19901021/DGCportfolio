@@ -1,17 +1,17 @@
 ---
 import '../styles/global.css';
+import '../styles/site-chrome.css';
 import { site } from '../data/site';
 import { pathFor } from '../lib/works';
-interface Props { title?: string; description?: string; activeCategory?: string; previewVersion?: string; }
-const { title = site.title, description = site.positioning, activeCategory, previewVersion = 'V0.6' } = Astro.props;
+interface Props { title?: string; description?: string; activeCategory?: string; previewVersion?: string; homeVisual?: boolean; caseVisual?: boolean; }
+const { title = site.title, description = site.positioning, previewVersion = 'V0.6', homeVisual = false, caseVisual = false } = Astro.props;
 const publicRelease = import.meta.env.PORTFOLIO_PUBLIC_ONLY === '1';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const current = Astro.url.pathname.replace(base, '');
 const links = [
-  { href: '/projects/', label: '專案作品集', active: current.startsWith('/projects') || (activeCategory !== undefined && activeCategory !== 'learning') },
-  { href: '/learning/', label: '課程與教學設計', active: current.startsWith('/learning') || activeCategory === 'learning' },
-  { href: '/explore/', label: '從問題探索', active: current.startsWith('/explore') },
-  { href: '/#about', label: '關於與聯絡', active: false },
+  { href: '/', label: '首頁', active: current === '/' },
+  { href: '/works/', label: '所有作品', active: current.startsWith('/works/') },
+  { href: '/#about', label: '關於我', active: false },
 ];
 ---
 <!doctype html>
@@ -21,21 +21,27 @@ const links = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     {!publicRelease && <meta name="robots" content="noindex, nofollow" />}
-    <meta name="theme-color" content="#f4f1e7" />
+    <meta name="theme-color" content={homeVisual || caseVisual ? '#fbf9f4' : '#f4f1e7'} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet" />
     <link rel="icon" href="data:," />
     <title>{title}</title>
   </head>
-  <body>
+  <body class:list={{ 'home-page': homeVisual, 'case-page-v2': caseVisual }}>
     <a class="skip-link" href="#main">跳至主要內容</a>
-    <header class="site-header wrap">
+    <header class="site-header site-chrome-header">
+      <div class="site-chrome-inner wrap">
       <a class="brand" href={pathFor('/')} aria-label="游鏡騰，回到首頁">游鏡騰<span>方案設計與實作</span></a>
       <nav aria-label="主要導覽"><ul>{links.map(link => <li><a href={pathFor(link.href)} aria-current={link.active ? 'page' : undefined}>{link.label}</a></li>)}</ul></nav>
+      </div>
     </header>
     <main id="main" tabindex="-1"><slot /></main>
-    <footer class="site-footer wrap">
-      <div><p class="footer-name">游鏡騰</p><p>{site.positioning}</p></div>
-      <div class="footer-links"><a href={`mailto:${site.email}`}>Email 聯絡</a><a href={site.linkedin}>LinkedIn</a><a href={pathFor('/#resume')}>履歷與經歷</a></div>
+    <footer class="site-footer site-chrome-footer">
+      <div class="site-chrome-inner wrap">
+      <p>{site.positioning}</p>
       {!publicRelease && <p class="preview-label">{previewVersion} · 本機閱讀測試版</p>}
+      </div>
     </footer>
   </body>
 </html>

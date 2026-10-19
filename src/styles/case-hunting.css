@@ -1,0 +1,8 @@
+/* Keep the story in source order; reuse V2 prose, natural-ratio figures and comparisons. */
+.case-hunting #forest-information,
+.case-hunting #original-section-5 { margin-top: 5.5rem; }
+.case-hunting .case-v03-end .related { border-left: 0; border-top: 1px solid var(--line); padding: 1.5rem 0 0; }
+@media (max-width: 700px) {
+  .case-hunting #forest-information,
+  .case-hunting #original-section-5 { margin-top: 4.25rem; }
+}

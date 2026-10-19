@@ -1,0 +1,21 @@
+---
+import type { Work } from '../../lib/works';
+import { visibleBlocks } from '../../lib/case-blocks';
+import CaseModules from './CaseModules.astro';
+import DecisionBlock from './DecisionBlock.astro';
+interface Props { work: Work; }
+const { work } = Astro.props;
+const blocks = visibleBlocks(work);
+// Only pair these adjacent source blocks; never move or duplicate source content.
+const studentIndex = blocks.findIndex(block => block.id === 'student-participation');
+const pairStudents = studentIndex >= 0 && blocks[studentIndex + 1]?.id === 'student-illustration';
+---
+{blocks.map((block, index) =>
+  block.id === 'design-choices' && block.type === 'narrative'
+    ? <DecisionBlock block={block} work={work} />
+    : pairStudents && index === studentIndex
+      ? <div class="case-student-layout"><CaseModules work={work} blocks={blocks.slice(index, index + 2)} /></div>
+      : pairStudents && index === studentIndex + 1
+        ? null
+        : <CaseModules work={work} blocks={[block]} />
+)}
