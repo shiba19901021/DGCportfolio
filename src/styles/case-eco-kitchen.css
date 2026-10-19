@@ -1,0 +1,68 @@
+/* Reuse the approved editorial system; these overrides belong only to this case. */
+.case-eco-kitchen .case-summary-grid.columns-two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 3rem;
+}
+.case-eco-kitchen .case-gallery-grid.layout-single { max-width: 54rem; }
+.case-eco-kitchen #completed-space .case-gallery-grid { max-width: none; }
+
+/* Keep all three source experiences in their original order, with no invented dates. */
+.case-eco-kitchen .case-timeline > ol {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 54rem;
+  gap: 0;
+}
+.case-eco-kitchen .case-timeline > ol > li {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 2rem;
+  border: 0;
+  padding: 0 0 2.5rem;
+}
+.case-eco-kitchen .case-timeline > ol > li:last-child { padding-bottom: 0; }
+.case-eco-kitchen .case-step {
+  font-size: 2.75rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -.04em;
+}
+.case-eco-kitchen .case-timeline > ol > li > div {
+  min-width: 0;
+  border-left: 1px solid var(--line);
+  padding-left: 2rem;
+}
+.case-eco-kitchen .case-timeline h3 { font-size: 1.25rem; line-height: 1.65; margin: 0 0 1rem; }
+.case-eco-kitchen .case-timeline p { font-size: 1.0625rem; line-height: 1.95; margin: 0; }
+
+/* Full prose stays intact; subheadings distinguish needs and material judgements. */
+.case-eco-kitchen .case-reading h3 {
+  font-size: 1.25rem;
+  line-height: 1.65;
+  letter-spacing: normal;
+  margin: 2.5rem 0 1rem;
+}
+.case-eco-kitchen .case-reading > div > h3:first-child { margin-top: 0; }
+.case-eco-kitchen #materials-and-adjustments .case-reading h3 { color: var(--copper); }
+.case-eco-kitchen #earlier-builds,
+.case-eco-kitchen #building-workshop,
+.case-eco-kitchen #ongoing-use { margin-top: 5.5rem; }
+
+/* Completion, maintained condition, cooking and recovery remain separate source blocks. */
+.case-eco-kitchen #garden-recovery,
+.case-eco-kitchen #garden-learning { margin-top: 4.5rem; }
+.case-eco-kitchen .case-v03-end .related {
+  border-left: 0;
+  border-top: 1px solid var(--line);
+  padding: 1.5rem 0 0;
+}
+@media (max-width: 700px) {
+  .case-eco-kitchen .case-summary-grid.columns-two { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; }
+  .case-eco-kitchen .case-timeline > ol > li { grid-template-columns: 2.75rem minmax(0, 1fr); gap: 1rem; padding-bottom: 2rem; }
+  .case-eco-kitchen .case-timeline > ol > li > div { padding-left: 1rem; }
+  .case-eco-kitchen .case-step { font-size: 2.5rem; }
+  .case-eco-kitchen #earlier-builds,
+  .case-eco-kitchen #building-workshop,
+  .case-eco-kitchen #ongoing-use { margin-top: 4.25rem; }
+  .case-eco-kitchen #garden-recovery,
+  .case-eco-kitchen #garden-learning { margin-top: 3.25rem; }
+}
