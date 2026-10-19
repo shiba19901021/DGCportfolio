@@ -4,16 +4,14 @@ import '../styles/site-chrome.css';
 import { site } from '../data/site';
 import { pathFor } from '../lib/works';
 interface Props { title?: string; description?: string; activeCategory?: string; previewVersion?: string; homeVisual?: boolean; }
-const { title = site.title, description = site.positioning, activeCategory, previewVersion = 'V0.6', homeVisual = false } = Astro.props;
+const { title = site.title, description = site.positioning, previewVersion = 'V0.6', homeVisual = false } = Astro.props;
 const publicRelease = import.meta.env.PORTFOLIO_PUBLIC_ONLY === '1';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const current = Astro.url.pathname.replace(base, '');
 const links = [
   { href: '/', label: '首頁', active: current === '/' },
   { href: '/#works', label: '所有作品', active: false },
-  { href: '/projects/', label: '專案作品', active: current.startsWith('/projects') || (activeCategory !== undefined && activeCategory !== 'learning') },
-  { href: '/learning/', label: '課程作品', active: current.startsWith('/learning') || activeCategory === 'learning' },
-  { href: '/#about', label: '關於與聯絡', active: false },
+  { href: '/#about', label: '關於我', active: false },
 ];
 ---
 <!doctype html>
@@ -24,6 +22,9 @@ const links = [
     <meta name="description" content={description} />
     {!publicRelease && <meta name="robots" content="noindex, nofollow" />}
     <meta name="theme-color" content={homeVisual ? '#fbf9f4' : '#f4f1e7'} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400..700;1,400..700&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet" />
     <link rel="icon" href="data:," />
     <title>{title}</title>
   </head>
