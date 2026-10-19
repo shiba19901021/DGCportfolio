@@ -87,7 +87,7 @@ blocks:
     id: prelude-photo
     layout: single
     images:
-      - src: /images/alishan/prelude-game-mosaic.png
+      - src: /images/alishan/prelude-game-mosaic.webp
         approved: true
         preview: false
         alt: 臉部已遮蔽的學員圍桌操作骰子與狩獵奇蹟教具
