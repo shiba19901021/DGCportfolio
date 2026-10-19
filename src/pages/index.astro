@@ -11,7 +11,6 @@ const courses = works.filter(work => work.data.category === 'learning');
 <Base homeVisual>
   <div class="home-v03">
     <section class="home-hero wrap" aria-labelledby="home-title">
-      <p class="home-name">游鏡騰 <span lang="en">Ching-Teng Yu</span></p>
       <h1 id="home-title">{site.slogan}</h1>
       <p class="home-position">方案設計者，從永續實務與環境教育出發，串起問題分析、現場執行與持續改善。</p>
       <p class="home-career"><span>求職方向</span>氣候韌性與永續方案 · 跨領域專案 · 系統與流程改善</p>
@@ -20,11 +19,11 @@ const courses = works.filter(work => work.data.category === 'learning');
 
     <div id="works" class="home-works">
       <section id="selected" class="home-work-group wrap" aria-labelledby="projects-title">
-        <div class="home-section-heading"><div><h2 id="projects-title">專案作品</h2><p>從問題、限制到執行與修正，閱讀完整的專案脈絡。</p></div><span class="home-work-count">{projects.length} 篇</span></div>
+        <div class="home-section-heading"><div><h2 id="projects-title">專案作品</h2><p>從問題、限制到執行與修正，閱讀完整的專案脈絡。</p></div></div>
         <div class="home-work-list">{projects.map(work => <WorkRowCard work={work} />)}</div>
       </section>
       <section class="home-work-group wrap" aria-labelledby="courses-title">
-        <div class="home-section-heading"><div><h2 id="courses-title">課程作品</h2><p>探索學習流程、互動機制，以及試教與回饋如何推進設計。</p></div><span class="home-work-count">{courses.length} 篇</span></div>
+        <div class="home-section-heading"><div><h2 id="courses-title">課程作品</h2><p>探索學習流程、互動機制，以及試教與回饋如何推進設計。</p></div></div>
         <div class="home-work-list">{courses.map(work => <WorkRowCard work={work} />)}</div>
       </section>
     </div>

@@ -39,8 +39,7 @@ const links = [
     <main id="main" tabindex="-1"><slot /></main>
     <footer class="site-footer site-chrome-footer">
       <div class="site-chrome-inner wrap">
-      <div><p class="footer-name">游鏡騰</p><p>{site.positioning}</p></div>
-      <div class="footer-links"><a href={`mailto:${site.email}`}>Email 聯絡</a><a href={site.linkedin}>LinkedIn</a><a href={pathFor('/#resume')}>履歷與經歷</a></div>
+      <p>{site.positioning}</p>
       {!publicRelease && <p class="preview-label">{previewVersion} · 本機閱讀測試版</p>}
       </div>
     </footer>

@@ -14,8 +14,6 @@
 .home-v03 { overflow-wrap: anywhere; letter-spacing: .01em; }
 .home-v03 h2, .home-v03 h3 { letter-spacing: normal; }
 .home-v03 .home-hero { padding-block: clamp(3rem, 6vw, 5.25rem) clamp(2.875rem, 5.75vw, 5rem); }
-.home-v03 .home-name { font-size: 1rem; margin: 0 0 1.5rem; font-weight: 600; }
-.home-v03 .home-name span { font-size: .8125rem; margin-left: .8rem; font-weight: 400; color: var(--muted); }
 .home-v03 h1 { max-width: 18em; font-size: clamp(2.2rem, 4.6vw, 3.5rem); line-height: 1.55; letter-spacing: -.02em; margin: 0 0 1.5rem; }
 .home-v03 .home-position { max-width: 43rem; font-size: 1.125rem; line-height: 1.875; color: var(--muted); }
 .home-v03 .home-career { max-width: 45rem; font-size: .9375rem; color: var(--muted); margin-top: 1.75rem; }
@@ -30,7 +28,6 @@
 .home-v03 .home-section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 2rem; }
 .home-v03 .home-section-heading h2 { margin: 0 0 .5rem; font-size: clamp(1.65rem, 3vw, 2rem); }
 .home-v03 .home-section-heading p { color: var(--muted); font-size: 1rem; margin: 0; }
-.home-v03 .home-work-count { white-space: nowrap; color: var(--accent); font-size: .8125rem; }
 .home-v03 .home-work-list { display: grid; gap: 1.5rem; }
 .work-row {
   display: grid;
@@ -80,7 +77,6 @@
   .home-v03 .home-hero { padding-block: 2.25rem 2.5rem; }
   .home-v03 h1 { font-size: 2.1rem; line-height: 1.6; }
   .home-v03 .home-position { font-size: 1.0625rem; }
-  .home-v03 .home-name span { display: block; margin-left: 0; margin-top: .2rem; }
   .home-v03 .home-section-heading { margin-bottom: 1.5rem; }
   .work-row { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; padding: 1rem; }
   .work-row-media { aspect-ratio: 4 / 3; }
