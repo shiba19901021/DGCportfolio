@@ -27,7 +27,7 @@ const modular = blocks.length > 0;
 const rainwater = work.id === 'rainwater';
 const ecoKitchen = work.id === 'eco-kitchen';
 const alishan = work.id === 'alishan';
-const caseV2 = rainwater || ecoKitchen || alishan;
+const caseV2 = rainwater || ecoKitchen || alishan || work.id === 'workflow';
 ---
 <Base title={`${intro?.title ?? d.title}｜游鏡騰`} description={d.summary} activeCategory={d.category} previewVersion={intro ? "V0.7" : "V0.6"} caseVisual={caseV2}>
   {modular ? <div class:list={['case-v03', { 'case-v2': caseV2, 'case-eco-kitchen': ecoKitchen, 'case-alishan': alishan }]}>
