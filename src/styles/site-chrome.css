@@ -1,0 +1,54 @@
+/* Shared chrome only. Keep the case pages' existing content palette and layout. */
+.site-chrome-header {
+  display: block;
+  padding: 0;
+  background: #fbf9f4;
+  border-bottom: 1px solid #e5dfd7;
+  color: #1b1c19;
+}
+.site-chrome-header .site-chrome-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 88px;
+  padding-block: .9rem;
+}
+.site-chrome-header .brand { color: #1b1c19; font-size: 1.25rem; }
+.site-chrome-header .brand span { color: #5a5f63; font-size: .6875rem; }
+.site-chrome-header nav ul { gap: .15rem 1.4rem; }
+.site-chrome-header nav a { color: #5a5f63; font-size: .875rem; }
+.site-chrome-header nav a:hover,
+.site-chrome-header nav a[aria-current=page] { color: #864e29; }
+.site-chrome-header nav a[aria-current=page] { text-underline-offset: .5rem; }
+.site-chrome-header a:focus-visible,
+.site-chrome-footer a:focus-visible { outline-color: #864e29; }
+.site-chrome-footer {
+  display: block;
+  padding: 0;
+  background: #fbf9f4;
+  border-top: 1px solid #e5dfd7;
+  color: #5a5f63;
+}
+.site-chrome-footer .site-chrome-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem 2rem;
+  padding-block: 2.5rem;
+}
+.site-chrome-footer .footer-name { color: #1b1c19; margin-bottom: .35rem; }
+.site-chrome-footer .footer-links { gap: .4rem 1.5rem; }
+.site-chrome-footer a { color: #5a5f63; text-decoration: none; }
+.site-chrome-footer a:hover { color: #864e29; text-decoration: underline; }
+.site-chrome-footer .preview-label { color: #5a5f63; }
+@media (max-width: 850px) {
+  .site-chrome-header .site-chrome-inner { align-items: flex-start; flex-direction: column; gap: .35rem; }
+  .site-chrome-header nav { max-width: 100%; }
+  .site-chrome-header nav ul { gap: 0 1.2rem; }
+  .site-chrome-footer .site-chrome-inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 380px) {
+  .site-chrome-header nav ul { gap: 0 .9rem; }
+  .site-chrome-header nav a { font-size: .8125rem; }
+}

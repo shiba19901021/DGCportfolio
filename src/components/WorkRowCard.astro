@@ -1,0 +1,17 @@
+---
+import { pathFor, workHref, workLinkLabel, type Work } from '../lib/works';
+import { workMedia } from '../lib/work-media';
+interface Props { work: Work; }
+const { work } = Astro.props;
+const image = workMedia(work);
+---
+<a class="work-row" href={workHref(work)}>
+  <div class="work-row-media">
+    <img src={pathFor(image.src!)} alt={image.alt} width="640" height="480" loading="lazy" decoding="async" style={{ objectFit: image.fit, objectPosition: image.position }} />
+  </div>
+  <div class="work-row-copy">
+    <h3>{work.data.detailIntro?.title ?? work.data.title}</h3>
+    <p>{work.data.summary}</p>
+  </div>
+  <span class="work-row-link"><span>{workLinkLabel(work)}</span><span class="work-row-arrow" aria-hidden="true">↗</span></span>
+</a>
