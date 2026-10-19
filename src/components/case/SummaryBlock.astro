@@ -1,0 +1,12 @@
+---
+import type { CaseBlock } from '../../data/case-blocks';
+import type { Work } from '../../lib/works';
+import { caseText } from '../../lib/case-blocks';
+interface Props { block: Extract<CaseBlock, { type: 'summary' }>; work: Work; }
+const { block, work } = Astro.props;
+const items = block.items.filter(item => item.label.trim() && caseText(item.value, work));
+---
+{items.length > 0 && <section id={block.id} class="case-block case-summary" data-module="summary">
+  {block.title && <h2>{block.title}</h2>}
+  <dl class:list={['case-summary-grid', `columns-${block.columns}`]}>{items.map(item => <div><dt>{item.label}</dt><dd>{caseText(item.value, work)}</dd></div>)}</dl>
+</section>}

@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import WorkBriefs from '../../components/WorkBriefs.astro';
+import { listedWorks, pathFor } from '../../lib/works';
+import '../../styles/projects-v03.css';
+const all = await listedWorks();
+const works = all.filter(w => ['project', 'tool', 'practice'].includes(w.data.category));
+
+---
+<Base title="專案作品集｜游鏡騰" previewVersion="V0.6">
+  <div class="projects-v03">
+    <div class="wrap page-intro"><p class="eyebrow">作品分類</p><h1>專案作品集</h1><p class="lead">從場域、合作到資訊流程，將需求與限制整理成方案，再進入執行、測試與修正。</p><a class="text-link" href={pathFor('/explore/')}>也可以從問題開始探索 ↗</a></div>
+    <div class="wrap project-index-grid">{works.map((work, index) => <ProjectCard work={work} index={index} />)}</div>
+    <WorkBriefs works={works} all={all} />
+  </div>
+</Base>
+
+
+

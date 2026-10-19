@@ -1,0 +1,14 @@
+---
+import type { CaseBlock } from '../../data/case-blocks';
+import type { Work } from '../../lib/works';
+import { caseText } from '../../lib/case-blocks';
+import { renderCaseMarkdown } from '../../lib/case-markdown';
+interface Props { block: Extract<CaseBlock, { type: 'narrative' }>; work: Work; }
+const { block, work } = Astro.props;
+const paragraphs = block.paragraphs.map(p => caseText(p, work)).filter(Boolean);
+const html = block.markdown.trim() ? await renderCaseMarkdown(block.markdown, block.id) : '';
+---
+{(html || paragraphs.length > 0 || (block.useBody && work.body?.trim())) && <section id={block.id} class="case-block case-narrative" data-module="narrative">
+  {block.title && <h2>{block.title}</h2>}
+  <div class="case-reading">{block.useBody && <slot />}{html && <div set:html={html} />}{paragraphs.map(text => <p>{text}</p>)}</div>
+</section>}

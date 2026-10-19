@@ -1,0 +1,24 @@
+{
+  "name": "ching-teng-portfolio-v01",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "dev": "node scripts/astro.mjs dev --host 127.0.0.1",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/astro.mjs preview --host 127.0.0.1",
+    "check": "node scripts/astro.mjs check",
+    "preview:static": "node scripts/preview-static.mjs"
+  },
+  "dependencies": {
+    "@astrojs/markdown-satteri": "0.4.4",
+    "astro": "7.4.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.9.0"
+  }
+}

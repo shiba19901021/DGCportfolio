@@ -1,0 +1,29 @@
+.projects-v03 .page-intro{padding-bottom:1.8rem}
+.projects-v03 .project-index-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;padding-bottom:3rem}
+.projects-v03 .project-index-card{display:flex;flex-direction:column;min-width:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--white);scroll-margin-top:1.5rem}
+.projects-v03 .project-index-media{aspect-ratio:16/6;background:var(--tint);border-bottom:1px solid var(--line);overflow:hidden}
+.projects-v03 .project-index-media>img{width:100%;height:100%;object-fit:cover}
+.projects-v03 .project-index-placeholder{height:100%;padding:1rem 1.5rem;display:grid;grid-template-columns:auto 1fr;align-content:center;align-items:center;gap:.3rem 1.4rem;color:var(--muted)}
+.projects-v03 .project-index-number{font-family:var(--serif);font-size:3rem;color:#8a9a84;grid-row:1/3;line-height:1.3}
+.projects-v03 .project-index-placeholder>span:not(.project-index-number){font-size:.9375rem;letter-spacing:.06em}
+.projects-v03 .project-index-placeholder>small{font-size:.75rem}
+.projects-v03 .project-index-copy{display:flex;flex:1;flex-direction:column;padding:1.3rem 1.5rem 1rem}
+.projects-v03 .project-index-copy h2{font-size:1.5rem;margin:0 0 .8rem}
+.projects-v03 .project-index-challenge{font-size:1rem;line-height:1.85;margin:0 0 .8rem}
+.projects-v03 .project-index-outcome{font-size:.875rem;line-height:1.8;color:var(--muted);margin:0 0 .6rem}
+.projects-v03 .project-index-feature{font-size:.9375rem;line-height:1.85;margin:0 0 .8rem}
+.projects-v03 .project-index-caption{font-size:.8125rem;line-height:1.7;color:var(--muted);margin:0 0 1rem}
+.projects-v03 .project-index-copy .tags{margin:.2rem 0 .8rem}
+.projects-v03 .project-index-copy>.text-link{margin-top:auto;align-self:flex-start}
+.projects-v03 .project-briefs{border-top:1px solid var(--line);padding-block:2.2rem 3rem}
+.projects-v03 .project-briefs>h2{font-size:1.6rem}
+.projects-v03 .project-brief-intro{font-size:.9375rem;color:var(--muted);margin-bottom:1.5rem}
+.projects-v03 .project-brief{border-top:1px solid var(--line);scroll-margin-top:1.5rem}
+.projects-v03 .project-brief:last-child{border-bottom:1px solid var(--line)}
+.projects-v03 .project-brief>summary{padding:1.1rem .25rem;font-size:1.0625rem;font-family:var(--serif);cursor:pointer;min-height:56px}
+.projects-v03 .brief-open-label{font-family:var(--sans);font-size:.75rem;color:var(--muted);float:right;margin-top:.3rem;margin-left:1rem}
+.projects-v03 .project-brief>summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.projects-v03 .project-brief-body{padding:.5rem 1.5rem 1.5rem;max-width:50rem}
+.projects-v03 .project-brief-lead{font-size:1rem;line-height:1.95;margin-bottom:1.3rem}
+.projects-v03 .project-brief .related{margin-top:1.5rem;margin-bottom:0}
+@media(max-width:650px){.projects-v03 .project-index-grid{grid-template-columns:1fr;gap:1.2rem;padding-bottom:2rem}.projects-v03 .project-index-copy{padding:1.1rem 1.15rem .9rem}.projects-v03 .project-index-copy h2{font-size:1.35rem}.projects-v03 .project-index-media{aspect-ratio:16/5}.projects-v03 .project-index-placeholder{padding:.8rem 1.1rem;gap:.2rem 1rem}.projects-v03 .project-index-number{font-size:2.5rem}.projects-v03 .project-index-placeholder>span:not(.project-index-number){font-size:.8125rem}.projects-v03 .project-briefs{padding-block:1.8rem 2.5rem}.projects-v03 .project-brief-body{padding:.5rem .3rem 1.3rem}.projects-v03 .brief-open-label{font-size:.6875rem}}

@@ -1,0 +1,13 @@
+---
+import type { CaseBlock } from '../../data/case-blocks';
+import type { Work } from '../../lib/works';
+import { caseText } from '../../lib/case-blocks';
+import CaseFigure from './CaseFigure.astro';
+interface Props { block: Extract<CaseBlock, { type: 'timeline' }>; work: Work; }
+const { block, work } = Astro.props;
+const steps = block.steps.filter(step => step.title.trim() && caseText(step.text, work));
+---
+{steps.length > 0 && <section id={block.id} class="case-block case-timeline" data-module="timeline">
+  {block.title && <h2>{block.title}</h2>}
+  <ol>{steps.map((step, index) => <li><span class="case-step" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span><div><h3>{step.title}</h3><p>{caseText(step.text, work)}</p>{step.image && <CaseFigure image={step.image} />}</div></li>)}</ol>
+</section>}

@@ -1,0 +1,110 @@
+[
+  {
+    "path": "images/alishan/forest-practice.jpg",
+    "sha256": "522a1648ad53165b33ca388a2a32c9401d9ae8aef5b399a2bce580d727684936"
+  },
+  {
+    "path": "images/alishan/prelude-game-mosaic.png",
+    "sha256": "3e8dc3d36c068bb2a689d549794ec14ebdeb815f6bc6dc97793c05d354f24371"
+  },
+  {
+    "path": "images/alishan/stream-practice-mosaic.webp",
+    "sha256": "4b47b6ff97dbca741f92c8e5829a8f35c689cc975f10ed7231cba6795442fa31"
+  },
+  {
+    "path": "images/climate-program/capillary-planters.jpg",
+    "sha256": "0683410ff1662d2749c9482a6c908b55cb8e596e077beb7093fe45d69c6b56fb"
+  },
+  {
+    "path": "images/climate-program/resource-cycle-teaching-mosaic.png",
+    "sha256": "fa8be1017d264c88322a34b72bc0f9262c095bb58f121319bd76272a5a908668"
+  },
+  {
+    "path": "images/climate-program/solar-oven-teaching-mosaic.webp",
+    "sha256": "2c9c21875ee5246c0fad55ccea4908cc03222b413820128013a8aa382960daef"
+  },
+  {
+    "path": "images/eco-kitchen/completed-kitchen.jpg",
+    "sha256": "47e644b25167b9315c905186cac1627d646479abf814b41a78821ba31e285e0c"
+  },
+  {
+    "path": "images/eco-kitchen/garden-overview.jpg",
+    "sha256": "c23ca49ba999cdc2c725024fb92db6f1d2dabef58ca3749111375a2db0981b3e"
+  },
+  {
+    "path": "images/eco-kitchen/garden-reorganized.jpg",
+    "sha256": "3877c63d45138188a4e1988e6df60c73cd5ab6364590e0844f16fbe759dcafd9"
+  },
+  {
+    "path": "images/eco-kitchen/garden-storm-before.jpg",
+    "sha256": "7c8a7251fa0398fefb4506d3f0daa93978392a2f7be13a44df1314e28d0f860e"
+  },
+  {
+    "path": "images/eco-kitchen/garden-student-maintenance.webp",
+    "sha256": "6aacd1b07503d387f69ac60dd97dfb65b2667fbf781faf69c114bdd9b11e966d"
+  },
+  {
+    "path": "images/eco-kitchen/stone-base-mosaic.png",
+    "sha256": "6ef2974d8f87db9cb0cb5d25ba56e312b16dc0bc23b950607aa441ed6567f2dc"
+  },
+  {
+    "path": "images/eco-kitchen/stove-building-detail.jpg",
+    "sha256": "a7e81ec2883bb7f5a7199c80d2d1a7e3fbf4d711b3bdffccf0b268e916cb0d06"
+  },
+  {
+    "path": "images/eco-kitchen/stove-building-side.jpg",
+    "sha256": "3e549165a33a25207f693cd341ee80250607b7576daedaa5e48d8ad65de4484e"
+  },
+  {
+    "path": "images/food-carbon/ingredient-introduction.png",
+    "sha256": "22109686f10f64282f1d0cd72208b430b87e487cc561a4b0eaf7077cce1fe753"
+  },
+  {
+    "path": "images/food-carbon/stove-cooking.png",
+    "sha256": "1fbf341283686fb8c7fd51cf561f27bdf3eedcdfd59aef7f8c4271a880e93f3f"
+  },
+  {
+    "path": "images/food-carbon/student-sharing.png",
+    "sha256": "0ab344e77392d7feb4f42f6709b5f0ed222d89a0507280423417a0ba618e7a0a"
+  },
+  {
+    "path": "images/rainwater/broken-joint.jpg",
+    "sha256": "5039e06743a3c6e25fe069ee40bbbc348df2318243091588162f301fb0973d5b"
+  },
+  {
+    "path": "images/rainwater/courtyard-before.png",
+    "sha256": "6414d020839a2bb2d0a35603955f4fd6014dfa233e21a0cea56a299e5a3f53c8"
+  },
+  {
+    "path": "images/rainwater/maintenance-system.png",
+    "sha256": "a4120ee46616f45d7dcf8abd38f57151249e32300ce096f2412e42e1ef67f444"
+  },
+  {
+    "path": "images/rainwater/original-tee.png",
+    "sha256": "51deac37bba13f235580fa51202ce53acf4d5ff8e44190c8c46165dd0b76e2fa"
+  },
+  {
+    "path": "images/rainwater/student-participation-illustration.png",
+    "sha256": "b1d88dac591debda79c5575382c6ca3a136ce177a051e71ff199228fce0e9ab3"
+  },
+  {
+    "path": "images/rainwater/system.jpg",
+    "sha256": "852b256d5c59c53c46e275f8dc8874e4f50954354dbeb8a68debb38449358706"
+  },
+  {
+    "path": "images/rainwater/teaching-operation.png",
+    "sha256": "72dbc2f92174f58d8dfc0a45ca02fc4f285de9dbbdd78c139c9041076688f48d"
+  },
+  {
+    "path": "images/workflow/excel-records.png",
+    "sha256": "2029a863e4560b41e754846601879bd0cbcb343b45cf4a093f26e878c9dd35ba"
+  },
+  {
+    "path": "images/workflow/management-interface.png",
+    "sha256": "d9b0b9921e9544a6aaed191a13ba0786fa002945bdb37b7d7b17c600eacbba22"
+  },
+  {
+    "path": "images/workflow/sheets-records.png",
+    "sha256": "78a94dd971c7706814dae6141fb4c2333440f828d07a377f88376ab913b40426"
+  }
+]

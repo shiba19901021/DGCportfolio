@@ -1,0 +1,44 @@
+---
+import type { Work } from '../lib/works';
+import RelatedWorks from './RelatedWorks.astro';
+interface Props { works: Work[]; all: Work[]; kind?: 'project' | 'learning'; }
+const { works, all, kind = 'project' } = Astro.props;
+const briefs = works.filter(work => !work.data.detail);
+const learning = kind === 'learning';
+---
+{briefs.length > 0 && <section class="wrap project-briefs" aria-labelledby="briefs-title">
+  <p class="eyebrow">繼續閱讀</p><h2 id="briefs-title">{learning ? '課程摘要' : '專案摘要'}</h2>
+  <p class="project-brief-intro">{learning ? '選一件課程，閱讀學習問題、設計方式與實際使用經驗。' : '選一件專案，閱讀它的問題、設計方式與協作過程。'}</p>
+  {briefs.map(work => <details id={work.id} class="project-brief" data-work-brief open>
+    <summary><span>{work.data.title}</span><span class="brief-open-label" aria-hidden="true">展開／收合</span></summary>
+    <div class="project-brief-body"><p class="project-brief-lead">{work.data.summary}</p>
+      <dl class="evidence-list">
+        <div><dt>{learning ? '學習問題' : '原始問題'}</dt><dd>{work.data.challenge}</dd></div>
+        <div><dt>{learning ? '設計方式' : '設計與調整'}</dt><dd>{work.data.decision}</dd></div>
+        <div><dt>完成內容</dt><dd>{work.data.delivered}</dd></div>
+        <div><dt>我的角色</dt><dd>{work.data.role}</dd></div>
+        <div class="boundary"><dt>成果說明與限制</dt><dd>{work.data.boundary}</dd></div>
+      </dl><RelatedWorks work={work} all={all} />
+    </div>
+  </details>)}
+</section>}
+<script>
+  const briefs = Array.from(document.querySelectorAll<HTMLDetailsElement>('[data-work-brief]'));
+  function openAnchor(scroll = false) {
+    let id = '';
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    const target = briefs.find(brief => brief.id === id);
+    if (target) { target.open = true; if (scroll) requestAnimationFrame(() => target.scrollIntoView({ block: 'start' })); }
+  }
+  briefs.forEach(brief => brief.open = false);
+  openAnchor(true);
+  window.addEventListener('hashchange', () => openAnchor(true));
+  window.addEventListener('pageshow', () => openAnchor(false));
+  document.querySelectorAll<HTMLAnchorElement>('a[href*="#"]').forEach(link => link.addEventListener('click', () => {
+    const url = new URL(link.href);
+    if (url.pathname !== location.pathname) return;
+    let id = ''; try { id = decodeURIComponent(url.hash.slice(1)); } catch { return; }
+    const target = briefs.find(brief => brief.id === id);
+    if (target) target.open = true;
+  }));
+</script>

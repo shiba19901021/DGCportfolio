@@ -1,0 +1,12 @@
+---
+import type { CaseImage } from '../../data/case-blocks';
+import { hasImageContent, imageIsReady } from '../../lib/case-blocks';
+import { pathFor } from '../../lib/works';
+interface Props { image: CaseImage; eager?: boolean; }
+const { image, eager = false } = Astro.props;
+const ready = imageIsReady(image);
+---
+{hasImageContent(image) && <figure class:list={['case-figure', `ratio-${image.ratio}`, { 'image-missing': !ready }]}>
+  {ready ? <div class="case-figure-frame"><img src={pathFor(image.src!)} alt={image.alt} loading={eager ? 'eager' : 'lazy'} decoding="async" style={{ objectFit: image.fit, objectPosition: image.position }} />{image.annotations.map(marker => <span aria-hidden="true" class="case-photo-marker" style={{ left: `${marker.x}%`, top: `${marker.y}%` }}>{marker.label}</span>)}</div> : <div class="case-image-placeholder"><span aria-hidden="true">＋</span><p>{image.placeholder}</p><small>圖片尚未加入，非現場影像</small></div>}
+  {image.caption && <figcaption>{image.caption}</figcaption>}
+</figure>}

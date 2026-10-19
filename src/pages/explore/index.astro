@@ -1,0 +1,68 @@
+---
+import Base from '../../layouts/Base.astro';
+import '../../styles/explore-v04.css';
+import { listedWorks, workHref, workLinkLabel } from '../../lib/works';
+import { problems, categories } from '../../data/site';
+const works = await listedWorks();
+---
+<Base title="從問題探索作品｜游鏡騰" previewVersion="V0.6">
+  <div class="wrap page-intro"><p class="eyebrow">跨分類的閱讀入口</p><h1>從問題探索作品</h1><p class="lead">有些作品從設備開始，有些從課程或日常工作開始。也可以從問題，找到它們之間的關係。</p><p>自由選一個你關心的問題，看看我如何判斷與修正。不需要回答測驗，也可以直接閱讀全部作品。</p></div>
+  <section class="wrap exploration" aria-label="問題與作品">
+    <div class="problem-picker" role="group" aria-label="選擇一個問題" hidden>
+      <button type="button" class="all-filter" data-filter="all" aria-pressed="true" aria-controls="results">全部作品</button>
+      <div class="problem-grid">{problems.map((problem, i) => <button type="button" class="problem-button" data-filter={problem.id} aria-pressed="false" aria-controls="results"><span class="eyebrow" aria-hidden="true">問題 0{i + 1}</span><span class="problem-title">{problem.title}</span><span class="problem-description">{problem.description}</span></button>)}</div>
+    </div>
+    <noscript><p class="notice">目前顯示全部作品；以下連結均可直接閱讀，不需啟用互動。</p></noscript>
+    <div class="results-heading"><h2 id="result-title">全部作品</h2><p id="result-status" role="status" aria-live="polite" aria-atomic="true">共 {works.length} 件作品，跨越專案與課程分類。</p></div>
+    <p id="result-description">選擇問題可縮小閱讀範圍，同一件作品始終連到相同內容。</p>
+    <div id="results" class="result-list" aria-labelledby="result-title">
+      {works.map(work => <article class="result-card" data-work={work.id} data-problems={work.data.problems.join(' ')} data-contexts={JSON.stringify(work.data.contexts)}>
+        <p class="eyebrow">{categories[work.data.category].label}</p><h3>{work.data.title}</h3>
+        <dl class="evidence-list">{([['challenge', '遇到的問題'], ['decision', '設計與調整'], ['delivered', '完成內容']] as const).map(([key, label]) => <div><dt>{label}</dt><dd data-field={key} data-default={work.data[key]}>{work.data[key]}</dd></div>)}</dl>
+        <a class="text-link" href={workHref(work)}>{workLinkLabel(work)}<span class="sr-only">：{work.data.title}</span> ↗</a>
+      </article>)}
+    </div>
+    <p class="notice" id="empty-results" hidden>這個問題目前沒有可閱讀的作品，請切換其他問題或全部作品。</p>
+  </section>
+</Base>
+<script>
+  import { problems } from '../../data/site';
+  const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-filter]'));
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-work]'));
+  // 無 JavaScript 時直接閱讀全部作品，不留下無法操作的篩選按鈕。
+  const picker = document.querySelector<HTMLElement>('.problem-picker');
+  function selectProblem(requested: string, updateUrl = true) {
+    const problem = problems.find(p => p.id === requested);
+    const selected = problem ? problem.id : 'all';
+    let count = 0;
+    buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === selected)));
+    cards.forEach(card => {
+      const visible = selected === 'all' || card.dataset.problems?.split(' ').includes(selected);
+      card.hidden = !visible;
+      if (!visible) return;
+      count++;
+      const contexts = JSON.parse(card.dataset.contexts || '{}');
+      const context = contexts[selected];
+      card.querySelectorAll<HTMLElement>('[data-field]').forEach(field => {
+        field.textContent = context?.[field.dataset.field!] ?? field.dataset.default ?? '';
+      });
+    });
+    document.getElementById('result-title')!.textContent = problem?.title ?? '全部作品';
+    document.getElementById('result-description')!.textContent = problem?.description ?? '選擇問題可縮小閱讀範圍，同一件作品始終連到相同內容。';
+    document.getElementById('result-status')!.textContent = `共 ${count} 件相關作品。`;
+    document.getElementById('empty-results')!.hidden = count > 0;
+    if (updateUrl) {
+      const url = new URL(window.location.href);
+      if (selected === 'all') url.searchParams.delete('problem'); else url.searchParams.set('problem', selected);
+      window.history.replaceState(null, '', url);
+    }
+  }
+  buttons.forEach(button => button.addEventListener('click', () => selectProblem(button.dataset.filter!)));
+  selectProblem(new URLSearchParams(window.location.search).get('problem') || 'all', false);
+  if (picker) picker.hidden = false;
+  window.addEventListener('popstate', () => selectProblem(new URLSearchParams(window.location.search).get('problem') || 'all', false));
+  window.addEventListener('pageshow', () => selectProblem(new URLSearchParams(window.location.search).get('problem') || 'all', false));
+</script>
+
+
+

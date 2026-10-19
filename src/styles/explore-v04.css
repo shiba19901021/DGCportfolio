@@ -1,0 +1,4 @@
+.exploration .result-card{display:flex;flex-direction:column}
+.exploration .result-card .evidence-list{margin-top:0}
+.exploration .result-card .evidence-list>div{margin-bottom:.85rem}
+.exploration .result-card .text-link{margin-top:auto;align-self:flex-start}

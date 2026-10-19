@@ -1,0 +1,33 @@
+---
+import type { Work } from '../lib/works';
+import { pathFor, workHref, workLinkLabel } from '../lib/works';
+import { categories, problems } from '../data/site';
+import WorkArt from './WorkArt.astro';
+interface Props { work: Work; expanded?: boolean; }
+const { work, expanded = false } = Astro.props;
+const d = work.data;
+---
+<article id={work.id} class:list={['work-card', { expanded }]}>
+  {d.image?.approved ? <figure class="work-photo"><img src={pathFor(d.image.src)} alt={d.image.alt} loading="lazy" width="960" height="640" /><figcaption>{d.image.caption}</figcaption></figure> : <WorkArt id={work.id} />}
+  <div class="work-copy">
+    <p class="eyebrow">{categories[d.category].label}<span class="dot">・</span>{d.detail ? '完整案例' : '作品摘要'}</p>
+    <h2>{d.title}</h2>
+    <p class="summary">{d.summary}</p>
+    {expanded ? <dl class="evidence-list">
+      <div><dt>原始問題</dt><dd>{d.challenge}</dd></div>
+      <div><dt>設計與調整</dt><dd>{d.decision}</dd></div>
+      <div><dt>完成內容</dt><dd>{d.delivered}</dd></div>
+      <div><dt>我的角色</dt><dd>{d.role}</dd></div>
+      <div class="boundary"><dt>成果說明與限制</dt><dd>{d.boundary}</dd></div>
+    </dl> : <>
+      <p><strong>判斷：</strong>{d.decision}</p>
+      <p><strong>交付：</strong>{d.delivered}</p>
+      <p class="small"><strong>角色：</strong>{d.role}</p>
+      <p class="small"><strong>邊界：</strong>{d.boundary}</p>
+    </>}
+    <ul class="tags" aria-label="主題">{d.topics.map(tag => <li>{tag}</li>)}</ul>
+    {(!expanded || d.detail) && <a class="text-link" href={workHref(work)}>{workLinkLabel(work)}<span class="sr-only">：{d.title}</span><span aria-hidden="true"> ↗</span></a>}
+    {expanded && <div class="problem-links"><span>從問題再看看：</span>{problems.filter(p => d.problems.includes(p.id)).map(p => <a href={pathFor(`/explore/?problem=${p.id}`)}>{p.short}</a>)}</div>}
+  </div>
+</article>
+

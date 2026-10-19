@@ -1,0 +1,44 @@
+# Dependencies and generated output
+node_modules/
+dist/
+.astro/
+.cache/
+.vite/
+coverage/
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.log
+*.pem
+*.key
+
+# Private/local preview material — never publish as repository source
+preview-media/
+private-source/
+private/
+_private/
+internal/
+backups/
+*-internal/
+原始資料/
+歷史版本封存/
+
+# Root-level backup archives
+/*.zip
+/*.7z
+/*.rar
+/*.tar
+/*.gz
+
+# Temporary files and operating-system metadata
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Keep private backups outside Git even if copied here accidentally
+私人備份/

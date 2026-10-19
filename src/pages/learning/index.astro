@@ -1,0 +1,18 @@
+---
+import Base from '../../layouts/Base.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import WorkBriefs from '../../components/WorkBriefs.astro';
+import { listedWorks, pathFor } from '../../lib/works';
+import '../../styles/projects-v03.css';
+const all = await listedWorks();
+const works = all.filter(w => w.data.category === 'learning');
+---
+<Base title="課程與教學設計｜游鏡騰" previewVersion="V0.6">
+  <div class="projects-v03">
+    <div class="wrap page-intro"><p class="eyebrow">作品分類</p><h1>課程與教學設計</h1><p class="lead">將抽象的學習問題，轉成可參與、可回饋的流程與機制。</p><p>這裡記錄方案研發、資訊轉譯與模擬教具。重點是設計判斷、試教與迭代，不只留下活動照片。</p><a class="text-link" href={pathFor('/explore/')}>跨分類看看相似的問題 ↗</a></div>
+    <div class="wrap project-index-grid">{works.map((work, index) => <ProjectCard work={work} index={index} />)}</div>
+    <WorkBriefs works={works} all={all} kind="learning" />
+  </div>
+</Base>
+
+

@@ -1,0 +1,21 @@
+---
+import type { Work } from '../../lib/works';
+import { visibleBlocks } from '../../lib/case-blocks';
+import SummaryBlock from './SummaryBlock.astro';
+import NarrativeBlock from './NarrativeBlock.astro';
+import GalleryBlock from './GalleryBlock.astro';
+import TimelineBlock from './TimelineBlock.astro';
+import ComparisonBlock from './ComparisonBlock.astro';
+import ResultsBlock from './ResultsBlock.astro';
+interface Props { work: Work; }
+const { work } = Astro.props;
+const blocks = visibleBlocks(work);
+---
+{blocks.map(block => <>
+  {block.type === 'summary' && <SummaryBlock block={block} work={work} />}
+  {block.type === 'narrative' && <NarrativeBlock block={block} work={work}>{block.useBody && <slot name="body" />}</NarrativeBlock>}
+  {block.type === 'gallery' && <GalleryBlock block={block} />}
+  {block.type === 'timeline' && <TimelineBlock block={block} work={work} />}
+  {block.type === 'comparison' && <ComparisonBlock block={block} work={work} />}
+  {block.type === 'results' && <ResultsBlock block={block} work={work} />}
+</>)}

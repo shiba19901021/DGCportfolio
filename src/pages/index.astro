@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import HomeProblemCard from '../components/HomeProblemCard.astro';
+import { listedWorks, pathFor } from '../lib/works';
+import { site, homeConfig } from '../data/site';
+import '../styles/home-v02.css';
+const works = await listedWorks();
+const featured = works.filter(w => w.data.featured)
+  .sort((a, b) => (a.data.home?.order ?? a.data.order) - (b.data.home?.order ?? b.data.order))
+  .slice(0, homeConfig.featuredLimit);
+---
+<Base previewVersion="V0.6">
+  <div class="home-v02">
+    <section class="home-hero wrap" aria-labelledby="home-title">
+      <p class="home-name">游鏡騰 <span lang="en">Ching-Teng Yu</span></p>
+      <h1 id="home-title">{site.slogan}</h1>
+      <p class="home-position">方案設計者，從永續實務與環境教育出發，串起問題分析、現場執行與持續改善。</p>
+      <p class="home-career"><span>求職方向</span>氣候韌性與永續方案 · 跨領域專案 · 系統與流程改善</p>
+      <div class="home-actions"><a class="button" href={site.resume ? pathFor(site.resume) : '#resume'}>{site.resume ? '查看履歷 PDF' : '履歷與經歷'}<span aria-hidden="true"> ↗</span></a><a class="home-contact-link" href={`mailto:${site.email}`}>Email 聯絡 <span aria-hidden="true">→</span></a></div>
+    </section>
+
+    <section id="selected" class="home-problems wrap" aria-labelledby="problems-title">
+      <div class="home-section-heading"><p class="eyebrow">精選問題 · 真實專案中的判斷</p><h2 id="problems-title">我曾經解決過哪些問題？</h2><p>四個不同情境，看看需求與限制如何改變方案。</p></div>
+      <div class="home-problem-grid">{featured.map((work, index) => <HomeProblemCard work={work} index={index} />)}</div>
+      <div class="home-explore-more"><a class="text-link" href={pathFor('/explore/')}>查看更多問題與案例 <span aria-hidden="true">→</span></a></div>
+    </section>
+
+    <section class="home-browse wrap" aria-labelledby="browse-title">
+      <div class="home-section-heading"><p class="eyebrow">作品持續累積</p><h2 id="browse-title">瀏覽更多作品</h2></div>
+      <div class="home-category-grid">
+        <a class="home-category" href={pathFor('/projects/')}><span class="home-category-type">場域・合作・系統改善</span><h3>專案成果 <span aria-hidden="true">↗</span></h3><p>從問題、限制到執行與修正，閱讀完整的專案脈絡。</p></a>
+        <a class="home-category" href={pathFor('/learning/')}><span class="home-category-type">課程・教具・模擬活動</span><h3>課程成果 <span aria-hidden="true">↗</span></h3><p>探索學習流程、互動機制，以及試教與回饋如何推進設計。</p></a>
+      </div>
+    </section>
+
+    <section id="about" class="home-about" aria-labelledby="about-title">
+      <div class="wrap home-about-grid"><div><p class="eyebrow">關於我與聯絡</p><h2 id="about-title">從現場經驗，走向下一個方案。</h2><p>我的背景涵蓋環境教育、永續實務、場域建置與跨組織合作。希望將累積的問題分析與方案設計經驗，應用到更廣泛的工作。</p><p class="home-work-preference">偏好遠端或彈性工作，可配合必要場勘與現場協作。</p></div>
+      <div id="resume" class="home-resume"><h3>履歷與聯絡</h3><p>場域與資源整合、方案研發、專案協作，以及資訊流程改善。</p>{site.resume ? <a class="button" href={pathFor(site.resume)}>查看履歷 PDF ↗</a> : <p class="home-resume-note">履歷 PDF 待確認；目前可先閱讀作品與經歷摘要。</p>}<div class="home-contact-list"><a href={`mailto:${site.email}`}>Email 聯絡 <span aria-hidden="true">↗</span></a><a href={site.linkedin}>LinkedIn <span aria-hidden="true">↗</span></a></div></div></div>
+    </section>
+  </div>
+</Base>
+
+
+

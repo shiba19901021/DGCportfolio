@@ -1,0 +1,12 @@
+---
+import type { CaseBlock } from '../../data/case-blocks';
+import { hasImageContent } from '../../lib/case-blocks';
+import CaseFigure from './CaseFigure.astro';
+interface Props { block: Extract<CaseBlock, { type: 'gallery' }>; }
+const { block } = Astro.props;
+const images = block.images.filter(hasImageContent);
+---
+{images.length > 0 && <section id={block.id} class="case-block case-gallery" data-module="gallery">
+  {block.title && <h2>{block.title}</h2>}
+  <div class:list={['case-gallery-grid', `layout-${block.layout}`]}>{images.map(image => <CaseFigure image={image} />)}</div>
+</section>}

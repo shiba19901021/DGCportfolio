@@ -1,0 +1,42 @@
+---
+import type { Work } from '../lib/works';
+import { pathFor, workHref, workLinkLabel } from '../lib/works';
+interface Props { work: Work; index: number; }
+const { work, index } = Astro.props;
+const d = work.data;
+const visual = d.home?.visual || 'generic';
+---
+<article class="home-problem-card" data-home-work={work.id}>
+  <div class:list={['home-card-media', `media-${visual}`]}>
+    {d.image?.approved ? <img src={pathFor(d.image.src)} alt={d.image.alt} loading="lazy" width="960" height="540" style={{ objectPosition: d.image.position }} /> : <div class="home-media-fallback" aria-hidden="true">
+      <span class="home-media-label">{d.home?.mediaLabel || d.topics[0]}</span>
+      <svg viewBox="0 0 320 144" fill="none" focusable="false">
+        {visual === 'water' ? <>
+          <path class="art-faint" d="M38 58 91 32 146 58M49 58v56h80V58M65 112V80h25v32" />
+          <path d="M142 54h43v32h26M211 86v37h60V78h-60v8" />
+          <path d="M241 37c-7 10-13 16-13 23a13 13 0 0 0 26 0c0-7-6-13-13-23Z" />
+          <path class="art-faint" d="M217 104h47M193 120h-14" />
+        </> : visual === 'kitchen' ? <>
+          <path d="M83 111V75a40 40 0 0 1 80 0v36M71 113h103M106 110V88a17 17 0 0 1 34 0v22" />
+          <path d="M201 112V62m0 26c-26 0-36-14-36-28 24 0 36 9 36 28Zm0-17c0-23 13-35 35-35 0 22-12 35-35 35Z" />
+          <path class="art-faint" d="M74 128h176M90 60h65M124 23v-9" />
+        </> : visual === 'partnership' ? <>
+          <circle cx="88" cy="60" r="16" /><circle cx="231" cy="60" r="16" />
+          <path d="M58 119v-14a30 30 0 0 1 60 0v14M201 119v-14a30 30 0 0 1 60 0v14M126 77h68m-9-8 9 8-9 8" />
+          <path class="art-faint" d="m142 119 18-17 18 17M160 102V48m-16-15 16 15 16-15" />
+        </> : visual === 'data' ? <>
+          <rect x="43" y="40" width="55" height="68" rx="3" />
+          <path d="M55 56h29M55 69h22M55 82h29M98 74h50m-9-8 9 8-9 8M162 74h30v-30h30m-30 30h30m-30 0v30h30" />
+          <rect x="224" y="28" width="40" height="30" rx="3" /><rect x="224" y="61" width="40" height="30" rx="3" /><rect x="224" y="95" width="40" height="30" rx="3" />
+        </> : <><circle cx="103" cy="74" r="32" /><path d="M140 74h38m-9-8 9 8-9 8" /><rect x="191" y="42" width="64" height="64" rx="4" /></>}
+      </svg>
+      <span class="home-media-note">概念示意</span>
+    </div>}
+  </div>
+  <div class="home-card-body">
+    <p class="home-card-project"><span aria-hidden="true">0{index + 1}</span>{d.title}</p>
+    <h3>{d.home?.question || d.challenge}</h3>
+    <p class="home-card-judgement">{d.home?.judgement || d.decision}</p>
+    <a class="home-card-link" href={workHref(work)}>{workLinkLabel(work)}<span class="sr-only">：{d.title}</span><span aria-hidden="true"> →</span></a>
+  </div>
+</article>

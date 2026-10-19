@@ -1,0 +1,13 @@
+---
+import type { CaseBlock } from '../../data/case-blocks';
+import type { Work } from '../../lib/works';
+import { caseText } from '../../lib/case-blocks';
+import CaseFigure from './CaseFigure.astro';
+interface Props { block: Extract<CaseBlock, { type: 'comparison' }>; work: Work; }
+const { block, work } = Astro.props;
+---
+{caseText(block.before.text, work) && caseText(block.after.text, work) && <section id={block.id} class="case-block case-comparison" data-module="comparison">
+  {block.title && <h2>{block.title}</h2>}
+  <div class="case-comparison-grid">{[block.before, block.after].map((side, i) => <div class:list={['case-comparison-side', i === 0 ? 'before' : 'after']}><h3>{side.label}</h3><p>{caseText(side.text, work)}</p>{side.image && <CaseFigure image={side.image} />}</div>)}</div>
+  {block.note && <p class="case-module-note">{block.note}</p>}
+</section>}

@@ -1,0 +1,21 @@
+---
+interface Props { id: string; }
+const { id } = Astro.props;
+const sets: Record<string, string[]> = {
+  'eco-kitchen': ['料理與燃料', '場域配置', '資源循環'],
+  rainwater: ['確認用途', '現地配置', '放水測試'],
+  alishan: ['中心前導', '角色協作', '部落體驗'],
+  workflow: ['資料來源', '跨表取用', '必要輸出'],
+  'climate-program': ['原型與分工', '試教回饋', '版本收斂'],
+  'food-carbon': ['先做選擇', '取得資訊', '重新判斷'],
+  hunting: ['參與模擬', '選擇與後果', '回顧調整'],
+};
+const nodes = sets[id] || ['理解問題', '設計方案', '實作修正'];
+---
+<figure class="work-art">
+  <div class="art-label" aria-hidden="true">問題・方案・實作</div>
+  <ol class="art-nodes" aria-label="作品設計流程示意">
+    {nodes.map((node, i) => <li><span class="art-number" aria-hidden="true">0{i + 1}</span><span>{node}</span></li>)}
+  </ol>
+  <figcaption>設計流程示意，非現場紀錄或量測結果。</figcaption>
+</figure>

@@ -1,0 +1,59 @@
+.case-v03 .case-v03-header{padding-block:1.5rem 1rem}
+.case-v03 .case-v03-header .breadcrumb{margin-bottom:1.2rem}
+.case-v03 .case-v03-header h1{font-size:clamp(2rem,3.6vw,3rem);max-width:23em}
+.case-v03 .case-v03-header .lead{max-width:46rem}
+.case-v03 .case-header-role{max-width:48rem;font-size:.875rem;color:var(--muted);border-left:2px solid var(--line);padding-left:1rem;margin:1.4rem 0}
+.case-v03 .case-hero-photo{max-width:54rem;margin-top:2rem}
+.case-v03 .case-v03-toc{border-block:1px solid var(--line);padding-block:.7rem;margin:1.5rem auto 0;font-size:.8125rem}
+.case-v03 .case-v03-toc ul{display:flex;gap:.2rem 1.3rem;flex-wrap:wrap;list-style:none;padding:0;margin:0}
+.case-v03 .case-v03-toc a{display:inline-flex;min-height:44px;align-items:center}
+.case-v03 .case-modules{padding-block:.5rem 2rem}
+.case-v03 .case-block{margin-block:2.5rem;scroll-margin-top:1.5rem;min-width:0}
+.case-v03 .case-block>h2{font-size:1.65rem;margin-bottom:1.3rem}
+.case-v03 .case-reading{max-width:44rem}
+.case-v03 .case-reading p{line-height:1.95;margin:.6rem 0 1.2rem}
+.case-v03 .case-reading h3{font-size:1.25rem;margin:1.7rem 0 .7rem}
+.case-v03 .case-reading blockquote{margin:1.3rem 0;padding:.2rem 0 .2rem 1rem;border-left:2px solid var(--line)}
+.case-v03 .case-reading blockquote p{margin:.3rem 0}
+.case-v03 .case-reading li{margin:.4rem 0;line-height:1.9}
+.case-v03 .case-reading a{overflow-wrap:anywhere}
+.case-v03 .case-summary-grid{display:grid;gap:1rem;margin:0}
+.case-v03 .case-summary-grid.columns-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.case-v03 .case-summary-grid.columns-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.case-v03 .case-summary-grid>div{border:1px solid var(--line);border-radius:3px;padding:1.2rem;background:var(--tint)}
+.case-v03 .case-summary-grid dt{font-size:.8125rem;font-weight:650;color:var(--muted);margin-bottom:.6rem}
+.case-v03 .case-summary-grid dd{font-size:.9375rem;line-height:1.85;margin:0}
+.case-v03 .case-gallery-grid{display:grid;gap:1.4rem;max-width:54rem}
+.case-v03 .case-gallery-grid.layout-pair{grid-template-columns:repeat(2,minmax(0,1fr))}
+.case-v03 .case-figure{min-width:0}
+.case-v03 .case-figure-frame{position:relative;width:100%;min-width:0;overflow:hidden;background:var(--tint)}
+.case-v03 .case-photo-marker{position:absolute;transform:translate(-10px,calc(-100% - 8px));padding:.25rem .4rem;background:#fbf9ef;color:#224c3a;border:1px solid #224c3a;border-radius:3px;font-size:.75rem;font-weight:650;line-height:1.4;white-space:nowrap;box-shadow:0 1px 4px #0002;pointer-events:none}
+.case-v03 .case-photo-marker::after{content:"";position:absolute;left:5px;top:100%;border:5px solid transparent;border-top-color:#224c3a}
+.case-v03 .case-figure-frame img{display:block;width:100%;height:100%}
+.case-v03 .ratio-landscape .case-figure-frame,.case-v03 .ratio-landscape .case-image-placeholder{aspect-ratio:3/2}
+.case-v03 .ratio-wide .case-figure-frame,.case-v03 .ratio-wide .case-image-placeholder{aspect-ratio:16/7}
+.case-v03 .ratio-portrait .case-figure-frame,.case-v03 .ratio-portrait .case-image-placeholder{aspect-ratio:4/5}
+.case-v03 .ratio-natural .case-figure-frame img{height:auto;object-fit:contain}
+.case-v03 .case-figure figcaption{margin-top:.7rem;font-size:.8125rem;line-height:1.75;color:var(--muted)}
+.case-v03 .case-image-placeholder{width:100%;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2rem;min-height:140px;max-height:240px;border:1px dashed #a7b29e;background:#e9ecdf;color:var(--muted);padding:1.3rem;text-align:center}
+.case-v03 .case-image-placeholder>span{font-size:1.8rem;font-weight:300;line-height:1.3;color:#82947b}
+.case-v03 .case-image-placeholder p{font-size:.9375rem;margin:.3rem 0}.case-v03 .case-image-placeholder small{font-size:.75rem}
+.case-v03 .case-timeline>ol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));list-style:none;padding:0;margin:0;gap:1rem 2.3rem}
+.case-v03 .case-timeline>ol>li{display:flex;align-items:flex-start;gap:1rem;border-top:1px solid var(--line);padding-top:1rem;min-width:0}
+.case-v03 .case-step{font-family:var(--serif);font-size:1.4rem;color:var(--accent);flex:0 0 2rem}
+.case-v03 .case-timeline h3{font-size:1.1rem;margin:0 0 .5rem}
+.case-v03 .case-timeline p{font-size:.9375rem;margin:0 0 1rem;line-height:1.85}
+.case-v03 .case-comparison-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;max-width:54rem}
+.case-v03 .case-comparison-side{padding:1.2rem 1.4rem;border:1px solid var(--line);border-radius:3px}
+.case-v03 .case-comparison-side.after{background:var(--tint)}
+.case-v03 .case-comparison-side h3{font-family:var(--sans);font-size:.875rem;margin:0 0 .8rem;color:var(--muted)}
+.case-v03 .case-comparison-side p{font-size:1rem;line-height:1.9;margin:0 0 .5rem}
+.case-v03 .case-module-note{font-size:.8125rem;color:var(--muted);max-width:52rem;margin-top:.9rem}
+.case-v03 .case-results>dl{margin:0;max-width:54rem;border-top:1px solid var(--line)}
+.case-v03 .case-results>dl>div{display:grid;grid-template-columns:8em minmax(0,1fr);gap:1.5rem;padding:1rem .2rem;border-bottom:1px solid var(--line)}
+.case-v03 .case-results dt{font-size:.875rem;color:var(--muted);font-weight:650}
+.case-v03 .case-results dd{margin:0;font-size:.9375rem;line-height:1.85}
+.case-v03 .case-results p,.case-v03 .case-results ul{margin:0}
+.case-v03 .case-v03-end{padding-bottom:2.5rem}
+.case-v03 .case-v03-end .related{max-width:48rem}
+@media(max-width:700px){.case-v03 .case-summary-grid.columns-three,.case-v03 .case-summary-grid.columns-two{grid-template-columns:1fr}.case-v03 .case-v03-header{padding-top:1rem}.case-v03 .case-v03-header h1{font-size:1.9rem}.case-v03 .case-block{margin-block:2rem}.case-v03 .case-block>h2{font-size:1.45rem}.case-v03 .case-timeline>ol{grid-template-columns:1fr}.case-v03 .case-gallery-grid.layout-pair,.case-v03 .case-comparison-grid{grid-template-columns:1fr}.case-v03 .case-comparison-grid{gap:.9rem}.case-v03 .case-summary-grid>div{padding:1rem}.case-v03 .case-v03-toc{margin-top:1rem}.case-v03 .case-results>dl>div{grid-template-columns:1fr;gap:.4rem}.case-v03 .case-comparison-side{padding:1rem 1.1rem}.case-v03 .case-image-placeholder{max-height:200px}.case-v03 .case-v03-toc ul{gap:0 1rem}}
