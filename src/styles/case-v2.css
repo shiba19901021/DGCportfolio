@@ -13,15 +13,15 @@
 .case-v2 { --copper: #B9784F; overflow-wrap: anywhere; letter-spacing: .01em; }
 .case-v2 a { color: var(--ink); text-decoration-color: var(--copper); }
 .case-v2 a:hover { text-decoration-thickness: 2px; }
-.case-v2 .case-v03-header { padding-block: 3.5rem 1.5rem; }
+.case-v2 .case-v03-header { padding-block: 3.5rem 2rem; }
 .case-v2 .case-v03-header .breadcrumb { margin-bottom: 2rem; font-size: .875rem; }
-.case-v2 .case-v03-header h1 { max-width: 23em; font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.5; letter-spacing: -.015em; margin: 0 0 1.25rem; }
-.case-v2 .case-v03-header .lead { max-width: 32rem; font-size: 1.1875rem; line-height: 1.85; color: var(--muted); margin: 0 0 1.5rem; }
+.case-v2 .case-v03-header h1 { max-width: 23em; font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1.5; letter-spacing: -.015em; margin: 0 0 1.75rem; }
+.case-v2 .case-v03-header .lead { max-width: 32rem; font-size: 1.1875rem; line-height: 1.85; color: var(--muted); margin: 0 0 2rem; }
 .case-v2 .case-v03-header > .case-reading { max-width: 48rem; }
-.case-v2 .case-header-role { max-width: none; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: none; padding: 1.25rem 0 0; font-size: 1rem; line-height: 1.9; margin: 2rem 0 0; }
+.case-v2 .case-header-role { max-width: none; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: none; padding: 1.5rem 0 0; font-size: 1rem; line-height: 1.9; margin: 2.75rem 0 0; }
 .case-v2 .case-modules { padding-block: .5rem 2rem; }
 .case-v2 .case-block { margin-block: 4.5rem; scroll-margin-top: 1.5rem; }
-.case-v2 .case-modules > .case-block:first-child { margin-top: 2rem; }
+.case-v2 .case-modules > .case-block:first-child { margin-top: 3rem; }
 .case-v2 .case-block > h2 { border-top: 1px solid var(--line); padding-top: 1.5rem; font-size: clamp(1.5rem, 2.7vw, 1.875rem); line-height: 1.6; letter-spacing: normal; margin: 0 0 1.75rem; }
 .case-v2 .case-reading { max-width: 48rem; font-size: 1.0625rem; }
 .case-v2 .case-reading p { line-height: 1.95; margin: 0 0 1.25rem; }
@@ -59,6 +59,8 @@
 .case-v2 .case-results dd { font-size: 1.0625rem; line-height: 1.95; }
 .case-v2 .case-results li + li { margin-top: 1rem; }
 .case-v2 .case-results li::marker { color: var(--copper); }
+/* Add breathing room only at these three major chapter transitions. */
+.case-v2 #design-choices, .case-v2 .case-student-layout, .case-v2 #interactive-teaching { margin-top: 5.5rem; }
 .case-v2 .case-next { justify-content: flex-start; }
 @media (min-width: 1000px) {
   .case-v2 .case-v03-header { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); column-gap: 4rem; }
@@ -68,7 +70,11 @@
   .case-v2 .case-header-role { grid-column: 1 / -1; }
 }
 @media (max-width: 1099px) {
-  .case-v2 .case-decision-grid, .case-v2 .case-summary-grid.columns-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .case-v2 .case-summary-grid.columns-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* Three readable columns, or one complete sequence; never a stranded third item. */
+  .case-v2 .case-decision-grid { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+  .case-v2 .case-decision-card { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+  .case-v2 .case-decision-number { margin-bottom: 0; }
 }
 @media (max-width: 900px) {
   .case-v2 .case-student-layout { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
@@ -76,19 +82,21 @@
   .case-v2 .case-results > dl > div, .case-v2 .case-results > dl > div:first-child { grid-column: auto; grid-row: auto; border: 0; border-bottom: 1px solid var(--line); padding: 0 0 2rem; }
 }
 @media (max-width: 700px) {
-  .case-v2 .case-v03-header { padding-block: 2rem .75rem; }
+  .case-v2 .case-v03-header { padding-block: 2rem 1.25rem; }
   .case-v2 .case-v03-header .breadcrumb { margin-bottom: 1.5rem; }
   .case-v2 .case-v03-header h1 { font-size: 2rem; }
   .case-v2 .case-v03-header .lead { font-size: 1.125rem; }
   .case-v2 .case-block { margin-block: 3.25rem; }
-  .case-v2 .case-modules > .case-block:first-child { margin-top: 1.5rem; }
+  .case-v2 .case-modules > .case-block:first-child { margin-top: 2.25rem; }
   .case-v2 .case-block > h2 { font-size: 1.5rem; padding-top: 1.25rem; }
   .case-v2 .case-summary > h2, .case-v2 .case-student-layout > .case-block > h2 { padding-top: 0; }
   .case-v2 .case-summary-grid.columns-two, .case-v2 .case-decision-grid, .case-v2 .case-comparison-grid { grid-template-columns: minmax(0, 1fr); }
   .case-v2 .case-decision-grid { gap: 2.5rem; }
-  .case-v2 .case-decision-number { font-size: 2.5rem; margin-bottom: 1rem; }
+  .case-v2 .case-decision-card { grid-template-columns: 2.75rem minmax(0, 1fr); gap: 1rem; }
+  .case-v2 .case-decision-number { font-size: 2.5rem; margin-bottom: 0; }
   .case-v2 .case-gallery { margin-block: 1.75rem 3.25rem; }
   .case-v2 .case-student-layout { margin-block: 3.25rem; padding-top: 1.5rem; }
+  .case-v2 #design-choices, .case-v2 .case-student-layout, .case-v2 #interactive-teaching { margin-top: 4.25rem; }
   .case-v2 .case-student-layout > .case-block { margin: 0; }
   .case-v2 .case-comparison-grid { gap: 2.5rem; }
   .case-v2 .case-figure figcaption { font-size: .875rem; }
