@@ -46,6 +46,17 @@ blocks:
       開發時，我使用 Excel 整理不同工具的成功機率、玩家人數與森林資源數量之間的關係，推估並調整遊戲難度。我希望各自狩獵時會感受到生存壓力，合作與分工則能增加機會，同時保留運氣與資源限制。
 
       教學時會先說清楚共同生存的合作目標；至於工具怎麼交換、食物怎麼分享，則留給玩家在操作中討論與決定。
+  - type: gallery
+    id: waiting-for-hunt
+    layout: single
+    images:
+      - src: /images/hunting/hunting-waiting.webp
+        approved: true
+        preview: false
+        alt: 學生圍桌參與狩獵遊戲並等待結果，可辨識臉部已以馬賽克處理。
+        caption: 《狩獵奇蹟》教學現場：學生圍桌參與狩獵遊戲，等待操作結果。
+        ratio: natural
+        fit: contain
   - type: narrative
     id: forest-information
     title: 好不容易會打獵了，森林卻空了
@@ -61,6 +72,17 @@ blocks:
       玩家無法直接知道森林確切剩餘多少資源。如果想進一步了解，可以放棄一次狩獵機會，換取對森林狀況的粗略線索；得到的仍是不完整的資訊。
 
       這讓玩家除了考慮「要怎麼取得食物」，還得決定要不要少狩獵一次，先了解森林狀況，在眼前的食物需求與取得資訊之間做取捨。
+  - type: gallery
+    id: forest-resource-reaction
+    layout: single
+    images:
+      - src: /images/hunting/hunting-resource-reaction.webp
+        approved: true
+        preview: false
+        alt: 森林動物資源耗盡時的遊戲現場，一名學生以雙手掩面，可辨識臉部已以馬賽克處理。
+        caption: 遊戲中的森林動物資源耗盡時，學生以掩面等動作作出現場反應。
+        ratio: natural
+        fit: contain
   - type: narrative
     id: original-section-6
     title: 讓遊戲難，但不是讓玩家玩不下去
