@@ -13,6 +13,7 @@ import '../../styles/case-v03.css';
 import '../../styles/case-v2.css';
 import '../../styles/case-eco-kitchen.css';
 import '../../styles/case-alishan.css';
+import '../../styles/case-climate-program.css';
 export async function getStaticPaths() {
   const all = await listedWorks();
   return all.filter(w => w.data.detail).map(work => ({ params: { id: work.id }, props: { work, all } }));
@@ -27,10 +28,11 @@ const modular = blocks.length > 0;
 const rainwater = work.id === 'rainwater';
 const ecoKitchen = work.id === 'eco-kitchen';
 const alishan = work.id === 'alishan';
-const caseV2 = rainwater || ecoKitchen || alishan || work.id === 'workflow';
+const climateProgram = work.id === 'climate-program';
+const caseV2 = rainwater || ecoKitchen || alishan || work.id === 'workflow' || climateProgram;
 ---
 <Base title={`${intro?.title ?? d.title}｜游鏡騰`} description={d.summary} activeCategory={d.category} previewVersion={intro ? "V0.7" : "V0.6"} caseVisual={caseV2}>
-  {modular ? <div class:list={['case-v03', { 'case-v2': caseV2, 'case-eco-kitchen': ecoKitchen, 'case-alishan': alishan }]}>
+  {modular ? <div class:list={['case-v03', { 'case-v2': caseV2, 'case-eco-kitchen': ecoKitchen, 'case-alishan': alishan, 'case-climate-program': climateProgram }]}>
     <header class="wrap case-v03-header"><nav aria-label="所在位置" class="breadcrumb"><a href={pathFor('/')}>首頁</a><span aria-hidden="true">／</span><a href={pathFor(parent.path)}>{parent.label}</a></nav>{!caseV2 && <p class="eyebrow">{parent.label} · 完整案例</p>}<h1>{intro?.title ?? d.title}</h1><p class="lead">{intro?.subtitle ?? d.summary}</p>{intro && <div class="case-reading"><p>{intro.introduction}</p></div>}<p class="case-header-role"><strong>我的角色：</strong>{d.role}</p>{d.image?.approved && <div class="case-hero-photo"><CaseFigure image={{ ...d.image, preview: false, annotations: [], ratio: 'wide', fit: 'cover', placeholder: '' }} eager /></div>}</header>
     {!caseV2 && blocks.some(block => block.title) && <nav class="wrap case-v03-toc" aria-label="案例內容"><ul>{blocks.filter(block => block.title).map(block => <li><a href={`#${block.id}`}>{block.title}</a></li>)}</ul></nav>}
     <article class="wrap case-modules">{rainwater ? <RainwaterModules work={work} /> : <CaseModules work={work}><Content slot="body" /></CaseModules>}</article>
