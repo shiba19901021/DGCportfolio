@@ -10,7 +10,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const current = Astro.url.pathname.replace(base, '');
 const links = [
   { href: '/', label: '首頁', active: current === '/' },
-  { href: '/#works', label: '所有作品', active: false },
+  { href: '/works/', label: '所有作品', active: current.startsWith('/works/') },
   { href: '/#about', label: '關於我', active: false },
 ];
 ---

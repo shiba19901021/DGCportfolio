@@ -14,7 +14,7 @@ const courses = works.filter(work => work.data.category === 'learning');
       <h1 id="home-title">{site.slogan}</h1>
       <p class="home-position">方案設計者，從永續實務與環境教育出發，串起問題分析、現場執行與持續改善。</p>
       <p class="home-career"><span>求職方向</span>氣候韌性與永續方案 · 跨領域專案 · 系統與流程改善</p>
-      <div class="home-actions"><a class="button" href="#works">所有作品 <span aria-hidden="true">↓</span></a><a class="home-contact-link" href={`mailto:${site.email}`}>Email 聯絡 <span aria-hidden="true">↗</span></a></div>
+      <div class="home-actions"><a class="button" href={pathFor('/works/')}>所有作品 <span aria-hidden="true">↓</span></a><a class="home-contact-link" href={`mailto:${site.email}`}>Email 聯絡 <span aria-hidden="true">↗</span></a></div>
     </section>
 
     <div id="works" class="home-works">
