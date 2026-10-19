@@ -130,7 +130,7 @@ blocks:
     id: stone-base-construction
     layout: single
     images:
-      - src: /images/eco-kitchen/stone-base-mosaic.png
+      - src: /images/eco-kitchen/stone-base-mosaic.webp
         approved: true
         preview: false
         alt: 竹棚內正在建置的石材基座，背景人物臉部已遮蔽
@@ -179,10 +179,21 @@ blocks:
 
       料理、清洗、堆肥與植栽都在同一個場域裡發生，教師可以帶著學員，從實際操作理解材料、能源與資源的去向。這段在中心推動樸門實作與生態廚房的經驗，也成為我在 IPC15 分享的內容。
   - type: gallery
+    id: stove-maintained-2026
+    layout: single
+    images:
+      - src: /images/eco-kitchen/stove-maintained-2026.webp
+        approved: true
+        preview: false
+        alt: 2026 年初維護後的生態廚房爐灶，可見曲線灶體、料理爐口與竹棚。
+        caption: 2026 年初維護後現況：生態廚房的爐灶與竹棚場域。
+        ratio: natural
+        fit: contain
+  - type: gallery
     id: cooking-in-use
     layout: single
     images:
-      - src: /images/food-carbon/stove-cooking.png
+      - src: /images/food-carbon/stove-cooking.webp
         approved: true
         preview: false
         alt: 已遮蔽人臉的料理活動照片，參與者在生態廚房爐口旁操作鍋具

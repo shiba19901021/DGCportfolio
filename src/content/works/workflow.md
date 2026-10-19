@@ -109,6 +109,17 @@ blocks:
     after:
       label: 改善後
       text: Excel 整理請假資料、核對代理人與日期，再以 Word 合併列印批次產生正式文件。
+  - type: gallery
+    id: leave-mail-merge
+    layout: single
+    images:
+      - src: /images/workflow/leave-mail-merge.webp
+        approved: true
+        preview: false
+        alt: 請假單匿名化範例，保留姓名、請假事由、假別及起訖時間等合併列印欄位，不含真實個人資料。
+        caption: 假單合併列印欄位的匿名化範例：保留正式表單格式，姓名、事由與起訖時間等欄位由整理好的資料帶入。
+        ratio: natural
+        fit: contain
   - type: narrative
     id: everyday-use
     title: 其他工作，也從少整理一次開始

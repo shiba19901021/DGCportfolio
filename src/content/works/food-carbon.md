@@ -101,6 +101,32 @@ blocks:
     after:
       label: 後續｜約 100 種食材、食材冊
       text: 增加可比較的食材，並將資訊整理成冊，配合現場操作、閱讀與保存的需要。
+  - type: gallery
+    id: ingredient-handbook
+    layout: single
+    images:
+      - src: /images/food-carbon/ingredient-handbook.webp
+        approved: true
+        preview: false
+        alt: 攤開的活頁式食材手冊，內頁呈現食材圖片、產地、價格、口味、營養及編號。
+        caption: 食材手冊內頁：供學生翻閱食材資訊，選擇食材並記下編號。
+        ratio: natural
+        fit: contain
+  - type: narrative
+    id: handbook-and-digital-tool
+    markdown: |-
+      學生先翻閱食材手冊，選擇食材並記下編號，再由教師在「小廚房大採購」網站輸入各組的食材編號，將選擇結果呈現在投影幕上，供全班查看與討論。這項工具最初以 Google Sheets 製作，後來依教學操作需求改為由我設計的網站，並已投入實際教學使用。
+  - type: gallery
+    id: ingredient-projection
+    layout: single
+    images:
+      - src: /images/food-carbon/ingredient-projection.jpg
+        approved: true
+        preview: false
+        alt: 小廚房大採購網站畫面，顯示一組所選食材、食材編號輸入欄及資訊彙整。
+        caption: 「小廚房大採購」教學網站：教師輸入各組選擇的食材編號，將結果投影供全班查看與討論。
+        ratio: natural
+        fit: contain
   - type: narrative
     id: original-section-5
     title: 從模擬選材，走進真正的料理與循環
@@ -114,14 +140,14 @@ blocks:
     id: cooking-practice
     layout: pair
     images:
-      - src: /images/food-carbon/ingredient-introduction.png
+      - src: /images/food-carbon/ingredient-introduction.webp
         approved: true
         preview: false
         alt: 教師在生態廚房向學生介紹籃中的蔬果與食材，學生臉部已遮蔽。
         caption: 料理前先認識實際使用的食材，把桌面上的比較連回看得見、摸得到的材料。
         ratio: natural
         fit: contain
-      - src: /images/food-carbon/stove-cooking.png
+      - src: /images/food-carbon/stove-cooking.webp
         approved: true
         preview: false
         alt: 學生在柴火爐具前攪拌鍋中的料理，臉部已遮蔽。
