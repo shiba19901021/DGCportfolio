@@ -25,6 +25,22 @@
 .case-v2 .case-block > h2 { border-top: 1px solid var(--line); padding-top: 1.5rem; font-size: clamp(1.5rem, 2.7vw, 1.875rem); line-height: 1.6; letter-spacing: normal; margin: 0 0 1.75rem; }
 .case-v2 .case-reading { max-width: 48rem; font-size: 1.0625rem; }
 .case-v2 .case-reading p { line-height: 1.95; margin: 0 0 1.25rem; }
+/* Opt in with .case-subheading only for secondary narrative headings.
+   Existing case selectors preserve their source markup and vertical spacing.
+   Never apply this treatment to section titles, numbered stages or decisions. */
+.case-v2 .case-subheading,
+.case-eco-kitchen #materials-and-adjustments .case-reading h3,
+.case-alishan #operations h3 {
+  color: var(--ink);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.65;
+  letter-spacing: normal;
+  border-left: 2px solid var(--copper);
+  padding-left: .875rem;
+}
+.case-v2 .case-subheading { margin: 2.5rem 0 1rem; }
+.case-v2 .case-subheading:first-child { margin-top: 0; }
 .case-v2 .case-summary > h2 { border: 0; padding-top: 0; }
 .case-v2 .case-summary-grid.columns-two { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; border-block: 1px solid var(--line); padding-block: 1.5rem; background: none; }
 .case-v2 .case-summary-grid > div { border: 0; border-radius: 0; background: none; padding: 0; min-width: 0; }

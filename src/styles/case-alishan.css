@@ -15,7 +15,6 @@
 .case-alishan .case-reading > div > h3:first-child { margin-top: 0; }
 .case-alishan #prelude-courses ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 2rem; list-style: none; padding: 0; margin: 2rem 0; }
 .case-alishan #prelude-courses li { min-width: 0; border-top: 1px solid var(--line); padding-top: 1rem; margin: 0; }
-.case-alishan #operations h3 { border-left: 2px solid var(--copper); padding-left: .875rem; }
 .case-alishan #partnership-roles,
 .case-alishan #operations,
 .case-alishan #continuing-program { margin-top: 5.5rem; }
