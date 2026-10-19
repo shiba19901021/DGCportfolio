@@ -35,13 +35,6 @@
 .case-eco-kitchen .case-timeline p { font-size: 1.0625rem; line-height: 1.95; margin: 0; }
 
 /* Full prose stays intact; subheadings distinguish needs and material judgements. */
-.case-eco-kitchen .case-reading h3 {
-  font-size: 1.25rem;
-  line-height: 1.65;
-  letter-spacing: normal;
-  margin: 2.5rem 0 1rem;
-}
-.case-eco-kitchen .case-reading > div > h3:first-child { margin-top: 0; }
 .case-eco-kitchen #earlier-builds,
 .case-eco-kitchen #building-workshop,
 .case-eco-kitchen #ongoing-use { margin-top: 5.5rem; }
