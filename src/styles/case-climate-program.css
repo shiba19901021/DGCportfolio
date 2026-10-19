@@ -1,6 +1,10 @@
 /* Case-specific arrangements; typography, figures and comparisons use case-v2.css. */
 .case-climate-program .case-summary-grid.columns-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .case-climate-program .case-summary-grid.columns-three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; border-block: 1px solid var(--line); padding-block: 1.5rem; }
+.case-climate-program .case-statistics .case-stat-value { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: .5rem; line-height: 1.4; }
+.case-climate-program .case-statistics .case-stat-number { color: var(--copper); font-size: 1.75rem; font-weight: 600; }
+.case-climate-program .case-statistics .case-stat-unit { color: var(--ink); font-size: 1.0625rem; font-weight: 600; }
+.case-climate-program .case-statistics .case-stat-note { display: block; margin-top: .625rem; color: var(--muted); font-size: .9375rem; line-height: 1.8; }
 
 /* Preserve the six source links, descriptions and row-by-row reading order. */
 .case-climate-program #original-section-2 .case-reading ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 2rem; list-style: none; padding: 0; margin: 2rem 0; }

@@ -13,7 +13,7 @@ const { work } = Astro.props;
 const blocks = Astro.props.blocks ?? visibleBlocks(work);
 ---
 {blocks.map(block => <>
-  {block.type === 'summary' && <SummaryBlock block={block} work={work} />}
+  {block.type === 'summary' && <SummaryBlock block={block} work={work} statistics={work.id === 'climate-program' && block.id === 'project-outcomes'} />}
   {block.type === 'narrative' && <NarrativeBlock block={block} work={work}>{block.useBody && <slot name="body" />}</NarrativeBlock>}
   {block.type === 'gallery' && <GalleryBlock block={block} />}
   {block.type === 'timeline' && <TimelineBlock block={block} work={work} />}

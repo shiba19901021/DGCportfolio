@@ -2,11 +2,15 @@
 import type { CaseBlock } from '../../data/case-blocks';
 import type { Work } from '../../lib/works';
 import { caseText } from '../../lib/case-blocks';
-interface Props { block: Extract<CaseBlock, { type: 'summary' }>; work: Work; }
-const { block, work } = Astro.props;
+interface Props { block: Extract<CaseBlock, { type: 'summary' }>; work: Work; statistics?: boolean; }
+const { block, work, statistics = false } = Astro.props;
 const items = block.items.filter(item => item.label.trim() && caseText(item.value, work));
+// Split source text only for presentation. Keep every character, including separators;
+// fall back to the ordinary summary if a value does not match this metric format.
+const metrics = items.map(item => caseText(item.value, work).match(/^(\d+\+?)(\s+)([^，]+)(，?)(.*)$/));
+const showStatistics = statistics && metrics.every(Boolean);
 ---
 {items.length > 0 && <section id={block.id} class="case-block case-summary" data-module="summary">
   {block.title && <h2>{block.title}</h2>}
-  <dl class:list={['case-summary-grid', `columns-${block.columns}`]}>{items.map(item => <div><dt>{item.label}</dt><dd>{caseText(item.value, work)}</dd></div>)}</dl>
+  <dl class:list={['case-summary-grid', `columns-${block.columns}`, { 'case-statistics': showStatistics }]}>{items.map((item, index) => <div><dt>{item.label}</dt><dd>{showStatistics ? <><span class="case-stat-value"><span class="case-stat-number">{metrics[index]![1]}</span>{metrics[index]![2]}<span class="case-stat-unit">{metrics[index]![3]}</span></span>{metrics[index]![4] && <span class="sr-only">{metrics[index]![4]}</span>}{metrics[index]![5] && <span class="case-stat-note">{metrics[index]![5]}</span>}</> : caseText(item.value, work)}</dd></div>)}</dl>
 </section>}
