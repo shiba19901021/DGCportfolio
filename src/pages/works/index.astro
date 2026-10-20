@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import WorkRowCard from '../../components/WorkRowCard.astro';
-import { listedWorks } from '../../lib/works';
+import { listedWorks, pathFor } from '../../lib/works';
 import '../../styles/home-v03.css';
 import '../../styles/home-editorial.css';
 import '../../styles/works-index.css';
@@ -15,9 +15,12 @@ const groups = [
 <Base title="所有作品｜游鏡騰" homeVisual>
   <div class="home-v03 home-editorial works-index wrap">
     <header class="works-index-heading"><h1>所有作品</h1></header>
+    <div class="works-index-columns">
       {groups.map(group => <section class="home-work-group" aria-labelledby={`${group.id}-title`}>
         <div class="home-section-heading"><h2 id={`${group.id}-title`}>{group.title}</h2></div>
         <div class="home-work-list">{group.works.map(work => <WorkRowCard work={work} />)}</div>
       </section>)}
+    </div>
+    <div class="works-index-return"><a class="home-index-link" href={pathFor('/')}>← 返回首頁</a></div>
   </div>
 </Base>

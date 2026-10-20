@@ -3,7 +3,7 @@
 - 正式文字與連結只有一份：`src/data/resume.json`。
 - `src/components/ResumeDocument.astro` 同時供線上閱讀及 PDF 排版使用。
 - `src/styles/resume.css` 只作用在履歷內；螢幕版可以自然延長，列印版為 A4 直式。
-- 既有共用頁首／頁尾不改版；`ResumeEntry.astro` 只新增右下角入口。
+- 既有共用頁首／頁尾不改版；履歷入口設於首頁「專業履歷」區塊，不再顯示浮動選單。
 - 網址為 `/DGCportfolio/resume/`，下載為 `/DGCportfolio/resume.pdf`。
 
 ## 更新文字或履歷版型
@@ -42,6 +42,6 @@ python scripts/build-resume-pdf.py --profile teaching
 
 共用元件若只新增可選欄位且不影響公版履歷，應先比對原公版履歷的建置 HTML、CSS 及 PDF 雜湊，確認呈現完全相同，再更新其元件來源雜湊；不得因新增第二份文件而擅自重製已確認的 PDF。
 
-右下角 `ResumeEntry.astro` 使用原生 details/summary 展開兩份履歷連結，無額外依賴。`TeachingCooperationLink.astro` 只用於三篇課程作品頁末。
+首頁「專業履歷」區塊直接連到兩份線上履歷，無浮動選單或額外依賴。`TeachingCooperationLink.astro` 只用於三篇課程作品頁末。
 
 GitHub Actions 繼續使用既有流程，直接發布已確認的 PDF；不需要 Python、瀏覽器或額外部署步驟。建置會檢查 PDF 與資料／排版來源的雜湊，避免網頁已更新而下載檔仍是舊版。這是更新提醒，不能代替轉圖檢視。

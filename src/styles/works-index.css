@@ -1,5 +1,5 @@
-/* Page framing only; the list, media, interaction and breakpoints are shared
-   with the homepage through home-editorial.css and WorkRowCard. */
+/* Compact catalogue: reuse WorkRowCard, the editorial surface, hover and focus.
+   Each category owns its list, so different item counts never interleave. */
 .works-index {
   padding-block: clamp(2.5rem, 5vw, 4rem) clamp(3.5rem, 7vw, 6rem);
   letter-spacing: .01em;
@@ -7,3 +7,23 @@
 }
 .works-index-heading { margin-bottom: 2.5rem; }
 .home-v03.home-editorial.works-index .works-index-heading h1 { margin: 0; font-size: clamp(2rem, 4vw, 2.5rem); line-height: 1.5; letter-spacing: -.015em; }
+
+.works-index-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; align-items: start; }
+.home-v03.home-editorial.works-index .home-work-group { min-width: 0; margin: 0; }
+.home-v03.home-editorial.works-index .home-section-heading { padding-top: 1rem; margin-bottom: .25rem; }
+.home-v03.home-editorial.works-index .work-row { grid-template-columns: 92px minmax(0, 1fr) 32px; gap: 1rem; align-items: start; padding-block: 1.125rem; }
+.home-v03.home-editorial.works-index .work-row-media { grid-column: auto; width: 92px; aspect-ratio: 4 / 3; }
+.home-v03.home-editorial.works-index .work-row-copy h3 { font-size: 1.0625rem; line-height: 1.6; margin-bottom: .375rem; }
+/* Clamp presentation only; the complete approved summary remains in the DOM/data. */
+.home-v03.home-editorial.works-index .work-row-copy p { font-size: .875rem; line-height: 1.75; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; max-height: 3.5em; overflow: hidden; }
+.home-v03.home-editorial.works-index .work-row-link { align-self: center; }
+.home-v03.home-editorial.works-index .work-row-arrow { width: 32px; height: 32px; font-size: 1.25rem; }
+.works-index-return { margin-top: 2.5rem; }
+@media (max-width: 979px) {
+  .works-index-columns { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+}
+@media (max-width: 420px) {
+  .home-v03.home-editorial.works-index .work-row { grid-template-columns: 80px minmax(0, 1fr) 24px; gap: .75rem; }
+  .home-v03.home-editorial.works-index .work-row-media { width: 80px; }
+  .home-v03.home-editorial.works-index .work-row-arrow { width: 24px; }
+}
