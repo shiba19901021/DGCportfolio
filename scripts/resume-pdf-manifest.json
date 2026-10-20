@@ -5,12 +5,12 @@
     "src/data/resume.json": "7a23325701a7ae30d1436f5bb8fbbb18c0ab9f0b152e699e7050f0529604ee15",
     "src/components/ResumeDocument.astro": "164051f8604cfecb1cf1aa4358832e402da980f4d2e97c0847d4f31e756e9768",
     "src/pages/resume/index.astro": "86d040259a95e82c1ba870218a2d405b32afac3648ad0934ab12f73a641b87e3",
-    "src/styles/resume.css": "9d3c67d4ab57d12f17f5d0d92757283b1fd98cc0e8d2c6d62c54ee1577fea342",
+    "src/styles/resume.css": "dfcf176e2d024197290a6b2d8130385373d59b802fed9accfc52823c74c19ae1",
     "src/layouts/Base.astro": "858fde6412b27313440317cab08da987dab9bfc218960386f37adc96912c0c26",
     "src/styles/global.css": "d007ac95a5fcc1951e503af144c9d8a06f97731771ad5afa77f0ceb7a261c596",
     "src/styles/site-chrome.css": "22d41278f96452207a5b53bb9b68218b36074f58127270261c9b994416fa4bfc",
     "public/fonts/resume-noto-sans-tc.woff2": "b5eb4375fa3d1f744000b22601367e10f00aca7cce99adde331124b86cecac9b",
     "public/fonts/resume-noto-sans-tc-bold.woff2": "8fe77e22db51e19cacd2f52366508aab11e014e0f48b1bdb6bdbd7b400beb1ce"
   },
-  "pdf": "413a0651db3309eab87376187a28ba8a618acc839b9177152a9c091e0bbc9cbd"
+  "pdf": "bb255f42dd437d1f028452cbdd76c24f15765810e0cf5123d1cf1316604a60d8"
 }
