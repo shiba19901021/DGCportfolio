@@ -3,8 +3,10 @@ import Base from '../layouts/Base.astro';
 import WorkRowCard from '../components/WorkRowCard.astro';
 import { listedWorks, pathFor } from '../lib/works';
 import { site } from '../data/site';
+import { homeSummaries } from '../data/home-summaries';
 import '../styles/home-v03.css';
 import '../styles/home-editorial.css';
+import '../styles/home-summaries.css';
 const works = await listedWorks();
 const projects = works.filter(work => work.data.category !== 'learning');
 const courses = works.filter(work => work.data.category === 'learning');
@@ -34,11 +36,11 @@ const courses = works.filter(work => work.data.category === 'learning');
     <div id="works" class="home-works">
       <section id="selected" class="home-work-group wrap" aria-labelledby="projects-title">
         <div class="home-section-heading"><div><h2 id="projects-title">專案作品</h2><p>從問題、限制到執行與修正，閱讀完整的專案脈絡。</p></div></div>
-        <div class="home-work-list">{projects.map(work => <WorkRowCard work={work} />)}</div>
+        <div class="home-work-list">{projects.map(work => <WorkRowCard work={work} summary={homeSummaries[work.id]} />)}</div>
       </section>
       <section class="home-work-group wrap" aria-labelledby="courses-title">
         <div class="home-section-heading"><div><h2 id="courses-title">課程作品</h2><p>探索學習流程、互動機制，以及試教與回饋如何推進設計。</p></div></div>
-        <div class="home-work-list">{courses.map(work => <WorkRowCard work={work} />)}</div>
+        <div class="home-work-list">{courses.map(work => <WorkRowCard work={work} summary={homeSummaries[work.id]} />)}</div>
       </section>
       <div class="home-all-works wrap"><a class="home-index-link" href={pathFor('/works/')}>查看所有作品 <span aria-hidden="true">↗</span></a></div>
     </div>
