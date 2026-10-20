@@ -1,17 +1,25 @@
 ---
 import { pathFor, workHref, workLinkLabel, type Work } from '../lib/works';
 import { workMedia } from '../lib/work-media';
-interface Props { work: Work; }
-const { work } = Astro.props;
+import type { HomeSummary } from '../data/home-summaries';
+interface Props { work: Work; summary?: HomeSummary; }
+const { work, summary } = Astro.props;
 const image = workMedia(work);
 ---
-<a class="work-row" href={workHref(work)}>
+<a class:list={['work-row', { 'work-row-detailed': summary }]} href={workHref(work)}>
   <div class="work-row-media">
     <img src={pathFor(image.src!)} alt={image.alt} width="640" height="480" loading="lazy" decoding="async" style={{ objectFit: image.fit, objectPosition: image.position }} />
   </div>
   <div class="work-row-copy">
     <h3>{work.data.detailIntro?.title ?? work.data.title}</h3>
-    <p>{work.data.summary}</p>
+    {summary ? <>
+      <dl class="work-row-summary">
+        <div><dt>問題｜</dt><dd>{summary.problem}</dd></div>
+        <div><dt>做法｜</dt><dd>{summary.approach}</dd></div>
+        <div><dt>成果｜</dt><dd>{summary.outcome}</dd></div>
+      </dl>
+      <span class="work-row-read">{workLinkLabel(work)} <span class="work-row-arrow" aria-hidden="true">↗</span></span>
+    </> : <p>{work.data.summary}</p>}
   </div>
-  <span class="work-row-link"><span>{workLinkLabel(work)}</span><span class="work-row-arrow" aria-hidden="true">↗</span></span>
+  {!summary && <span class="work-row-link"><span>{workLinkLabel(work)}</span><span class="work-row-arrow" aria-hidden="true">↗</span></span>}
 </a>
