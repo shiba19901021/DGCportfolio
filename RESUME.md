@@ -30,4 +30,18 @@
 
 PDF 不使用截圖，中文字型已嵌入，可離線閱讀、選取與搜尋。網頁字型子集僅用於履歷，不改變現有作品字型。
 
+## 課程設計與教學合作履歷
+
+第二份資料在 `src/data/teaching.json`，網址為 `/DGCportfolio/teaching/` 及 `/DGCportfolio/teaching.pdf`。它沿用 `ResumeDocument.astro`、`resume.css` 及同一 PDF 產生程式；`teaching.css` 只處理教學專長欄位與該份文件的單頁間距。
+
+```sh
+python scripts/build-resume-pdf.py --profile teaching
+```
+
+首次產生或需要新增字元時，加上 `--refresh-fonts`，只更新教學履歷的字型子集與素材，不修改公版履歷的字型或 PDF。兩份 PDF 各有自己的來源雜湊紀錄。
+
+共用元件若只新增可選欄位且不影響公版履歷，應先比對原公版履歷的建置 HTML、CSS 及 PDF 雜湊，確認呈現完全相同，再更新其元件來源雜湊；不得因新增第二份文件而擅自重製已確認的 PDF。
+
+右下角 `ResumeEntry.astro` 使用原生 details/summary 展開兩份履歷連結，無額外依賴。`TeachingCooperationLink.astro` 只用於三篇課程作品頁末。
+
 GitHub Actions 繼續使用既有流程，直接發布已確認的 PDF；不需要 Python、瀏覽器或額外部署步驟。建置會檢查 PDF 與資料／排版來源的雜湊，避免網頁已更新而下載檔仍是舊版。這是更新提醒，不能代替轉圖檢視。

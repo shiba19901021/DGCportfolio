@@ -3,6 +3,7 @@ import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import WorkArt from '../../components/WorkArt.astro';
 import RelatedWorks from '../../components/RelatedWorks.astro';
+import TeachingCooperationLink from '../../components/TeachingCooperationLink.astro';
 import { listedWorks, pathFor } from '../../lib/works';
 import { categories } from '../../data/site';
 import CaseModules from '../../components/case/CaseModules.astro';
@@ -40,7 +41,7 @@ const caseV2 = rainwater || ecoKitchen || alishan || work.id === 'workflow' || c
     <header class="wrap case-v03-header"><nav aria-label="所在位置" class="breadcrumb"><a href={pathFor('/')}>首頁</a><span aria-hidden="true">／</span><a href={pathFor(parent.path)}>{parent.label}</a></nav>{!caseV2 && <p class="eyebrow">{parent.label} · 完整案例</p>}<h1>{intro?.title ?? d.title}</h1><p class="lead">{intro?.subtitle ?? d.summary}</p>{intro && <div class="case-reading"><p>{intro.introduction}</p></div>}<p class="case-header-role"><strong>我的角色：</strong>{d.role}</p>{d.image?.approved && <div class="case-hero-photo"><CaseFigure image={{ ...d.image, preview: false, annotations: [], ratio: 'wide', fit: 'cover', placeholder: '' }} eager /></div>}</header>
     {!caseV2 && blocks.some(block => block.title) && <nav class="wrap case-v03-toc" aria-label="案例內容"><ul>{blocks.filter(block => block.title).map(block => <li><a href={`#${block.id}`}>{block.title}</a></li>)}</ul></nav>}
     <article class="wrap case-modules">{rainwater ? <RainwaterModules work={work} /> : <CaseModules work={work}><Content slot="body" /></CaseModules>}</article>
-    <div class="wrap case-v03-end"><RelatedWorks work={work} all={all} /><div class="case-next">{caseV2 ? <a class="text-link" href={pathFor('/works/')}>← 返回所有作品</a> : <><a class="text-link" href={pathFor(parent.path)}>← 回到{parent.label}</a><a class="text-link" href={pathFor('/explore/')}>從問題繼續探索 ↗</a></>}</div></div>
+    <div class="wrap case-v03-end"><RelatedWorks work={work} all={all} /><div class="case-next">{caseV2 ? <a class="text-link" href={pathFor('/works/')}>← 返回所有作品</a> : <><a class="text-link" href={pathFor(parent.path)}>← 回到{parent.label}</a><a class="text-link" href={pathFor('/explore/')}>從問題繼續探索 ↗</a></>}{(climateProgram || foodCarbon || hunting) && <TeachingCooperationLink />}</div></div>
   </div> : <>
   <div class="wrap case-intro"><nav aria-label="所在位置" class="breadcrumb"><a href={pathFor('/')}>首頁</a><span aria-hidden="true">／</span><a href={pathFor(parent.path)}>{parent.label}</a></nav><p class="eyebrow">{parent.label} · 完整案例</p><h1>{d.title}</h1><p class="lead">{d.summary}</p><WorkArt id={work.id} /></div>
   <div class="wrap case-layout">

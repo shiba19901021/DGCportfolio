@@ -1,7 +1,14 @@
 ---
-import resume from '../data/resume.json';
+import publicResume from '../data/resume.json';
+type ResumeData = typeof publicResume & { expertiseHeading?: string; expertise?: { label: string; text: string }[] };
+interface Props {
+  data?: ResumeData;
+  teaching?: boolean;
+}
+const resume: ResumeData = Astro.props.data ?? publicResume;
+const { teaching = false } = Astro.props;
 ---
-<article class="resume-sheet" aria-labelledby="resume-name">
+<article class:list={['resume-sheet', { 'teaching-sheet': teaching }]} aria-labelledby="resume-name">
   <header class="resume-header">
     <div class="resume-identity">
       <h1 id="resume-name">{resume.name}</h1>
@@ -15,7 +22,7 @@ import resume from '../data/resume.json';
   <section class="resume-cases" aria-labelledby="resume-cases-heading">
     <div class="resume-section-heading">
       <h2 id="resume-cases-heading">{resume.casesHeading}</h2>
-      <p class="resume-logic">{resume.logic}</p>
+      {resume.logic && <p class="resume-logic">{resume.logic}</p>}
     </div>
     <div class="resume-case-stack">
       {resume.cases.map(item => <section class="resume-case">
@@ -25,6 +32,10 @@ import resume from '../data/resume.json';
       </section>)}
     </div>
   </section>
+  {resume.expertise && <section class="teaching-expertise" aria-labelledby="teaching-expertise-heading">
+    <div class="resume-section-heading"><h2 id="teaching-expertise-heading">{resume.expertiseHeading}</h2></div>
+    <dl>{resume.expertise.map(item => <div><dt>{item.label}</dt><dd>{item.text}</dd></div>)}</dl>
+  </section>}
   <div class="resume-bottom-grid">
     <section aria-labelledby="resume-experience-heading">
       <div class="resume-section-heading"><h2 id="resume-experience-heading">{resume.experienceHeading}</h2></div>
@@ -43,7 +54,7 @@ import resume from '../data/resume.json';
         <div class="resume-item-heading"><h3>{resume.education.name}</h3><span class="resume-period">{resume.education.period}</span></div>
         <p>{resume.education.degree}</p>
       </div>
-      <h3 class="resume-certifications-heading">{resume.certificationsHeading}</h3>
+      {resume.certificationsHeading && <h3 class="resume-certifications-heading">{resume.certificationsHeading}</h3>}
       <ul class="resume-certifications">{resume.certifications.map(item => <li>{item}</li>)}</ul>
     </section>
   </div>

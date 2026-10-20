@@ -2,6 +2,7 @@
 
 Optional authoring tools: python -m pip install weasyprint==70.0 pypdf fonttools brotli
 Run from the repository root: python scripts/build-resume-pdf.py
+Teaching document: python scripts/build-resume-pdf.py --profile teaching
 After changing text, use --refresh-fonts to refresh the self-hosted glyph subsets.
 """
 from pathlib import Path
@@ -30,6 +31,7 @@ INPUTS = [
 ]
 FONT_URL = 'https://raw.githubusercontent.com/google/fonts/main/ofl/notosanstc/'
 BASE = (os.environ.get('PORTFOLIO_BASE') or '/DGCportfolio').rstrip('/')
+PROFILE = 'resume'
 DATA = json.loads((ROOT / 'src/data/resume.json').read_text())
 
 
@@ -69,25 +71,34 @@ def refresh_fonts():
             sub.populate(text=text)
             sub.subset(font)
             font.flavor = 'woff2'
-            font.save(target / f'resume-noto-sans-tc{suffix}.woff2')
+            font.save(target / f'{PROFILE}-noto-sans-tc{suffix}.woff2')
         with urllib.request.urlopen(FONT_URL + 'OFL.txt', timeout=30) as response:
-            (target / 'OFL-resume-noto-sans-tc.txt').write_bytes(response.read())
+            (target / f'OFL-{PROFILE}-noto-sans-tc.txt').write_bytes(response.read())
 
 
 def check_font_coverage():
     from fontTools.ttLib import TTFont
     required = {ord(ch) for ch in ''.join(strings(DATA)) if not ch.isspace()}
     for suffix in ('', '-bold'):
-        font = TTFont(ROOT / f'public/fonts/resume-noto-sans-tc{suffix}.woff2')
+        font = TTFont(ROOT / f'public/fonts/{PROFILE}-noto-sans-tc{suffix}.woff2')
         missing = required - set(font.getBestCmap())
         if missing:
             raise ValueError('履歷字型缺字，請加上 --refresh-fonts 重新產生：' + ''.join(map(chr, sorted(missing))))
 
 
 def main():
+    global PROFILE, DATA, INPUTS
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--profile', choices=['resume', 'teaching'], default='resume')
     parser.add_argument('--refresh-fonts', action='store_true')
     args = parser.parse_args()
+    PROFILE = args.profile
+    if PROFILE == 'teaching':
+        INPUTS = [file.replace('src/data/resume.', 'src/data/teaching.')
+                  .replace('src/pages/resume/', 'src/pages/teaching/')
+                  .replace('fonts/resume-', 'fonts/teaching-') for file in INPUTS]
+        INPUTS.append('src/styles/teaching.css')
+    DATA = json.loads((ROOT / f'src/data/{PROFILE}.json').read_text())
     if args.refresh_fonts:
         refresh_fonts()
     check_font_coverage()
@@ -95,7 +106,7 @@ def main():
         output = Path(tmp)
         subprocess.run(['node', 'scripts/astro.mjs', 'build', '--outDir', str(output)],
                        cwd=ROOT, check=True, env={**os.environ, 'PORTFOLIO_PUBLIC_ONLY': '1'})
-        page = lhtml.fromstring((output / 'resume/index.html').read_text())
+        page = lhtml.fromstring((output / PROFILE / 'index.html').read_text())
         # The PDF has no remote resource dependency; omit Base's Google Fonts request.
         for link in page.xpath('//link[starts-with(@href,"https://fonts.")]'):
             link.getparent().remove(link)
@@ -112,10 +123,10 @@ def main():
 
         fetch_local._fail_on_errors = True
         document = HTML(string=lhtml.tostring(page, encoding='unicode'),
-                        base_url=f'https://shiba19901021.github.io{BASE}/resume/', url_fetcher=fetch_local)
+                        base_url=f'https://shiba19901021.github.io{BASE}/{PROFILE}/', url_fetcher=fetch_local)
         pdf = output / 'resume-generated.pdf'
         rendered = document.render()
-        rendered.write_pdf(pdf, pdf_identifier=b'DGC-public-resume')
+        rendered.write_pdf(pdf, pdf_identifier=f'DGC-public-{PROFILE}'.encode())
         reader = PdfReader(pdf)
         if len(reader.pages) != 1:
             raise ValueError(f'履歷超出單頁（{len(reader.pages)} 頁），未取代正式 PDF')
@@ -131,21 +142,21 @@ def main():
         actual = {str(a.get_object().get('/A', {}).get('/URI', '')) for a in reader.pages[0].get('/Annots', [])}
         if not expected.issubset(actual):
             raise ValueError('PDF 連結缺漏：' + repr(expected - actual) + '；實際連結：' + repr(actual))
-        (ROOT / 'public/resume.pdf').write_bytes(pdf.read_bytes())
+        (ROOT / f'public/{PROFILE}.pdf').write_bytes(pdf.read_bytes())
 
     manifest = {'format': 'A4 portrait', 'pages': 1,
                 'inputs': {file: digest(ROOT / file) for file in INPUTS},
-                'pdf': digest(ROOT / 'public/resume.pdf')}
-    (ROOT / 'scripts/resume-pdf-manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
+                'pdf': digest(ROOT / f'public/{PROFILE}.pdf')}
+    (ROOT / f'scripts/{PROFILE}-pdf-manifest.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
     assets_file = ROOT / 'scripts/public-assets.json'
     assets = json.loads(assets_file.read_text())
-    new_files = ['resume.pdf', 'fonts/resume-noto-sans-tc.woff2',
-                 'fonts/resume-noto-sans-tc-bold.woff2', 'fonts/OFL-resume-noto-sans-tc.txt']
+    new_files = [f'{PROFILE}.pdf', f'fonts/{PROFILE}-noto-sans-tc.woff2',
+                 f'fonts/{PROFILE}-noto-sans-tc-bold.woff2', f'fonts/OFL-{PROFILE}-noto-sans-tc.txt']
     assets = [item for item in assets if item['path'] not in new_files]
     assets += [{'path': file, 'sha256': digest(ROOT / 'public' / file)} for file in new_files]
     assets.sort(key=lambda item: item['path'])
     assets_file.write_text(json.dumps(assets, ensure_ascii=False, indent=2) + '\n')
-    print('履歷 PDF 已更新：A4 直式單頁、完整可選取文字、7 個不同連結；素材清單與來源雜湊已同步。')
+    print(f'{PROFILE} PDF 已更新：A4 直式單頁、完整可選取文字、{len(expected)} 個不同連結；素材清單與來源雜湊已同步。')
 
 
 if __name__ == '__main__':

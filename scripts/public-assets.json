@@ -4,12 +4,24 @@
     "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
   },
   {
+    "path": "fonts/OFL-teaching-noto-sans-tc.txt",
+    "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+  },
+  {
     "path": "fonts/resume-noto-sans-tc-bold.woff2",
     "sha256": "8fe77e22db51e19cacd2f52366508aab11e014e0f48b1bdb6bdbd7b400beb1ce"
   },
   {
     "path": "fonts/resume-noto-sans-tc.woff2",
     "sha256": "b5eb4375fa3d1f744000b22601367e10f00aca7cce99adde331124b86cecac9b"
+  },
+  {
+    "path": "fonts/teaching-noto-sans-tc-bold.woff2",
+    "sha256": "896459ebca2941d448d4760bf0607923d69bdeebad8032eb0bb06f1b4b82f0d3"
+  },
+  {
+    "path": "fonts/teaching-noto-sans-tc.woff2",
+    "sha256": "bb067e875eb5d604c4deef1decc2d33032541bf67eb5e8234533f38143814714"
   },
   {
     "path": "images/alishan/forest-practice.jpg",
@@ -146,5 +158,9 @@
   {
     "path": "resume.pdf",
     "sha256": "96c91f873632cd6b74718ed074fdb023a5f8e718b2d3f8b3ad1eea42b3bdc091"
+  },
+  {
+    "path": "teaching.pdf",
+    "sha256": "22101345519435778c065d17af3449cfc29806f9805e9ea5e22b6c1b42bb5022"
   }
 ]

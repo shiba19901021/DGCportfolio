@@ -11,12 +11,19 @@ export const resumeInputs = [
 ];
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 export async function verifyResume(root = process.cwd()) {
-  const manifest = JSON.parse(await readFile(path.join(root, 'scripts/resume-pdf-manifest.json'), 'utf8'));
-  if (JSON.stringify(Object.keys(manifest.inputs).sort()) !== JSON.stringify([...resumeInputs].sort())) throw new Error('履歷 PDF 的來源清單不完整');
-  for (const file of resumeInputs) {
-    if (sha256(await readFile(path.join(root, file))) !== manifest.inputs[file]) throw new Error(`履歷已修改但 PDF 尚未更新：${file}。請執行 python scripts/build-resume-pdf.py`);
+  for (const profile of ['resume', 'teaching']) await verifyDocument(root, profile);
+}
+async function verifyDocument(root, profile) {
+  const inputs = profile === 'resume' ? resumeInputs : [...resumeInputs.map(file => file
+    .replace('src/data/resume.', 'src/data/teaching.')
+    .replace('src/pages/resume/', 'src/pages/teaching/')
+    .replace('fonts/resume-', 'fonts/teaching-')), 'src/styles/teaching.css'];
+  const manifest = JSON.parse(await readFile(path.join(root, `scripts/${profile}-pdf-manifest.json`), 'utf8'));
+  if (JSON.stringify(Object.keys(manifest.inputs).sort()) !== JSON.stringify([...inputs].sort())) throw new Error(`${profile} PDF 的來源清單不完整`);
+  for (const file of inputs) {
+    if (sha256(await readFile(path.join(root, file))) !== manifest.inputs[file]) throw new Error(`履歷已修改但 PDF 尚未更新：${file}。請執行 python scripts/build-resume-pdf.py --profile ${profile}`);
   }
-  if (sha256(await readFile(path.join(root, 'public/resume.pdf'))) !== manifest.pdf) throw new Error('履歷 PDF 與產生紀錄不一致');
+  if (sha256(await readFile(path.join(root, `public/${profile}.pdf`))) !== manifest.pdf) throw new Error('履歷 PDF 與產生紀錄不一致');
   if (manifest.pages !== 1 || manifest.format !== 'A4 portrait') throw new Error('履歷 PDF 必須為 A4 直式單頁');
-  console.log('履歷一致性檢查通過：單一內容來源、PDF 及排版來源雜湊一致。');
+  console.log(`${profile} 履歷一致性檢查通過：單一內容來源、PDF 及排版來源雜湊一致。`);
 }
