@@ -7,6 +7,7 @@
 .teaching-expertise dl > div { display: grid; grid-template-columns: 8em minmax(0,1fr); gap: .7rem; padding-block: .25rem; }
 .teaching-expertise dt { font-weight: 700; color: #292E32; }
 .teaching-expertise dd { margin: 0; color: #4A5056; }
+.teaching-sheet .teaching-early-item { display: inline-block; white-space: nowrap; }
 @media screen and (max-width: 650px) {
   .teaching-expertise dl > div { grid-template-columns: minmax(0,1fr); gap: .15rem; padding-block: .5rem; }
 }
@@ -17,6 +18,6 @@
   .teaching-sheet .resume-case { padding-block: 10px; }
   .teaching-sheet .teaching-expertise { margin-bottom: 18px; }
   .teaching-expertise dl { font-size: 13px; line-height: 1.6; }
-  .teaching-expertise dl > div { grid-template-columns: 8em minmax(0,1fr); gap: 12px; padding-block: 3px; }
+  .teaching-expertise dl > div { grid-template-columns: 8em minmax(0,1fr); gap: 12px; padding-block: 0; }
   .teaching-sheet .resume-document-footer { margin-top: 18px; }
 }

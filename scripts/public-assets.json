@@ -17,11 +17,11 @@
   },
   {
     "path": "fonts/teaching-noto-sans-tc-bold.woff2",
-    "sha256": "896459ebca2941d448d4760bf0607923d69bdeebad8032eb0bb06f1b4b82f0d3"
+    "sha256": "94cf29d8d28268be78c297e2b13f4b4c3ea2bbf421ac3a916c360f73d0bd2354"
   },
   {
     "path": "fonts/teaching-noto-sans-tc.woff2",
-    "sha256": "bb067e875eb5d604c4deef1decc2d33032541bf67eb5e8234533f38143814714"
+    "sha256": "1290d92cb694199633ede9051a018009bef6d4951afb2d5f5696a643294fe000"
   },
   {
     "path": "images/alishan/forest-practice.jpg",
@@ -161,6 +161,6 @@
   },
   {
     "path": "teaching.pdf",
-    "sha256": "22101345519435778c065d17af3449cfc29806f9805e9ea5e22b6c1b42bb5022"
+    "sha256": "62ca85f68297745df2612003e1bc0a4de719ab830af6b806dc53c67efa696fa8"
   }
 ]
