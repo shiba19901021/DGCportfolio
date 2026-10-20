@@ -44,7 +44,7 @@ const links = [
       {!publicRelease && <p class="preview-label">{previewVersion} · 本機閱讀測試版</p>}
       </div>
     </footer>
-    <ResumeEntry />
+    {current !== '/' && <ResumeEntry />}
   </body>
 </html>
 

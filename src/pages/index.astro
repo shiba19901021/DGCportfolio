@@ -15,6 +15,16 @@ const courses = works.filter(work => work.data.category === 'learning');
       <p class="home-position">方案設計者，從永續實務與環境教育出發，串起問題分析、現場執行與持續改善。</p>
       <p class="home-career"><span>求職方向</span>氣候韌性與永續方案 · 跨領域專案 · 系統與流程改善</p>
       <div class="home-actions"><a class="button" href={pathFor('/works/')}>所有作品 <span aria-hidden="true">↓</span></a><a class="home-contact-link" href={`mailto:${site.email}`}>Email 聯絡 <span aria-hidden="true">↗</span></a></div>
+      <div class="home-resume-directions">
+        <a class="work-row resume-direction" href={pathFor('/resume/')}>
+          <div class="work-row-copy"><h2>方案設計與問題解決</h2><p>跨領域專案、方案研發、系統與流程改善</p></div>
+          <span class="work-row-link"><span class="work-row-arrow" aria-hidden="true">↗</span></span>
+        </a>
+        <a class="work-row resume-direction" href={pathFor('/teaching/')}>
+          <div class="work-row-copy"><h2>課程設計與教學合作</h2><p>課程研發、教材設計、體驗式教學與教師研習</p></div>
+          <span class="work-row-link"><span class="work-row-arrow" aria-hidden="true">↗</span></span>
+        </a>
+      </div>
     </section>
 
     <div id="works" class="home-works">
@@ -30,7 +40,7 @@ const courses = works.filter(work => work.data.category === 'learning');
 
     <section id="about" class="home-about" aria-labelledby="about-title">
       <div class="wrap home-about-grid"><div><p class="eyebrow">關於我與聯絡</p><h2 id="about-title">從現場經驗，走向下一個方案。</h2><p>我的背景涵蓋環境教育、永續實務、場域建置與跨組織合作。希望將累積的問題分析與方案設計經驗，應用到更廣泛的工作。</p><p class="home-work-preference">偏好遠端或彈性工作，可配合必要場勘與現場協作。</p></div>
-      <div id="resume" class="home-resume"><h3>履歷與聯絡</h3><p>場域與資源整合、方案研發、專案協作，以及資訊流程改善。</p>{site.resume ? <a class="button" href={pathFor(site.resume)}>查看履歷 PDF ↗</a> : <p class="home-resume-note">履歷 PDF 待確認；目前可先閱讀作品與經歷摘要。</p>}<div class="home-contact-list"><a href={`mailto:${site.email}`}>Email 聯絡 <span aria-hidden="true">↗</span></a><a href={site.linkedin}>LinkedIn <span aria-hidden="true">↗</span></a></div></div></div>
+      <div id="resume" class="home-resume"><h3>履歷與聯絡</h3><p>歡迎跨領域方案設計、課程研發、教學及專案合作邀約。</p><div class="home-contact-list"><a href={`mailto:${site.email}`}>Email 聯絡 <span aria-hidden="true">↗</span></a><a href={site.linkedin}>LinkedIn <span aria-hidden="true">↗</span></a></div></div></div>
     </section>
   </div>
 </Base>

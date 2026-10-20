@@ -50,7 +50,7 @@ const { teaching = false } = Astro.props;
           <p>{item.text}</p>
         </section>)}
         <div class="resume-early"><h3>{resume.earlyHeading}</h3>{Array.isArray(resume.earlyExperience)
-          ? <div class="teaching-early-list">{resume.earlyExperience.map(item => <div class="teaching-early-row"><span>{item.title}</span><span>{item.period}</span></div>)}</div>
+          ? <div class={teaching ? 'teaching-early-list' : 'resume-early-list'}>{resume.earlyExperience.map(item => <div class={teaching ? 'teaching-early-row' : 'resume-early-row'}><span>{item.title}</span><span>{item.period}</span></div>)}</div>
           : <p>{resume.earlyExperience}</p>}</div>
       </div>
     </section>

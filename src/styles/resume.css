@@ -89,3 +89,13 @@
   .resume-certifications li + li { margin-top: 9px; }
   .resume-document-footer { display: block; margin-top: auto; padding-top: 8px; font-size: 10px; }
 }
+
+/* Structured early experience: same title/year rows as the teaching resume. */
+.resume-early-list { font-size: .875rem; font-weight: 400; line-height: 1.6; color: #4A5056; }
+.resume-early-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.resume-early-row + .resume-early-row { margin-top: .15rem; }
+.resume-early-row span:last-child { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+@media print {
+  .resume-early-list { font-size: 13.5px; }
+  .resume-early-row + .resume-early-row { margin-top: 2px; }
+}

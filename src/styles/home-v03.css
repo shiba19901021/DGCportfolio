@@ -59,7 +59,6 @@
 .home-v03 .home-about .home-work-preference { font-size: .875rem; margin-top: 1.5rem; }
 .home-v03 .home-resume { padding-left: 2rem; border-left: 1px solid var(--line); }
 .home-v03 .home-resume h3 { font-size: 1.3rem; margin-top: 0; }
-.home-v03 .home-resume .home-resume-note { font-size: .875rem; }
 .home-v03 .home-contact-list { display: flex; gap: .5rem 1.5rem; flex-wrap: wrap; margin-top: 1.5rem; }
 .home-v03 .home-contact-list a { display: inline-flex; align-items: center; gap: .75rem; min-height: 44px; font-size: .9375rem; }
 @media (max-width: 1000px) {
@@ -83,4 +82,17 @@
   .work-row-copy { padding: 0 0 2.75rem; }
   .work-row-copy h3 { font-size: 1.4rem; }
   .work-row-link { right: 1rem; }
+}
+
+/* Reuse the work-row surface, circular arrow and hover interaction without media. */
+.home-resume-directions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 1.75rem; }
+.home-resume-directions .resume-direction { grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; }
+.resume-direction .work-row-copy { padding: 0; }
+.resume-direction .work-row-copy h2 { margin: 0 0 .5rem; font-size: 1.1875rem; line-height: 1.5; }
+.resume-direction .work-row-copy p { font-size: .9375rem; line-height: 1.75; }
+.resume-direction .work-row-link { position: static; padding: 0; }
+/* Work cards hide their text label; resume cards contain only the visible arrow. */
+.resume-direction .work-row-link > .work-row-arrow { position: static; width: 44px; height: 44px; overflow: visible; clip-path: none; }
+@media (max-width: 760px) {
+  .home-resume-directions { grid-template-columns: minmax(0, 1fr); gap: .875rem; }
 }

@@ -3,10 +3,10 @@
   "pages": 1,
   "inputs": {
     "src/data/teaching.json": "b7e1639660181dd25252ebbbf5ecc7cbf2c14c23d3d0595c010050154909bcab",
-    "src/components/ResumeDocument.astro": "85cec6ae0b63fd738bddebcc694ff2402830bcdfb1bd7c78079ed4bcfa20d12e",
+    "src/components/ResumeDocument.astro": "4883f5d4189c82609281025097e8688dc202f15d05bb9bbda52b4ee1f8d6b212",
     "src/pages/teaching/index.astro": "63a4049810fdf4007abc5d5d0e4e057df548ecca9a4ba4f2f81b35759d5f6bd0",
-    "src/styles/resume.css": "706b3d4040c835cd8a20fcf1b99fe7b60562b74d2b2d3fac0d1a0b1915a4c372",
-    "src/layouts/Base.astro": "858fde6412b27313440317cab08da987dab9bfc218960386f37adc96912c0c26",
+    "src/styles/resume.css": "75f58929d68c18f9bca0e53d14708464c0b46594da8ed5f059f012eb07a92e7c",
+    "src/layouts/Base.astro": "1b4d01997db450d990525dfa27c494365106e0a92effb90fc78e4762f41c976a",
     "src/styles/global.css": "d007ac95a5fcc1951e503af144c9d8a06f97731771ad5afa77f0ceb7a261c596",
     "src/styles/site-chrome.css": "22d41278f96452207a5b53bb9b68218b36074f58127270261c9b994416fa4bfc",
     "public/fonts/teaching-noto-sans-tc.woff2": "1290d92cb694199633ede9051a018009bef6d4951afb2d5f5696a643294fe000",
