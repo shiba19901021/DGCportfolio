@@ -10,9 +10,7 @@ body.home-page:has(.home-editorial) {
   --white: #F7F5F0;
 }
 .home-v03.home-editorial .home-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr);
-  column-gap: clamp(2rem, 5vw, 4rem);
+  display: block;
   padding-block: clamp(3rem, 6vw, 5rem) 0;
 }
 .home-editorial .home-hero > * { min-width: 0; }
@@ -24,21 +22,20 @@ body.home-page:has(.home-editorial) {
   margin-bottom: 2rem;
 }
 .home-v03.home-editorial .home-position {
-  max-width: 38rem;
+  max-width: 48rem;
   font-size: 1.1875rem;
   line-height: 1.95;
   margin: 0;
 }
 .home-v03.home-editorial .home-career {
-  font-size: 1rem;
+  max-width: 48rem;
+  font-size: .9375rem;
   line-height: 1.9;
-  margin: 0;
-  padding-top: .1rem;
+  margin: 1.5rem 0 0;
 }
-.home-editorial .home-career span { color: var(--ink); }
-.home-v03.home-editorial .home-actions { grid-column: 1 / -1; gap: 1rem 2.5rem; margin-top: 1.5rem; }
-.home-editorial .home-index-link,
-.home-v03.home-editorial .home-contact-link {
+.home-v03.home-editorial .home-career span { display: inline-block; color: var(--muted); font-size: .8125rem; font-weight: 500; letter-spacing: .06em; margin: 0 .875rem 0 0; }
+.home-v03.home-editorial .home-actions { gap: 1rem 2.5rem; margin-top: 1rem; }
+.home-editorial .home-index-link {
   display: inline-flex;
   align-items: center;
   gap: 1.5rem;
@@ -51,23 +48,21 @@ body.home-page:has(.home-editorial) {
   text-decoration-color: var(--accent);
   text-underline-offset: .4em;
 }
-.home-editorial .home-index-link span,
-.home-editorial .home-contact-link span { color: var(--accent); }
-.home-editorial .home-index-link:hover,
-.home-v03.home-editorial .home-contact-link:hover { color: var(--ink); text-decoration-thickness: 2px; }
+.home-editorial .home-index-link span { color: var(--accent); }
+.home-editorial .home-index-link:hover { color: var(--ink); text-decoration-thickness: 2px; }
 .home-editorial .home-professional {
   grid-column: 1 / -1;
   margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--line);
 }
-.home-editorial .home-professional > h2 { font-size: 1.25rem; line-height: 1.6; margin: 0 0 1.25rem; }
+.home-editorial .home-professional > h2 { margin: 0 0 1.5rem; }
 .home-editorial .home-resume-directions { gap: 2.5rem; margin-top: 0; }
 /* A single link surface per item; rules and whitespace replace card containers. */
 .home-v03.home-editorial .work-row {
-  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr) auto;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  padding: 2.5rem 0;
+  grid-template-columns: minmax(0, 28%) minmax(0, 1fr) auto;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  padding: 1.5rem 0;
   border: 0;
   border-bottom: 1px solid var(--line);
   border-radius: 0;
@@ -82,7 +77,7 @@ body.home-page:has(.home-editorial) {
 .home-editorial .work-row:active .work-row-arrow { transform: translate(2px, -2px); }
 .home-editorial .work-row-media { border-radius: 8px; background: transparent; }
 .home-editorial .work-row-copy { padding: 0; }
-.home-editorial .work-row-copy h3 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); line-height: 1.6; margin: 0 0 1rem; }
+.home-editorial .work-row-copy h3 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); line-height: 1.6; margin: 0 0 .75rem; }
 .home-editorial .work-row-copy p { font-size: 1.0625rem; line-height: 1.95; }
 .home-editorial .work-row-link { position: static; align-self: center; padding: 0; }
 .home-editorial .work-row-arrow {
@@ -95,41 +90,44 @@ body.home-page:has(.home-editorial) {
   transition: transform .2s ease;
 }
 .home-editorial .work-row:hover .work-row-arrow { transform: translate(3px, -3px); }
-.home-v03.home-editorial .resume-direction { grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; padding: .5rem 0 1.5rem; border: 0; }
+.home-v03.home-editorial .resume-direction { grid-template-columns: minmax(0, 1fr) auto; gap: 1.25rem; align-items: start; padding: .5rem 0 1.5rem; border: 0; }
 .home-editorial .resume-direction .work-row-copy h3 { font-size: 1.1875rem; line-height: 1.65; margin-bottom: .5rem; }
 .home-editorial .resume-direction .work-row-copy p { font-size: 1rem; line-height: 1.85; }
-.home-editorial .resume-direction .work-row-link > .work-row-arrow { position: static; border: 0; border-radius: 0; }
+.home-editorial .resume-direction .work-row-link { align-self: start; }
+.home-editorial .resume-direction .work-row-link > .work-row-arrow { position: static; border: 0; border-radius: 0; height: 32px; }
 .home-v03.home-editorial .home-works { background: transparent; padding-block: 4.5rem 0; }
 .home-v03.home-editorial .home-section-heading { border-top: 1px solid var(--line); padding-top: 1.5rem; margin-bottom: 0; }
+.home-v03.home-editorial .home-professional > h2,
 .home-v03.home-editorial .home-section-heading h2 { font-size: clamp(1.5rem, 2.7vw, 1.875rem); line-height: 1.6; margin-bottom: .75rem; }
 .home-editorial .home-section-heading p { max-width: 48rem; line-height: 1.95; }
 .home-v03.home-editorial .home-work-list { gap: 0; }
 .home-v03.home-editorial .home-work-group + .home-work-group { margin-top: 4.5rem; }
 .home-v03.home-editorial .home-about { padding-block: 4.5rem; }
-.home-editorial .home-about-grid { border-top: 1px solid var(--line); padding-top: 2rem; }
+.home-v03.home-editorial .home-about-grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(2rem, 5vw, 4rem); align-items: start; border-top: 1px solid var(--line); padding-top: 2rem; }
+.home-v03.home-editorial .home-about h2 { font-size: 1.5rem; line-height: 1.6; margin: 0 0 1.25rem; }
+.home-v03.home-editorial .home-about .home-about-direction { font-size: 1.125rem; font-weight: 600; margin: 0 0 1rem; }
+.home-editorial .home-about-grid > div > p:not(.home-about-direction):first-of-type,
+.home-editorial .home-resume > p { margin-top: 0; }
 .home-v03.home-editorial .home-resume { border: 0; padding: 0; }
-.home-editorial .home-resume h3 { font-size: 1.25rem; line-height: 1.65; }
 .home-editorial .home-about p { line-height: 1.95; }
 .home-editorial .home-contact-list { margin-top: 1rem; }
 @media (max-width: 850px) {
-  .home-v03.home-editorial .home-hero { grid-template-columns: minmax(0, 1fr); }
-  .home-v03.home-editorial .home-career { margin-top: 1.5rem; }
   .home-editorial .home-resume-directions { gap: 1.5rem; }
-  .home-v03.home-editorial .work-row { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr) auto; gap: 1.5rem; }
+  .home-v03.home-editorial .work-row { grid-template-columns: minmax(0, 28%) minmax(0, 1fr) auto; gap: 1.5rem; }
   .home-v03.home-editorial .resume-direction { grid-template-columns: minmax(0, 1fr) auto; gap: .75rem; }
 }
 @media (max-width: 760px) {
   .home-editorial .home-resume-directions { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
   .home-v03.home-editorial .resume-direction + .resume-direction { border-top: 1px solid var(--line); padding-top: 1.25rem; }
-  .home-v03.home-editorial .home-about-grid { gap: 2.5rem; }
+  .home-v03.home-editorial .home-about-grid { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .home-v03.home-editorial .home-hero { padding-top: 2.5rem; }
   .home-v03.home-editorial h1 { font-size: 2.1rem; line-height: 1.6; }
   .home-v03.home-editorial .home-position { font-size: 1.125rem; }
   .home-editorial .home-professional { margin-top: 2.5rem; }
   .home-v03.home-editorial .home-works { padding-top: 3.25rem; }
-  .home-v03.home-editorial .work-row { grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem .75rem; padding-block: 2rem; }
+  .home-v03.home-editorial .work-row { grid-template-columns: minmax(0, 1fr) auto; gap: 1.25rem .75rem; padding-block: 1.5rem; }
   .home-editorial .work-row-media { grid-column: 1 / -1; }
   .home-editorial .work-row-copy h3 { font-size: 1.375rem; }
   .home-editorial .work-row-copy p { font-size: 1rem; }
@@ -138,4 +136,8 @@ body.home-page:has(.home-editorial) {
   .home-editorial .resume-direction .work-row-copy h3 { font-size: 1.1875rem; }
   .home-v03.home-editorial .home-work-group + .home-work-group { margin-top: 3.25rem; }
   .home-v03.home-editorial .home-about { padding-block: 3.25rem; }
+}
+
+@media (max-width: 540px) {
+  .home-v03.home-editorial .home-career span { display: block; margin: 0 0 .25rem; }
 }
