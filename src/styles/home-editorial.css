@@ -11,7 +11,7 @@ body.home-page:has(.home-editorial) {
 }
 .home-v03.home-editorial .home-hero {
   display: block;
-  padding-block: clamp(3rem, 6vw, 5rem) 0;
+  padding-block: clamp(2.5rem, 5vw, 4rem) 0;
 }
 .home-editorial .home-hero > * { min-width: 0; }
 .home-v03.home-editorial h1 {
@@ -19,7 +19,7 @@ body.home-page:has(.home-editorial) {
   max-width: 18em;
   font-size: clamp(2.2rem, 4.6vw, 3.5rem);
   line-height: 1.55;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 .home-v03.home-editorial .home-position {
   max-width: 48rem;
@@ -31,10 +31,10 @@ body.home-page:has(.home-editorial) {
   max-width: 48rem;
   font-size: .9375rem;
   line-height: 1.9;
-  margin: 1.5rem 0 0;
+  margin: 0 0 1rem;
 }
-.home-v03.home-editorial .home-career span { display: inline-block; color: var(--muted); font-size: .8125rem; font-weight: 500; letter-spacing: .06em; margin: 0 .875rem 0 0; }
-.home-v03.home-editorial .home-actions { gap: 1rem 2.5rem; margin-top: 1rem; }
+.home-v03.home-editorial .home-career span { display: inline; color: inherit; font-size: inherit; font-weight: 500; letter-spacing: normal; margin: 0; }
+.home-v03.home-editorial .home-actions { gap: 1rem 2.5rem; margin-top: .75rem; }
 .home-editorial .home-index-link {
   display: inline-flex;
   align-items: center;
@@ -52,8 +52,8 @@ body.home-page:has(.home-editorial) {
 .home-editorial .home-index-link:hover { color: var(--ink); text-decoration-thickness: 2px; }
 .home-editorial .home-professional {
   grid-column: 1 / -1;
-  margin-top: 3rem;
-  padding-top: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
   border-top: 1px solid var(--line);
 }
 .home-editorial .home-professional > h2 { margin: 0 0 1.5rem; }
@@ -122,10 +122,10 @@ body.home-page:has(.home-editorial) {
   .home-v03.home-editorial .home-about-grid { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
 }
 @media (max-width: 700px) {
-  .home-v03.home-editorial .home-hero { padding-top: 2.5rem; }
+  .home-v03.home-editorial .home-hero { padding-top: 2rem; }
   .home-v03.home-editorial h1 { font-size: 2.1rem; line-height: 1.6; }
   .home-v03.home-editorial .home-position { font-size: 1.125rem; }
-  .home-editorial .home-professional { margin-top: 2.5rem; }
+  .home-editorial .home-professional { margin-top: 1.75rem; }
   .home-v03.home-editorial .home-works { padding-top: 3.25rem; }
   .home-v03.home-editorial .work-row { grid-template-columns: minmax(0, 1fr) auto; gap: 1.25rem .75rem; padding-block: 1.5rem; }
   .home-editorial .work-row-media { grid-column: 1 / -1; }
@@ -138,6 +138,3 @@ body.home-page:has(.home-editorial) {
   .home-v03.home-editorial .home-about { padding-block: 3.25rem; }
 }
 
-@media (max-width: 540px) {
-  .home-v03.home-editorial .home-career span { display: block; margin: 0 0 .25rem; }
-}
