@@ -3,6 +3,7 @@ import '../styles/global.css';
 import '../styles/site-chrome.css';
 import { site } from '../data/site';
 import { pathFor } from '../lib/works';
+import ResumeEntry from '../components/ResumeEntry.astro';
 interface Props { title?: string; description?: string; activeCategory?: string; previewVersion?: string; homeVisual?: boolean; caseVisual?: boolean; }
 const { title = site.title, description = site.positioning, previewVersion = 'V0.6', homeVisual = false, caseVisual = false } = Astro.props;
 const publicRelease = import.meta.env.PORTFOLIO_PUBLIC_ONLY === '1';
@@ -43,6 +44,7 @@ const links = [
       {!publicRelease && <p class="preview-label">{previewVersion} · 本機閱讀測試版</p>}
       </div>
     </footer>
+    <ResumeEntry />
   </body>
 </html>
 

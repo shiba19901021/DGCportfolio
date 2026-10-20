@@ -1,5 +1,17 @@
 [
   {
+    "path": "fonts/OFL-resume-noto-sans-tc.txt",
+    "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+  },
+  {
+    "path": "fonts/resume-noto-sans-tc-bold.woff2",
+    "sha256": "8fe77e22db51e19cacd2f52366508aab11e014e0f48b1bdb6bdbd7b400beb1ce"
+  },
+  {
+    "path": "fonts/resume-noto-sans-tc.woff2",
+    "sha256": "b5eb4375fa3d1f744000b22601367e10f00aca7cce99adde331124b86cecac9b"
+  },
+  {
     "path": "images/alishan/forest-practice.jpg",
     "sha256": "522a1648ad53165b33ca388a2a32c9401d9ae8aef5b399a2bce580d727684936"
   },
@@ -130,5 +142,9 @@
   {
     "path": "images/workflow/sheets-records.png",
     "sha256": "78a94dd971c7706814dae6141fb4c2333440f828d07a377f88376ab913b40426"
+  },
+  {
+    "path": "resume.pdf",
+    "sha256": "413a0651db3309eab87376187a28ba8a618acc839b9177152a9c091e0bbc9cbd"
   }
 ]

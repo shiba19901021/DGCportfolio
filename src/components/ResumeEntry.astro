@@ -1,0 +1,14 @@
+---
+import { pathFor } from '../lib/works';
+---
+<aside class="resume-entry" aria-label="履歷與合作">
+  <a href={pathFor('/resume/')}>履歷與合作<span aria-hidden="true">↗</span></a>
+</aside>
+<style>
+  .resume-entry { position: fixed; z-index: 20; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); }
+  .resume-entry a { display: flex; align-items: center; gap: .65rem; min-height: 44px; padding: .65rem 1rem; border: 1px solid #B9784F; border-radius: 3px; background: #F7F5F0; color: #292E32; font-family: system-ui, sans-serif; font-size: .875rem; font-weight: 600; line-height: 1.5; text-decoration: none; }
+  .resume-entry span { color: #864e29; }
+  .resume-entry a:hover { background: #eee9e0; }
+  .resume-entry a:focus-visible { outline: 3px solid #864e29; outline-offset: 3px; }
+  @media print { .resume-entry { display: none; } }
+</style>

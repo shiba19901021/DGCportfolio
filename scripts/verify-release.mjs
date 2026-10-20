@@ -1,6 +1,7 @@
 import { readFile, readdir, stat } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
+import { verifyResume } from './verify-resume.mjs';
 
 async function filesIn(root) {
   const files = [];
@@ -17,6 +18,7 @@ const decode = value => value.replaceAll('&amp;', '&').replaceAll('&#39;', "'").
 
 export async function verifyRelease(outDir) {
   const root = process.cwd();
+  await verifyResume(root);
   const base = process.env.PORTFOLIO_BASE || '/DGCportfolio';
   const assets = JSON.parse(await readFile(path.join(root, 'scripts/public-assets.json'), 'utf8'));
   const approved = new Map(assets.map(asset => [asset.path, asset.sha256]));
