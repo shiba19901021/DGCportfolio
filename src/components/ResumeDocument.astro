@@ -1,13 +1,16 @@
 ---
 import publicResume from '../data/resume.json';
-type ResumeData = typeof publicResume & { expertiseHeading?: string; expertise?: { label: string; text: string }[] };
+type ResumeData = Omit<typeof publicResume, 'earlyExperience'> & {
+  earlyExperience: string | { title: string; period: string }[];
+  expertiseHeading?: string;
+  expertise?: { label: string; text: string }[];
+};
 interface Props {
   data?: ResumeData;
   teaching?: boolean;
 }
 const resume: ResumeData = Astro.props.data ?? publicResume;
 const { teaching = false } = Astro.props;
-const earlyItems = teaching ? resume.earlyExperience.split('｜') : [];
 ---
 <article class:list={['resume-sheet', { 'teaching-sheet': teaching }]} aria-labelledby="resume-name">
   <header class="resume-header">
@@ -46,7 +49,9 @@ const earlyItems = teaching ? resume.earlyExperience.split('｜') : [];
           {'role' in item && <p class="resume-role">{item.role}</p>}
           <p>{item.text}</p>
         </section>)}
-        <div class="resume-early"><h3>{resume.earlyHeading}</h3><p>{teaching ? earlyItems.map((item, index) => <span class="teaching-early-item">{item}{index < earlyItems.length - 1 ? '｜' : ''}</span>) : resume.earlyExperience}</p></div>
+        <div class="resume-early"><h3>{resume.earlyHeading}</h3>{Array.isArray(resume.earlyExperience)
+          ? <div class="teaching-early-list">{resume.earlyExperience.map(item => <div class="teaching-early-row"><span>{item.title}</span><span>{item.period}</span></div>)}</div>
+          : <p>{resume.earlyExperience}</p>}</div>
       </div>
     </section>
     <section aria-labelledby="resume-education-heading">

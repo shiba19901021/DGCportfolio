@@ -52,7 +52,10 @@
     }
   ],
   "earlyHeading": "早期經歷",
-  "earlyExperience": "環境教育專員（2014－2015）｜健康管理師（2015－2018）",
+  "earlyExperience": [
+    { "title": "環境教育專員", "period": "2014－2015" },
+    { "title": "健康管理師", "period": "2015－2018" }
+  ],
   "educationHeading": "學歷與專業認證",
   "education": { "name": "國立臺南大學", "period": "2010－2014", "degree": "生態暨環境資源學系 學士" },
   "certificationsHeading": "",
