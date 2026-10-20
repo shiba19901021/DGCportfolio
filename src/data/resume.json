@@ -1,0 +1,69 @@
+{
+  "name": "游鏡騰",
+  "positioning": "把複雜問題轉化為可執行方案",
+  "summary": "擅長釐清問題、整合不同需求與資源，從方案設計、實際執行到驗證修正，將複雜條件轉化為可運作的成果。目前主要應用於永續、環境與教育領域。",
+  "contacts": [
+    { "label": "電子郵件", "href": "mailto:shiba19901021@gmail.com" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/dagoshiba" },
+    { "label": "完整作品集", "href": "https://shiba19901021.github.io/DGCportfolio/" }
+  ],
+  "casesHeading": "我解決過的複雜問題",
+  "logic": "問題與限制 → 方案設計與整合 → 實際成果",
+  "cases": [
+    {
+      "number": "01",
+      "title": "生態廚房：多重需求與資源整合",
+      "text": "面對園區閒置戶外教室、場域定位、食農教育與課程安全等多重需求，我整合空間、能源、水資源及教學條件，將原有空間轉化為可持續使用的戶外生態廚房。",
+      "href": "https://shiba19901021.github.io/DGCportfolio/works/eco-kitchen/"
+    },
+    {
+      "number": "02",
+      "title": "嘉北國小雨水系統：現場限制下的系統設計",
+      "text": "面對校園集水需求及空間、管線與維護限制，我從現勘、設計到現場組裝與測試，持續調整系統配置，完成可供校園使用與學生學習的雨水蒐集系統。",
+      "href": "https://shiba19901021.github.io/DGCportfolio/works/rainwater/"
+    },
+    {
+      "number": "03",
+      "title": "工作流程改善：減少重複作業與行政負擔",
+      "text": "面對資料分散、重複整理與跨表統計的行政負擔，我重新梳理資料關係與作業流程，運用既有工具改善統計方式，將週期性作業時間由數小時縮短至約一小時內。",
+      "href": "https://shiba19901021.github.io/DGCportfolio/works/workflow/"
+    },
+    {
+      "number": "04",
+      "title": "氣候韌性課程研發：將抽象議題轉化為教學方案",
+      "text": "面對抽象的氣候韌性議題及不同學習需求，我參與規劃研發架構、整合團隊分工與試教回饋，直接主責其中兩套課程，協助團隊完成六套可實際教學的課程方案。",
+      "href": "https://shiba19901021.github.io/DGCportfolio/works/climate-program/"
+    }
+  ],
+  "caseLinkLabel": "查看完整案例 ↗",
+  "experienceHeading": "工作經歷",
+  "experience": [
+    {
+      "name": "鯨旗國際環境創產有限公司",
+      "period": "2018.06－至今",
+      "role": "環境教育教師／督導（現場經理）",
+      "text": "派駐觸口自然教育中心，負責方案研發、專案執行、場域建置、公部門協作及五人現場團隊的工作協調與營運管理。"
+    },
+    {
+      "name": "自由講師／樸門永續設計顧問",
+      "period": "2020.01－至今",
+      "text": "協助學校與社區進行永續方案、課程研發及場域設計，參與現場建置、教學實施與後續調整。"
+    }
+  ],
+  "earlyHeading": "早期經歷",
+  "earlyExperience": "環境教育專員（2014－2015）｜健康管理師（2015－2018）",
+  "educationHeading": "學歷與專業認證",
+  "education": {
+    "name": "國立臺南大學",
+    "period": "2010－2014",
+    "degree": "生態暨環境資源學系 學士"
+  },
+  "certificationsHeading": "專業認證與訓練",
+  "certifications": [
+    "iPAS 淨零規劃管理師（中級／初級）",
+    "環境部環境教育人員認證",
+    "Permaculture Design Certificate（PDC）",
+    "Permaculture Teacher Training"
+  ],
+  "portfolio": "https://shiba19901021.github.io/DGCportfolio/"
+}

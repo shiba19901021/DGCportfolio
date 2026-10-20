@@ -1,0 +1,69 @@
+{
+  "name": "游鏡騰",
+  "positioning": "課程設計｜知識轉譯｜體驗式教學",
+  "summary": "具多年環境教育、課程研發與教學實務經驗，擅長依學習目標與受眾需求，將複雜知識轉化為易懂、可參與的學習體驗。能整合內容研究、課程架構、教材與活動設計，並透過現場教學、觀察與回饋持續優化。",
+  "contacts": [
+    { "label": "電子郵件", "href": "mailto:shiba19901021@gmail.com" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/dagoshiba" },
+    { "label": "完整作品集", "href": "https://shiba19901021.github.io/DGCportfolio/" }
+  ],
+  "casesHeading": "代表課程與教學設計",
+  "logic": "",
+  "cases": [
+    {
+      "number": "01",
+      "title": "氣候韌性課程研發：跨課程架構與品質整合",
+      "text": "參與六套氣候韌性課程研發，整合抽象議題、不同學習需求及團隊協作，負責研發架構、試教與品質整合，直接主責其中兩套課程，並依教學回饋持續修正。",
+      "href": "https://shiba19901021.github.io/DGCportfolio/works/climate-program/"
+    },
+    {
+      "number": "02",
+      "title": "美食碳險家：知識轉譯與遊戲化學習",
+      "text": "將食物碳排與低碳飲食轉化為遊戲化、動手實作的學習體驗，透過實際教學與回饋持續優化。成熟版本於 2025–2026 年累積 30 場以上、800 人次以上參與。",
+      "href": "https://shiba19901021.github.io/DGCportfolio/works/food-carbon/"
+    },
+    {
+      "number": "03",
+      "title": "狩獵奇蹟：模擬遊戲與學習機制設計",
+      "text": "將狩獵、有限資源與環境倫理轉化為模擬遊戲，運用機率、資源限制與玩家決策，引導學員從系統回饋中理解合作、分工與資源管理，並經多次版本迭代優化教學體驗。",
+      "href": "https://shiba19901021.github.io/DGCportfolio/works/hunting/"
+    }
+  ],
+  "caseLinkLabel": "查看完整案例 ↗",
+  "expertiseHeading": "教學專長與合作形式",
+  "expertise": [
+    { "label": "主要領域", "text": "環境教育｜永續發展｜樸門永續設計" },
+    { "label": "課程應用議題", "text": "氣候韌性｜永續飲食｜水資源等" },
+    { "label": "課程與教學形式", "text": "學校課程｜教師研習｜體驗式工作坊｜遊戲化學習｜課程與教材研發" },
+    { "label": "授課對象", "text": "國小學生｜教師｜成人與社區參與者" }
+  ],
+  "experienceHeading": "工作與教學經歷",
+  "experience": [
+    {
+      "name": "鯨旗國際環境創產有限公司",
+      "period": "2018.06－至今",
+      "role": "環境教育教師／督導（現場經理）",
+      "text": "派駐觸口自然教育中心，負責環境與永續課程研發、教材及教學活動設計、現場教學與團隊協作，依不同受眾及教學回饋調整課程。"
+    },
+    {
+      "name": "自由講師／樸門永續設計顧問",
+      "period": "2020.01－至今",
+      "text": "協助學校與社區規劃永續課程、教師增能及實作活動，提供課程設計、教材開發與教學服務。"
+    }
+  ],
+  "earlyHeading": "早期經歷",
+  "earlyExperience": [
+    { "title": "環境教育專員", "period": "2014－2015" },
+    { "title": "健康管理師", "period": "2015－2018" }
+  ],
+  "educationHeading": "學歷與專業認證",
+  "education": { "name": "國立臺南大學", "period": "2010－2014", "degree": "生態暨環境資源學系 學士" },
+  "certificationsHeading": "",
+  "certifications": [
+    "環境部環境教育人員認證",
+    "iPAS 淨零規劃管理師（中級／初級）",
+    "Permaculture Design Certificate（PDC）",
+    "Permaculture Teacher Training"
+  ],
+  "portfolio": "https://shiba19901021.github.io/DGCportfolio/"
+}

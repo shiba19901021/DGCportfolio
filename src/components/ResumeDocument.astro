@@ -1,0 +1,68 @@
+---
+import publicResume from '../data/resume.json';
+type ResumeData = Omit<typeof publicResume, 'earlyExperience'> & {
+  earlyExperience: string | { title: string; period: string }[];
+  expertiseHeading?: string;
+  expertise?: { label: string; text: string }[];
+};
+interface Props {
+  data?: ResumeData;
+  teaching?: boolean;
+}
+const resume: ResumeData = Astro.props.data ?? publicResume;
+const { teaching = false } = Astro.props;
+---
+<article class:list={['resume-sheet', { 'teaching-sheet': teaching }]} aria-labelledby="resume-name">
+  <header class="resume-header">
+    <div class="resume-identity">
+      <h1 id="resume-name">{resume.name}</h1>
+      <p class="resume-positioning">{resume.positioning}</p>
+    </div>
+    <p class="resume-summary">{resume.summary}</p>
+    <nav class="resume-contacts" aria-label="履歷聯絡方式">
+      {resume.contacts.map(contact => <a href={contact.href}>{contact.label}</a>)}
+    </nav>
+  </header>
+  <section class="resume-cases" aria-labelledby="resume-cases-heading">
+    <div class="resume-section-heading">
+      <h2 id="resume-cases-heading">{resume.casesHeading}</h2>
+      {resume.logic && <p class="resume-logic">{resume.logic}</p>}
+    </div>
+    <div class="resume-case-stack">
+      {resume.cases.map(item => <section class="resume-case">
+        <span class="resume-case-number">{item.number}</span>
+        <div class="resume-case-content"><h3>{item.title}</h3><p>{item.text}</p></div>
+        <div class="resume-case-action"><a class="resume-case-link" href={item.href} aria-label={`${item.title}，${resume.caseLinkLabel}`}>{resume.caseLinkLabel}</a></div>
+      </section>)}
+    </div>
+  </section>
+  {resume.expertise && <section class="teaching-expertise" aria-labelledby="teaching-expertise-heading">
+    <div class="resume-section-heading"><h2 id="teaching-expertise-heading">{resume.expertiseHeading}</h2></div>
+    <dl>{resume.expertise.map(item => <div><dt>{item.label}</dt><dd>{item.text}</dd></div>)}</dl>
+  </section>}
+  <div class="resume-bottom-grid">
+    <section aria-labelledby="resume-experience-heading">
+      <div class="resume-section-heading"><h2 id="resume-experience-heading">{resume.experienceHeading}</h2></div>
+      <div class="resume-experience-list">
+        {resume.experience.map(item => <section class="resume-experience">
+          <div class="resume-item-heading"><h3>{item.name}</h3><span class="resume-period">{item.period}</span></div>
+          {'role' in item && <p class="resume-role">{item.role}</p>}
+          <p>{item.text}</p>
+        </section>)}
+        <div class="resume-early"><h3>{resume.earlyHeading}</h3>{Array.isArray(resume.earlyExperience)
+          ? <div class="teaching-early-list">{resume.earlyExperience.map(item => <div class="teaching-early-row"><span>{item.title}</span><span>{item.period}</span></div>)}</div>
+          : <p>{resume.earlyExperience}</p>}</div>
+      </div>
+    </section>
+    <section aria-labelledby="resume-education-heading">
+      <div class="resume-section-heading"><h2 id="resume-education-heading">{resume.educationHeading}</h2></div>
+      <div class="resume-education">
+        <div class="resume-item-heading"><h3>{resume.education.name}</h3><span class="resume-period">{resume.education.period}</span></div>
+        <p>{resume.education.degree}</p>
+      </div>
+      {resume.certificationsHeading && <h3 class="resume-certifications-heading">{resume.certificationsHeading}</h3>}
+      <ul class="resume-certifications">{resume.certifications.map(item => <li>{item}</li>)}</ul>
+    </section>
+  </div>
+  <footer class="resume-document-footer"><span>完整作品集：</span><a href={resume.portfolio}>{resume.portfolio}</a></footer>
+</article>
