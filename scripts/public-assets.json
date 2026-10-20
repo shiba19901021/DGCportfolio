@@ -9,11 +9,11 @@
   },
   {
     "path": "fonts/resume-noto-sans-tc-bold.woff2",
-    "sha256": "8fe77e22db51e19cacd2f52366508aab11e014e0f48b1bdb6bdbd7b400beb1ce"
+    "sha256": "f11e9f4be9b8b75486f8539884252783b5fa981fa317887591d803adf1d1b520"
   },
   {
     "path": "fonts/resume-noto-sans-tc.woff2",
-    "sha256": "b5eb4375fa3d1f744000b22601367e10f00aca7cce99adde331124b86cecac9b"
+    "sha256": "5b74be2a8824a6a8f113e775f64103f37889f349ee62a75ee91f196f162d1b49"
   },
   {
     "path": "fonts/teaching-noto-sans-tc-bold.woff2",
@@ -157,7 +157,7 @@
   },
   {
     "path": "resume.pdf",
-    "sha256": "9e68f7fe034c6f77d66dd0d03a5cef7150cf87c7c4e9f3891812260c1cf9b5f1"
+    "sha256": "de0877b3f373c51b5bff1977b180e344d17f748e7243033bfa1b78808efb0beb"
   },
   {
     "path": "teaching.pdf",
