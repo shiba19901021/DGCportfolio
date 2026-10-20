@@ -19,5 +19,6 @@
   .teaching-sheet .teaching-expertise { margin-bottom: 18px; }
   .teaching-expertise dl { font-size: 13px; line-height: 1.6; }
   .teaching-expertise dl > div { grid-template-columns: 8em minmax(0,1fr); gap: 12px; padding-block: 0; }
+  .teaching-sheet .resume-early p { white-space: nowrap; }
   .teaching-sheet .resume-document-footer { margin-top: 18px; }
 }
