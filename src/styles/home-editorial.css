@@ -1,4 +1,4 @@
-/* Homepage-only presentation. Keep the shared catalogue cards and case pages intact.
+/* Shared homepage/catalogue editorial presentation, opted in by .home-editorial.
    Palette, reading measure and chapter rhythm follow case-v2.css. */
 body.home-page:has(.home-editorial) {
   --paper: #F7F5F0;
@@ -138,3 +138,5 @@ body.home-page:has(.home-editorial) {
   .home-v03.home-editorial .home-about { padding-block: 3.25rem; }
 }
 
+
+.home-editorial .home-all-works { display: flex; justify-content: flex-end; padding-top: 1.5rem; }

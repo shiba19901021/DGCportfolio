@@ -40,6 +40,7 @@ const courses = works.filter(work => work.data.category === 'learning');
         <div class="home-section-heading"><div><h2 id="courses-title">課程作品</h2><p>探索學習流程、互動機制，以及試教與回饋如何推進設計。</p></div></div>
         <div class="home-work-list">{courses.map(work => <WorkRowCard work={work} />)}</div>
       </section>
+      <div class="home-all-works wrap"><a class="home-index-link" href={pathFor('/works/')}>查看所有作品 <span aria-hidden="true">↗</span></a></div>
     </div>
 
     <section id="about" class="home-about" aria-labelledby="about-title">
