@@ -1,0 +1,13 @@
+---
+import { workHref, workLinkLabel, type Work } from '../lib/works';
+import { homeCompact } from '../data/home-summaries';
+interface Props { work: Work; }
+const { work } = Astro.props;
+---
+<a class="work-row work-row-compact" href={workHref(work)}>
+  <div class="work-row-copy">
+    <h3>{work.data.detailIntro?.title ?? work.data.title}</h3>
+    <p>{homeCompact[work.id] ?? work.data.summary}</p>
+  </div>
+  <span class="work-row-link"><span>{workLinkLabel(work)}</span><span class="work-row-arrow" aria-hidden="true">↗</span></span>
+</a>

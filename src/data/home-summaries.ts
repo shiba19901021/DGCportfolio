@@ -1,15 +1,26 @@
 // Homepage-only copy; catalogue and case summaries remain in the work collection.
 export interface HomeSummary { problem: string; approach: string; outcome: string; }
+
+// 首頁以完整卡片（問題｜做法｜成果）呈現的案例；其餘案例以一行列表呈現。
+export const homeFeatured: string[] = ['eco-kitchen', 'rainwater', 'workflow', 'hunting'];
+
+// 一行列表的首頁專用文字；未列在這裡的案例沿用作品摘要。
+export const homeCompact: Record<string, string> = {
+  alishan: '串接中心前導與部落體驗，釐清專業主導權，在交通、人數與場地變動中調整方案。',
+  'climate-program': '統整六套課程的團隊研發，依試教觀察重新設計資源循環課程，讓新版教案進入實際教學。',
+  'food-carbon': '以兩次選材安排資訊出現的順序，讓學生比較食物選擇，並延伸到實際料理與資源循環。2025–2026 年累計 30+ 場、800+ 人參與，已列入山林悠遊網官方課程介紹。',
+};
+
 export const homeSummaries: Record<string, HomeSummary> = {
   'eco-kitchen': {
-    problem: '閒置空間與老化教具需要重新利用，但傳統委外建造成本高，也難以兼顧場域改造與教育需求。',
+    problem: '閒置空間與老化教具需要重新利用。自然建築少有承包業者、也沒有書面報價，兩位有接案經驗的實作者口頭估計，這個規模全部外包要 80 萬元以上。',
     approach: '運用自然建築專業，將部分建造工作轉化為自造工作坊，整合現有材料與參與者協作，並將窯體失敗經驗帶回設計修正。',
-    outcome: '以低成本完成可實際使用的生態廚房，同時讓建造過程成為學習體驗，創造場域建設與實作教育的雙重價值。',
+    outcome: '以八天工作坊協作完成，建置支出約 8 萬餘元（材料、工具、餐食與耗材）；2024 年底啟用並持續用於課程與培訓，建造過程本身也成為實作學習。',
   },
   rainwater: {
     problem: '學校希望蒐集雨水，但系統除了儲水，也需要讓學生理解水資源循環與設施運作。',
     approach: '從教學展示需求重新規劃水路，整合既有材料與學生施工參與，並透過放水測試發現問題、調整設計。',
-    outcome: '完成雨水蒐集設施與互動說明網站，並解決測試中發現的水路問題，讓實體系統成為可操作、可觀察的學習素材。',
+    outcome: '完成 200 公升雨水蒐集設施與學生參與的組裝活動；放水測試發現初期雨水提早進桶，抬高進桶支管後修正，並完成互動教學網站。',
   },
   alishan: {
     problem: '營隊需要結合環境教育與部落文化體驗，同時面對跨單位分工、交通及場地等執行限制。',
@@ -19,7 +30,7 @@ export const homeSummaries: Record<string, HomeSummary> = {
   workflow: {
     problem: '行政資料分散在不同表單與文件中，重複填寫、更新與整理增加團隊作業負擔。',
     approach: '重新梳理資料來源與使用流程，透過公式、跨表連動及文件自動產出，減少重複輸入與維護。',
-    outcome: '建立供 5 人團隊實際使用的作業工具，將分散的行政流程整合為較容易操作、更新與維護的工作方式。',
+    outcome: '報告所需的數據整理與統計圖製作，由數小時縮短至約一小時內（依實際作業概估，不含報告撰寫）；約 5 位同事使用相關業務表單，管理網站由我維護。',
   },
   'climate-program': {
     problem: '氣候韌性與資源循環概念較抽象，需要轉化為學生能理解、參與的學習活動。',
@@ -34,6 +45,6 @@ export const homeSummaries: Record<string, HomeSummary> = {
   hunting: {
     problem: '合作、資源限制與環境倫理等概念難以只靠講述理解，需要讓學生親自面對選擇。',
     approach: '將有限資源、合作與環境倫理轉化為遊戲機制，並依試玩及實際教學調整難度、引導與教具。',
-    outcome: '完成可實際帶領的情境遊戲課程，讓學生在不同選擇及其結果中體驗資源取捨，並透過討論連結環境議題。',
+    outcome: '已用於阿里山獵人成長營前導教學；歷經機率推估、同事試玩與實際教學，調整為擲骰判定、加入初始肉乾，教具改為耐用硬卡。',
   },
 };
