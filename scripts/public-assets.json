@@ -9,19 +9,19 @@
   },
   {
     "path": "fonts/resume-noto-sans-tc-bold.woff2",
-    "sha256": "f11e9f4be9b8b75486f8539884252783b5fa981fa317887591d803adf1d1b520"
+    "sha256": "f2a9f4fd6cd38fe9b1b8c1107de345d1b297479669a0f36019d00d6b152581c4"
   },
   {
     "path": "fonts/resume-noto-sans-tc.woff2",
-    "sha256": "5b74be2a8824a6a8f113e775f64103f37889f349ee62a75ee91f196f162d1b49"
+    "sha256": "54c7dfcd1593d3b1d5b6022aaad055d5189b36631c813cb1642d1d073a4295aa"
   },
   {
     "path": "fonts/teaching-noto-sans-tc-bold.woff2",
-    "sha256": "94cf29d8d28268be78c297e2b13f4b4c3ea2bbf421ac3a916c360f73d0bd2354"
+    "sha256": "79f6b46a1c3df8a120a65dde590a73ecff55082ef7551d8dbdae67b2ed50066d"
   },
   {
     "path": "fonts/teaching-noto-sans-tc.woff2",
-    "sha256": "1290d92cb694199633ede9051a018009bef6d4951afb2d5f5696a643294fe000"
+    "sha256": "49b9b24f49463d687cdba0d13b608fb1a3e5cd0756b3500a544ba7a515c01f92"
   },
   {
     "path": "images/alishan/forest-practice.jpg",
@@ -157,10 +157,10 @@
   },
   {
     "path": "resume.pdf",
-    "sha256": "de0877b3f373c51b5bff1977b180e344d17f748e7243033bfa1b78808efb0beb"
+    "sha256": "80d5ff634135df464a9d17291bd576447abb8ccecb99b667fa376e3548e0f98e"
   },
   {
     "path": "teaching.pdf",
-    "sha256": "34262ef17e81b398f88922bf591acd307ca0e06faea93285ffdf1b04152ed1ec"
+    "sha256": "b231f18061e7d18e547b02896d75f58ec612a259848fd67e598d211cb0644f09"
   }
 ]
