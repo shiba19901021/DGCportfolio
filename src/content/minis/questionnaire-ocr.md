@@ -4,7 +4,7 @@ kind: practice
 category: workflow-ai
 icon: questionnaire
 order: 1
-visibility: preview
+visibility: public
 summary: 用 AI 協作做出輔助工具，把紙本問卷的掃描檔轉成指定格式的資料，再由人工檢查。
 role: 發現問題、設計流程、用 AI 協作製作、交接與調整。
 problem: 有大量學生填寫的紙本問卷（不記名），原本全靠人工逐筆輸入。
