@@ -29,6 +29,8 @@
 .mini-section p, .mini-steps, .mini-limits { margin: 0; line-height: 1.9; }
 .mini-steps, .mini-limits { padding-left: 1.4rem; }
 .mini-steps li, .mini-limits li { margin-block: .375rem; padding-left: .25rem; }
+.mini-built { margin: 0 0 .75rem !important; color: var(--muted); font-size: .9375rem; }
+.mini-section .mini-estimate-line + .mini-estimate-line { margin-top: .5rem; }
 .mini-note { margin-top: .5rem; color: var(--muted); font-size: .875rem; }
 .mini-figure { margin: 2rem 0 0; }
 .mini-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 6px; }

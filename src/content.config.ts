@@ -53,6 +53,7 @@ const minis = defineCollection({
     summary: z.string(),
     role: z.string().optional(),
     problem: z.string(),
+    built: z.string().optional(),
     steps: z.array(z.string()).min(1).max(5),
     estimate: z.string().optional(),
     limits: z.array(z.string()).default([]),

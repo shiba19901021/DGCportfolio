@@ -41,12 +41,12 @@ const courseRows = courses.filter(work => !featured.has(work.id));
 
     <div id="works" class="home-works">
       <section id="selected" class="home-work-group wrap" aria-labelledby="projects-title">
-        <div class="home-section-heading"><div><h2 id="projects-title">專案作品</h2><p>從問題、限制到執行與修正，閱讀完整的專案脈絡。</p></div></div>
+        <div class="home-section-heading"><div><h2 id="projects-title">代表專案</h2><p>從問題、限制到執行與修正，閱讀完整的專案脈絡。</p></div></div>
         <div class="home-work-list">{projectCards.map(work => <WorkRowCard work={work} summary={homeSummaries[work.id]} />)}</div>
         {projectRows.length > 0 && <div class="home-work-list home-work-list-compact">{projectRows.map(work => <WorkCompactRow work={work} />)}</div>}
       </section>
       <section class="home-work-group wrap" aria-labelledby="courses-title">
-        <div class="home-section-heading"><div><h2 id="courses-title">課程作品</h2><p>探索學習流程、互動機制，以及試教與回饋如何推進設計。</p></div></div>
+        <div class="home-section-heading"><div><h2 id="courses-title">代表課程</h2><p>探索學習流程、互動機制，以及試教與回饋如何推進設計。</p></div></div>
         <div class="home-work-list">{courseCards.map(work => <WorkRowCard work={work} summary={homeSummaries[work.id]} />)}</div>
         {courseRows.length > 0 && <div class="home-work-list home-work-list-compact">{courseRows.map(work => <WorkCompactRow work={work} />)}</div>}
       </section>
