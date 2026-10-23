@@ -15,16 +15,18 @@
 .works-mini { margin-top: clamp(3rem, 6vw, 4.5rem); padding-top: 1rem; border-top: 1px solid var(--line); }
 .works-mini-heading h2 { margin: 0 0 .5rem; font-size: 1.5rem; line-height: 1.5; }
 .works-mini-heading p { margin: 0; max-width: 40rem; color: var(--muted); line-height: 1.85; }
-.mini-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin: 1.75rem 0 0; padding: 0; list-style: none; }
-.mini-card { display: flex; flex-direction: column; height: 100%; color: inherit; text-decoration: none; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; transition: border-color .15s ease, transform .15s ease; }
-.mini-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.mini-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 3rem; margin: .75rem 0 0; padding: 0; list-style: none; }
+/* 與上方專案／課程列表同尺寸：左縮圖、右文字，列與列以細線分隔。 */
+.mini-card { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 1rem; align-items: start; padding-block: 1.125rem; color: inherit; text-decoration: none; border-bottom: 1px solid var(--line); }
+.mini-card:hover h3 { color: var(--accent); }
 .mini-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-.mini-card-media { aspect-ratio: 8 / 5; background: rgba(41, 46, 50, .06); display: grid; place-items: center; overflow: hidden; }
+.mini-card-media { width: 92px; aspect-ratio: 4 / 3; border-radius: 6px; background: rgba(41, 46, 50, .06); display: grid; place-items: center; overflow: hidden; }
 .mini-card-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.mini-card-placeholder { padding: 1rem; color: var(--muted); font-size: .9375rem; letter-spacing: .08em; text-align: center; }
-.mini-card-copy { display: flex; flex-direction: column; align-items: flex-start; gap: .5rem; padding: 1.125rem 1.25rem 1.375rem; }
-.mini-card-copy h3 { margin: .25rem 0 0; font-size: 1.125rem; line-height: 1.6; }
-.mini-card-copy p { margin: 0; color: var(--muted); font-size: .9375rem; line-height: 1.8; }
+.mini-card-placeholder { padding: .25rem; color: var(--muted); font-size: .75rem; line-height: 1.5; letter-spacing: .04em; text-align: center; }
+.mini-card-copy { display: flex; flex-direction: column; align-items: flex-start; gap: .25rem; min-width: 0; }
+.mini-card-copy .mini-tag { font-size: .75rem; padding: 0 .5rem; line-height: 1.6; }
+.mini-card-copy h3 { margin: .125rem 0 0; font-size: 1.0625rem; line-height: 1.6; }
+.mini-card-copy p { margin: 0; color: var(--muted); font-size: .875rem; line-height: 1.75; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
 
 /* 簡短獨立頁 */
 .mini-page { max-width: 46rem; padding-block: clamp(2rem, 5vw, 3.5rem) clamp(3rem, 6vw, 5rem); overflow-wrap: anywhere; }
@@ -46,5 +48,5 @@
 .mini-figure-empty { padding: 2.5rem 1rem; border: 1px dashed var(--line); border-radius: 6px; color: var(--muted); text-align: center; font-size: .9375rem; }
 .mini-return { margin-top: 2.5rem; }
 
-@media (max-width: 979px) { .mini-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 620px) { .mini-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 979px) { .mini-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 420px) { .mini-card { grid-template-columns: 80px minmax(0, 1fr); gap: .75rem; } .mini-card-media { width: 80px; } }
