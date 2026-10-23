@@ -25,6 +25,7 @@ const kind = miniKinds[d.kind];
     <section class="mini-section" aria-labelledby="mini-problem"><h2 id="mini-problem">原本的問題</h2><p>{d.problem}</p></section>
     <section class="mini-section" aria-labelledby="mini-steps"><h2 id="mini-steps">做法與流程</h2>{d.built && <p class="mini-built">{d.built}</p>}<ol class="mini-steps">{d.steps.map(step => <li>{step}</li>)}</ol></section>
     {d.estimate && <section class="mini-section" aria-labelledby="mini-estimate"><h2 id="mini-estimate">處理時間</h2>{d.estimate.split('\n').map(line => <p class="mini-estimate-line">{line}</p>)}<p class="mini-note">{miniEstimateNote}</p></section>}
+    {d.usage.length > 0 && <section class="mini-section" aria-labelledby="mini-usage"><h2 id="mini-usage">使用狀況</h2><ul class="mini-usage">{d.usage.map(item => <li>{item}</li>)}</ul></section>}
     {d.limits.length > 0 && <section class="mini-section" aria-labelledby="mini-limits"><h2 id="mini-limits">風險與限制</h2><ul class="mini-limits">{d.limits.map(item => <li>{item}</li>)}</ul></section>}
     {d.image?.approved
       ? <figure class="mini-figure"><img src={pathFor(d.image.src)} alt={d.image.alt} loading="lazy" decoding="async" /><figcaption>{d.image.caption}</figcaption></figure>

@@ -13,6 +13,6 @@ const hasThumb = Boolean(image?.approved || icon);
       ? <img src={pathFor(image.src)} alt={image.alt} width="640" height="480" loading="lazy" decoding="async" />
       : icon && <MiniIcon name={icon} />}
   </div>}
-  <div class="mini-row-copy"><h3>{mini.data.title}</h3><p>{mini.data.summary}</p></div>
+  <div class="mini-row-copy"><h3>{mini.data.title}</h3><p>{mini.data.blurb ?? mini.data.summary}</p></div>
   <span class="mini-row-arrow" aria-hidden="true">↗</span>
 </a>
