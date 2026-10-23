@@ -31,7 +31,6 @@ const groups = [
     {miniGroups.length > 0 && <div id="minis" class="works-index-columns works-mini">
       {miniGroups.map(group => <section class="home-work-group" aria-labelledby={`mini-${group.kind}-title`}>
         <div class="home-section-heading"><h2 id={`mini-${group.kind}-title`}>{group.title}</h2></div>
-        <p class="works-mini-note">{group.note}</p>
         <ul class="mini-list">{group.items.map(mini => <li><MiniCard mini={mini} /></li>)}</ul>
       </section>)}
     </div>}

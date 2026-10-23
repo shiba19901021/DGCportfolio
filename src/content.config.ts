@@ -47,6 +47,7 @@ const minis = defineCollection({
     title: z.string(),
     kind: z.enum(['practice', 'course']),
     category: z.enum(['workflow-ai', 'interactive', 'hands-on', 'course-mini']).optional(),
+    icon: z.enum(['questionnaire']).optional(),
     order: z.number(),
     visibility: z.enum(['preview', 'public']).default('preview'),
     summary: z.string(),

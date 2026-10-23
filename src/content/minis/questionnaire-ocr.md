@@ -2,6 +2,7 @@
 title: 問卷辨識與資料整理
 kind: practice
 category: workflow-ai
+icon: questionnaire
 order: 1
 visibility: preview
 summary: 用 AI 協作做出輔助工具，把紙本問卷的掃描檔轉成指定格式的資料，再由人工檢查。

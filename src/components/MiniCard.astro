@@ -1,9 +1,18 @@
 ---
+import MiniIcon from './MiniIcon.astro';
 import { miniHref, type Mini } from '../lib/minis';
+import { pathFor } from '../lib/works';
 interface Props { mini: Mini; }
 const { mini } = Astro.props;
+const { image, icon } = mini.data;
+const hasThumb = Boolean(image?.approved || icon);
 ---
-<a class="mini-row" href={miniHref(mini)}>
+<a class:list={['mini-row', { 'mini-row-bare': !hasThumb }]} href={miniHref(mini)}>
+  {hasThumb && <div class="mini-row-thumb">
+    {image?.approved
+      ? <img src={pathFor(image.src)} alt={image.alt} width="640" height="480" loading="lazy" decoding="async" />
+      : icon && <MiniIcon name={icon} />}
+  </div>}
   <div class="mini-row-copy"><h3>{mini.data.title}</h3><p>{mini.data.summary}</p></div>
   <span class="mini-row-arrow" aria-hidden="true">↗</span>
 </a>
