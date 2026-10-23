@@ -1,5 +1,6 @@
 ---
 title: 問卷辨識與資料整理
+kind: practice
 category: workflow-ai
 order: 1
 visibility: preview

@@ -45,7 +45,8 @@ const minis = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/minis' }),
   schema: z.object({
     title: z.string(),
-    category: z.enum(['workflow-ai', 'interactive', 'hands-on', 'course-mini']),
+    kind: z.enum(['practice', 'course']),
+    category: z.enum(['workflow-ai', 'interactive', 'hands-on', 'course-mini']).optional(),
     order: z.number(),
     visibility: z.enum(['preview', 'public']).default('preview'),
     summary: z.string(),

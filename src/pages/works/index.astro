@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import WorkRowCard from '../../components/WorkRowCard.astro';
 import MiniCard from '../../components/MiniCard.astro';
 import { listedWorks, pathFor } from '../../lib/works';
-import { listedMinis } from '../../lib/minis';
+import { listedMinis, miniKinds } from '../../lib/minis';
 import '../../styles/home-v03.css';
 import '../../styles/home-editorial.css';
 import '../../styles/works-index.css';
@@ -11,9 +11,12 @@ import '../../styles/minis.css';
 
 const works = await listedWorks();
 const minis = await listedMinis();
+const miniGroups = (['practice', 'course'] as const)
+  .map(kind => ({ kind, ...miniKinds[kind], items: minis.filter(mini => mini.data.kind === kind) }))
+  .filter(group => group.items.length > 0);
 const groups = [
-  { id: 'projects', title: '專案作品', works: works.filter(work => work.data.category !== 'learning') },
-  { id: 'courses', title: '課程作品', works: works.filter(work => work.data.category === 'learning') },
+  { id: 'projects', title: '代表專案', works: works.filter(work => work.data.category !== 'learning') },
+  { id: 'courses', title: '代表課程', works: works.filter(work => work.data.category === 'learning') },
 ];
 ---
 <Base title="所有作品｜游鏡騰" homeVisual>
@@ -25,10 +28,13 @@ const groups = [
         <div class="home-work-list">{group.works.map(work => <WorkRowCard work={work} />)}</div>
       </section>)}
     </div>
-    {minis.length > 0 && <section id="minis" class="works-mini" aria-labelledby="minis-title">
-      <div class="works-mini-heading"><h2 id="minis-title">小專案</h2><p>順手做出來、解決實際問題的小工具與小製作。</p></div>
-      <ul class="mini-grid">{minis.map(mini => <li><MiniCard mini={mini} /></li>)}</ul>
-    </section>}
+    {miniGroups.length > 0 && <div id="minis" class="works-index-columns works-mini">
+      {miniGroups.map(group => <section class="home-work-group" aria-labelledby={`mini-${group.kind}-title`}>
+        <div class="home-section-heading"><h2 id={`mini-${group.kind}-title`}>{group.title}</h2></div>
+        <p class="works-mini-note">{group.note}</p>
+        <ul class="mini-list">{group.items.map(mini => <li><MiniCard mini={mini} /></li>)}</ul>
+      </section>)}
+    </div>}
     <div class="works-index-return"><a class="home-index-link" href={pathFor('/')}>← 返回首頁</a></div>
   </div>
 </Base>

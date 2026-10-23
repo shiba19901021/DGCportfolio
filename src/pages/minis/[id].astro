@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { listedMinis, miniCategories, miniEstimateNote } from '../../lib/minis';
+import { listedMinis, miniKinds, miniEstimateNote } from '../../lib/minis';
 import { pathFor } from '../../lib/works';
 import '../../styles/home-v03.css';
 import '../../styles/home-editorial.css';
@@ -12,13 +12,12 @@ export async function getStaticPaths() {
 }
 const { mini } = Astro.props;
 const d = mini.data;
-const showPlaceholder = import.meta.env.PORTFOLIO_PUBLIC_ONLY !== '1';
+const kind = miniKinds[d.kind];
 ---
-<Base title={`${d.title}｜小專案｜游鏡騰`} description={d.summary} homeVisual>
+<Base title={`${d.title}｜${kind.title}｜游鏡騰`} description={d.summary} homeVisual>
   <div class="home-v03 home-editorial mini-page wrap">
-    <nav aria-label="所在位置" class="breadcrumb mini-breadcrumb"><a href={pathFor('/')}>首頁</a><span aria-hidden="true">／</span><a href={pathFor('/works/#minis')}>小專案</a></nav>
+    <nav aria-label="所在位置" class="breadcrumb mini-breadcrumb"><a href={pathFor('/')}>首頁</a><span aria-hidden="true">／</span><a href={pathFor('/works/#minis')}>{kind.title}</a></nav>
     <header class="mini-header">
-      <span class="mini-tag">{miniCategories[d.category]}</span>
       <h1>{d.title}</h1>
       <p class="mini-lead">{d.summary}</p>
       {d.role && <p class="mini-role"><strong>我的角色：</strong>{d.role}</p>}
@@ -29,7 +28,7 @@ const showPlaceholder = import.meta.env.PORTFOLIO_PUBLIC_ONLY !== '1';
     {d.limits.length > 0 && <section class="mini-section" aria-labelledby="mini-limits"><h2 id="mini-limits">風險與限制</h2><ul class="mini-limits">{d.limits.map(item => <li>{item}</li>)}</ul></section>}
     {d.image?.approved
       ? <figure class="mini-figure"><img src={pathFor(d.image.src)} alt={d.image.alt} loading="lazy" decoding="async" /><figcaption>{d.image.caption}</figcaption></figure>
-      : showPlaceholder && <div class="mini-figure mini-figure-empty" role="note">示意圖待補（僅預覽顯示，正式頁不會出現）</div>}
-    <p class="mini-return"><a class="home-index-link" href={pathFor('/works/#minis')}>← 返回小專案區</a></p>
+      : null}
+    <p class="mini-return"><a class="home-index-link" href={pathFor('/works/#minis')}>← {kind.back}</a></p>
   </div>
 </Base>

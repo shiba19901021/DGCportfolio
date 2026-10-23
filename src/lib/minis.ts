@@ -3,12 +3,11 @@ import { pathFor } from './works';
 
 export type Mini = CollectionEntry<'minis'>;
 
-// 每個小專案只歸一個主要分類；沒有作品的分類不會出現。
-export const miniCategories = {
-  'workflow-ai': '流程與 AI 工具',
-  interactive: '互動教材與遊戲',
-  'hands-on': '教具與動手做',
-  'course-mini': '課程小設計',
+// 版面分兩欄：更多實作（practice）與更多課程（course）。
+// category 為日後顯示標籤與分類用，目前不在頁面顯示。
+export const miniKinds = {
+  practice: { title: '更多實作', note: '順手做出來、解決實際問題的小工具與小製作。', back: '返回更多實作' },
+  course: { title: '更多課程', note: '規模較小的課程與教學設計。', back: '返回更多課程' },
 } as const;
 
 export const miniEstimateNote = '依實際作業經驗概略估算';
