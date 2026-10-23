@@ -1,0 +1,20 @@
+---
+import { miniCategories, miniHref, type Mini } from '../lib/minis';
+import { pathFor } from '../lib/works';
+interface Props { mini: Mini; }
+const { mini } = Astro.props;
+const { image, category } = mini.data;
+const label = miniCategories[category];
+---
+<a class="mini-card" href={miniHref(mini)}>
+  <div class="mini-card-media">
+    {image?.approved
+      ? <img src={pathFor(image.src)} alt={image.alt} width="640" height="400" loading="lazy" decoding="async" />
+      : <span class="mini-card-placeholder" aria-hidden="true">{label}</span>}
+  </div>
+  <div class="mini-card-copy">
+    <span class="mini-tag">{label}</span>
+    <h3>{mini.data.title}</h3>
+    <p>{mini.data.summary}</p>
+  </div>
+</a>

@@ -40,4 +40,22 @@ const works = defineCollection({
   }),
 });
 
-export const collections = { works };
+// 小專案：順手做出來、解決實際問題的小工具與小製作。獨立於 works，不影響首頁與既有案例。
+const minis = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/minis' }),
+  schema: z.object({
+    title: z.string(),
+    category: z.enum(['workflow-ai', 'interactive', 'hands-on', 'course-mini']),
+    order: z.number(),
+    visibility: z.enum(['preview', 'public']).default('preview'),
+    summary: z.string(),
+    role: z.string().optional(),
+    problem: z.string(),
+    steps: z.array(z.string()).min(1).max(5),
+    estimate: z.string().optional(),
+    limits: z.array(z.string()).default([]),
+    image: z.object({ src: z.string(), alt: z.string(), caption: z.string(), approved: z.boolean() }).optional(),
+  }),
+});
+
+export const collections = { works, minis };

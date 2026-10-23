@@ -1,12 +1,16 @@
 ---
 import Base from '../../layouts/Base.astro';
 import WorkRowCard from '../../components/WorkRowCard.astro';
+import MiniCard from '../../components/MiniCard.astro';
 import { listedWorks, pathFor } from '../../lib/works';
+import { listedMinis } from '../../lib/minis';
 import '../../styles/home-v03.css';
 import '../../styles/home-editorial.css';
 import '../../styles/works-index.css';
+import '../../styles/minis.css';
 
 const works = await listedWorks();
+const minis = await listedMinis();
 const groups = [
   { id: 'projects', title: '專案作品', works: works.filter(work => work.data.category !== 'learning') },
   { id: 'courses', title: '課程作品', works: works.filter(work => work.data.category === 'learning') },
@@ -21,6 +25,10 @@ const groups = [
         <div class="home-work-list">{group.works.map(work => <WorkRowCard work={work} />)}</div>
       </section>)}
     </div>
+    {minis.length > 0 && <section id="minis" class="works-mini" aria-labelledby="minis-title">
+      <div class="works-mini-heading"><h2 id="minis-title">小專案</h2><p>順手做出來、解決實際問題的小工具與小製作。</p></div>
+      <ul class="mini-grid">{minis.map(mini => <li><MiniCard mini={mini} /></li>)}</ul>
+    </section>}
     <div class="works-index-return"><a class="home-index-link" href={pathFor('/')}>← 返回首頁</a></div>
   </div>
 </Base>
