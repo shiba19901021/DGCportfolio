@@ -6,7 +6,7 @@ import { pathFor } from '../../lib/works';
 import '../../styles/resume.css';
 import '../../styles/teaching.css';
 ---
-<Base title={`${teaching.name}｜課程設計與教學合作履歷`} description={teaching.summary}>
+<Base alt="/teaching/" title={`${teaching.name}｜課程設計與教學合作履歷`} description={teaching.summary}>
   <div class="resume-page">
     <div class="resume-toolbar"><a href={pathFor('/teaching.pdf')} download="游鏡騰-課程設計與教學合作履歷.pdf">下載 PDF<span aria-hidden="true"> ↓</span></a></div>
     <ResumeDocument data={teaching} teaching />

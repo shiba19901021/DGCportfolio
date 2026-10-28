@@ -3,15 +3,15 @@
   "pages": 1,
   "inputs": {
     "src/data/teaching.json": "4fef08afbd1a73e288ba543db67ec516bf6b73e007c12afef18111bd059be20c",
-    "src/components/ResumeDocument.astro": "4883f5d4189c82609281025097e8688dc202f15d05bb9bbda52b4ee1f8d6b212",
-    "src/pages/teaching/index.astro": "63a4049810fdf4007abc5d5d0e4e057df548ecca9a4ba4f2f81b35759d5f6bd0",
+    "src/components/ResumeDocument.astro": "dbc2e157e4a4ee7db4e51d8a4470a0cbf0074d8c38ad3da62d6867c04b8a31de",
+    "src/pages/teaching/index.astro": "d01936728f53e004bdec203b08c68b0744e5213c29f064b50b1597c401dd8505",
     "src/styles/resume.css": "75f58929d68c18f9bca0e53d14708464c0b46594da8ed5f059f012eb07a92e7c",
-    "src/layouts/Base.astro": "64ae61291632af2458d11572c939a603179bcfb025fe804a8d0b17a592eeb390",
+    "src/layouts/Base.astro": "b019693096ca7bea85cce1e517732a676130932037a18fa4d3a0b735e28b7379",
     "src/styles/global.css": "d007ac95a5fcc1951e503af144c9d8a06f97731771ad5afa77f0ceb7a261c596",
-    "src/styles/site-chrome.css": "22d41278f96452207a5b53bb9b68218b36074f58127270261c9b994416fa4bfc",
+    "src/styles/site-chrome.css": "c534c36d43982997a4c9617b5e220e399552ca7cd212476192909b7158c277f8",
     "public/fonts/teaching-noto-sans-tc.woff2": "87d3c20188a2c6f030d8021bf91a27cc02feaa2e859db19510a2152caf3cb249",
     "public/fonts/teaching-noto-sans-tc-bold.woff2": "c7b0abf768d4fa752cc5512f44cf2cbf821b4f8d775b3a1099a7666a8776a4d7",
     "src/styles/teaching.css": "f0abbcc7ba3d1583380521c071a99e08765b8cdf0792830514bc4b752308cbdf"
   },
-  "pdf": "07d06dbb66ec27662bc735bc4cffdb5991beb7e3ccc2b4f510c12da15fa9b23b"
+  "pdf": "3515d56ad9827e5ccec19271045ee8830cbcb6e576dd9028543b556572a41a1d"
 }

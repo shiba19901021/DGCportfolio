@@ -6,6 +6,7 @@ Teaching document: python scripts/build-resume-pdf.py --profile teaching
 After changing text, use --refresh-fonts to refresh the self-hosted glyph subsets.
 """
 from pathlib import Path
+import tempfile
 from tempfile import TemporaryDirectory
 from urllib.parse import unquote, urlparse
 import argparse
@@ -32,7 +33,9 @@ INPUTS = [
 FONT_URL = 'https://raw.githubusercontent.com/google/fonts/main/ofl/notosanstc/'
 BASE = (os.environ.get('PORTFOLIO_BASE') or '/DGCportfolio').rstrip('/')
 PROFILE = 'resume'
-DATA = json.loads((ROOT / 'src/data/resume.json').read_text())
+PAGE = 'resume'
+DATA_FILE = 'src/data/resume.json'
+DATA = json.loads((ROOT / DATA_FILE).read_text())
 
 
 def strings(value):
@@ -60,6 +63,8 @@ def refresh_fonts():
         with urllib.request.urlopen(FONT_URL + 'NotoSansTC%5Bwght%5D.ttf', timeout=60) as response:
             source.write_bytes(response.read())
         text = ''.join(strings(DATA)) + ''.join(chr(n) for n in range(32, 127)) + '完整作品集：下載履歷與合作↗↓'
+        if PROFILE.endswith('-en'):
+            text += '–—→↗↓'
         target = ROOT / 'public/fonts'
         target.mkdir(exist_ok=True)
         for weight, suffix in [(400, ''), (700, '-bold')]:
@@ -87,18 +92,28 @@ def check_font_coverage():
 
 
 def main():
-    global PROFILE, DATA, INPUTS
+    global PROFILE, PAGE, DATA_FILE, DATA, INPUTS
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--profile', choices=['resume', 'teaching'], default='resume')
+    parser.add_argument('--profile', choices=['resume', 'teaching', 'resume-en', 'teaching-en'], default='resume')
     parser.add_argument('--refresh-fonts', action='store_true')
     args = parser.parse_args()
     PROFILE = args.profile
-    if PROFILE == 'teaching':
-        INPUTS = [file.replace('src/data/resume.', 'src/data/teaching.')
+    kind = 'teaching' if PROFILE.startswith('teaching') else 'resume'
+    english = PROFILE.endswith('-en')
+    PAGE = f'en/{kind}' if english else kind
+    DATA_FILE = f'src/data/{kind}.en.json' if english else f'src/data/{kind}.json'
+    if kind == 'teaching':
+        INPUTS = [file.replace('src/data/resume.json', DATA_FILE)
                   .replace('src/pages/resume/', 'src/pages/teaching/')
                   .replace('fonts/resume-', 'fonts/teaching-') for file in INPUTS]
         INPUTS.append('src/styles/teaching.css')
-    DATA = json.loads((ROOT / f'src/data/{PROFILE}.json').read_text())
+    elif english:
+        INPUTS = [DATA_FILE if file == 'src/data/resume.json' else file for file in INPUTS]
+    if english:
+        # English pages live under src/pages/en/, use their own fonts, and read the i18n settings.
+        INPUTS = [file.replace('src/pages/', 'src/pages/en/').replace(f'fonts/{kind}-', f'fonts/{PROFILE}-') for file in INPUTS]
+        INPUTS += [f'src/styles/{PROFILE}.css', 'src/styles/en-print.css', 'src/lib/i18n.ts', 'src/data/i18n-config.json']
+    DATA = json.loads((ROOT / DATA_FILE).read_text())
     if args.refresh_fonts:
         refresh_fonts()
     check_font_coverage()
@@ -106,7 +121,7 @@ def main():
         output = Path(tmp)
         subprocess.run(['node', 'scripts/astro.mjs', 'build', '--outDir', str(output)],
                        cwd=ROOT, check=True, env={**os.environ, 'PORTFOLIO_PUBLIC_ONLY': '1'})
-        page = lhtml.fromstring((output / PROFILE / 'index.html').read_text())
+        page = lhtml.fromstring((output / PAGE / 'index.html').read_text())
         # The PDF has no remote resource dependency; omit Base's Google Fonts request.
         for link in page.xpath('//link[starts-with(@href,"https://fonts.")]'):
             link.getparent().remove(link)
@@ -123,12 +138,13 @@ def main():
 
         fetch_local._fail_on_errors = True
         document = HTML(string=lhtml.tostring(page, encoding='unicode'),
-                        base_url=f'https://shiba19901021.github.io{BASE}/{PROFILE}/', url_fetcher=fetch_local)
+                        base_url=f'https://shiba19901021.github.io{BASE}/{PAGE}/', url_fetcher=fetch_local)
         pdf = output / 'resume-generated.pdf'
         rendered = document.render()
         rendered.write_pdf(pdf, pdf_identifier=f'DGC-public-{PROFILE}'.encode())
         reader = PdfReader(pdf)
         if len(reader.pages) != 1:
+            Path(tempfile.gettempdir(), f'overflow-{PROFILE}.pdf').write_bytes(pdf.read_bytes())  # for inspection
             raise ValueError(f'履歷超出單頁（{len(reader.pages)} 頁），未取代正式 PDF')
         box = reader.pages[0].mediabox
         if abs(float(box.width) - 595.276) > 1 or abs(float(box.height) - 841.89) > 1:

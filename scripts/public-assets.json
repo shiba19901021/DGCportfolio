@@ -1,11 +1,27 @@
 [
   {
+    "path": "fonts/OFL-resume-en-noto-sans-tc.txt",
+    "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+  },
+  {
     "path": "fonts/OFL-resume-noto-sans-tc.txt",
+    "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+  },
+  {
+    "path": "fonts/OFL-teaching-en-noto-sans-tc.txt",
     "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
   },
   {
     "path": "fonts/OFL-teaching-noto-sans-tc.txt",
     "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+  },
+  {
+    "path": "fonts/resume-en-noto-sans-tc-bold.woff2",
+    "sha256": "165756b6c68d94983626cb2fc43372f23e4d1e661dfd9c4b3139f77334ebb508"
+  },
+  {
+    "path": "fonts/resume-en-noto-sans-tc.woff2",
+    "sha256": "db5749a20eda356aa367903d6f54defe7661651854d1de4fb8fda9c92d3242c0"
   },
   {
     "path": "fonts/resume-noto-sans-tc-bold.woff2",
@@ -14,6 +30,14 @@
   {
     "path": "fonts/resume-noto-sans-tc.woff2",
     "sha256": "0dc2b450dcee50df37c763279d4d02576d495f23f9c4a1a56973abcb795114ae"
+  },
+  {
+    "path": "fonts/teaching-en-noto-sans-tc-bold.woff2",
+    "sha256": "e1c1bb7fe26e63433c842a6ab1f709fc018b165611795d100a068b1c92ae5414"
+  },
+  {
+    "path": "fonts/teaching-en-noto-sans-tc.woff2",
+    "sha256": "1fb675e092fff23f4a3328e86f9aed048d728029ba91834ba46684345f412fc4"
   },
   {
     "path": "fonts/teaching-noto-sans-tc-bold.woff2",
@@ -156,11 +180,19 @@
     "sha256": "78a94dd971c7706814dae6141fb4c2333440f828d07a377f88376ab913b40426"
   },
   {
+    "path": "resume-en.pdf",
+    "sha256": "b4017a67555cbc2f858430a3935d46f35ffbffaffd3cbb1e2d9a1787dd244e2c"
+  },
+  {
     "path": "resume.pdf",
-    "sha256": "2bd70e9e65a3542a5f40b66249cd05201938b81a3d2631fedfae7ff6f63bf9e1"
+    "sha256": "2aefea83e46e6fd73c9a6f54684a67b057f4a9b6c50472b2890f02d08ea902a9"
+  },
+  {
+    "path": "teaching-en.pdf",
+    "sha256": "9a63fbdcb40c1097ec3d3367d0a3a05f5f5b02efdb52bb6c774868ea03d23d47"
   },
   {
     "path": "teaching.pdf",
-    "sha256": "07d06dbb66ec27662bc735bc4cffdb5991beb7e3ccc2b4f510c12da15fa9b23b"
+    "sha256": "3515d56ad9827e5ccec19271045ee8830cbcb6e576dd9028543b556572a41a1d"
   }
 ]

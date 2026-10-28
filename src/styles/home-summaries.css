@@ -29,3 +29,5 @@
   .home-v03.home-editorial .work-row-compact { grid-template-columns: minmax(0, 1fr) auto; gap: .75rem; padding-block: 1.25rem; }
   .home-editorial .work-row-compact .work-row-link { align-self: start; }
 }
+html[lang=en] .home-editorial .home-directions span { white-space: normal; }
+html[lang=en] .home-editorial .work-row-summary > div { grid-template-columns: 6.5em minmax(0, 1fr); }

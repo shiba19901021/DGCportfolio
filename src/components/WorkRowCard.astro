@@ -1,25 +1,34 @@
 ---
-import { pathFor, workHref, workLinkLabel, type Work } from '../lib/works';
+import { pathFor, workHref, workHrefEn, workLinkLabel, type Work } from '../lib/works';
 import { workMedia } from '../lib/work-media';
 import type { HomeSummary } from '../data/home-summaries';
-interface Props { work: Work; summary?: HomeSummary; }
-const { work, summary } = Astro.props;
+import { homeText } from '../data/home-i18n';
+import { localLink, ui, type Lang } from '../lib/i18n';
+interface Props { work: Work; summary?: HomeSummary; lang?: Lang; }
+const { work, summary, lang = 'zh' } = Astro.props;
 const image = workMedia(work);
+const t = homeText[lang];
+const title = lang === 'en' ? t.workTitles[work.id] : (work.data.detailIntro?.title ?? work.data.title);
+const alt = lang === 'en' ? t.cardImageAlt[work.id] : image.alt;
+if (lang === 'en' && (!title || !alt)) throw new Error(`英文首頁缺少作品標題或圖片說明：${work.id}`);
+const link = lang === 'en' ? localLink('en', `/works/${work.id}/`) : null;
+const href = lang === 'en' ? workHrefEn(work, link!) : workHref(work);
+const label = (lang === 'en' ? (work.data.detail ? t.readCase : work.data.category === 'learning' ? t.viewCourse : t.viewProject) : workLinkLabel(work)) + (link?.zhOnly ? ui.en.inChinese : '');
 ---
-<a class:list={['work-row', { 'work-row-detailed': summary }]} href={workHref(work)}>
+<a class:list={['work-row', { 'work-row-detailed': summary }]} href={href}>
   <div class="work-row-media">
-    <img src={pathFor(image.src!)} alt={image.alt} width="640" height="480" loading="lazy" decoding="async" style={{ objectFit: image.fit, objectPosition: image.position }} />
+    <img src={pathFor(image.src!)} alt={alt} width="640" height="480" loading="lazy" decoding="async" style={{ objectFit: image.fit, objectPosition: image.position }} />
   </div>
   <div class="work-row-copy">
-    <h3>{work.data.detailIntro?.title ?? work.data.title}</h3>
+    <h3>{title}</h3>
     {summary ? <>
       <dl class="work-row-summary">
-        <div><dt>問題｜</dt><dd>{summary.problem}</dd></div>
-        <div><dt>做法｜</dt><dd>{summary.approach}</dd></div>
-        <div><dt>成果｜</dt><dd>{summary.outcome}</dd></div>
+        <div><dt>{t.problem}</dt><dd>{summary.problem}</dd></div>
+        <div><dt>{t.approach}</dt><dd>{summary.approach}</dd></div>
+        <div><dt>{t.outcome}</dt><dd>{summary.outcome}</dd></div>
       </dl>
-      <span class="work-row-read">{workLinkLabel(work)} <span class="work-row-arrow" aria-hidden="true">↗</span></span>
+      <span class="work-row-read">{label} <span class="work-row-arrow" aria-hidden="true">↗</span></span>
     </> : <p>{work.data.summary}</p>}
   </div>
-  {!summary && <span class="work-row-link"><span>{workLinkLabel(work)}</span><span class="work-row-arrow" aria-hidden="true">↗</span></span>}
+  {!summary && <span class="work-row-link"><span>{label}</span><span class="work-row-arrow" aria-hidden="true">↗</span></span>}
 </a>

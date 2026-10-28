@@ -39,3 +39,8 @@ export function workHref(work: Work) {
 export function workLinkLabel(work: Work) {
   return work.data.detail ? '閱讀完整案例' : work.data.category === 'learning' ? '查看課程摘要' : '查看專案摘要';
 }
+
+// English pages: use the English case page when it exists, otherwise the Chinese one (labeled "in Chinese").
+export function workHrefEn(work: Work, link: { href: string; zhOnly: boolean }) {
+  return link.zhOnly ? workHref(work) : link.href;
+}

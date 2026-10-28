@@ -5,7 +5,7 @@ import resume from '../../data/resume.json';
 import { pathFor } from '../../lib/works';
 import '../../styles/resume.css';
 ---
-<Base title={`${resume.name}｜方案設計與問題解決履歷`} description={resume.summary}>
+<Base alt="/resume/" title={`${resume.name}｜方案設計與問題解決履歷`} description={resume.summary}>
   <div class="resume-page">
     <div class="resume-toolbar"><a href={pathFor('/resume.pdf')} download="游鏡騰-方案設計與問題解決履歷.pdf">下載 PDF<span aria-hidden="true"> ↓</span></a></div>
     <ResumeDocument />

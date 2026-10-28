@@ -1,13 +1,22 @@
 ---
-import { workHref, workLinkLabel, type Work } from '../lib/works';
+import { workHref, workHrefEn, workLinkLabel, type Work } from '../lib/works';
 import { homeCompact } from '../data/home-summaries';
-interface Props { work: Work; }
-const { work } = Astro.props;
+import { homeText, homeCompactEn } from '../data/home-i18n';
+import { localLink, ui, type Lang } from '../lib/i18n';
+interface Props { work: Work; lang?: Lang; }
+const { work, lang = 'zh' } = Astro.props;
+const t = homeText[lang];
+const link = lang === 'en' ? localLink('en', `/works/${work.id}/`) : null;
+const title = lang === 'en' ? t.workTitles[work.id] : (work.data.detailIntro?.title ?? work.data.title);
+const text = lang === 'en' ? homeCompactEn[work.id] : (homeCompact[work.id] ?? work.data.summary);
+if (lang === 'en' && (!title || !text)) throw new Error(`英文首頁缺少作品標題或簡述：${work.id}`);
+const href = lang === 'en' ? workHrefEn(work, link!) : workHref(work);
+const label = (lang === 'en' ? (work.data.detail ? t.readCase : work.data.category === 'learning' ? t.viewCourse : t.viewProject) : workLinkLabel(work)) + (link?.zhOnly ? ui.en.inChinese : '');
 ---
-<a class="work-row work-row-compact" href={workHref(work)}>
+<a class="work-row work-row-compact" href={href}>
   <div class="work-row-copy">
-    <h3>{work.data.detailIntro?.title ?? work.data.title}</h3>
-    <p>{homeCompact[work.id] ?? work.data.summary}</p>
+    <h3>{title}</h3>
+    <p>{text}</p>
   </div>
-  <span class="work-row-link"><span>{workLinkLabel(work)}</span><span class="work-row-arrow" aria-hidden="true">↗</span></span>
+  <span class="work-row-link"><span>{label}</span><span class="work-row-arrow" aria-hidden="true">↗</span></span>
 </a>

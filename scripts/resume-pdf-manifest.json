@@ -3,14 +3,14 @@
   "pages": 1,
   "inputs": {
     "src/data/resume.json": "d6ec225a6895f5e989658afd159356bab02ec01761dfe6bef15f876439184ae2",
-    "src/components/ResumeDocument.astro": "4883f5d4189c82609281025097e8688dc202f15d05bb9bbda52b4ee1f8d6b212",
-    "src/pages/resume/index.astro": "86d040259a95e82c1ba870218a2d405b32afac3648ad0934ab12f73a641b87e3",
+    "src/components/ResumeDocument.astro": "dbc2e157e4a4ee7db4e51d8a4470a0cbf0074d8c38ad3da62d6867c04b8a31de",
+    "src/pages/resume/index.astro": "e6d7d2a184d81bd505ca2867cf84c2c9b73716b0dd3953d144a533e53709377e",
     "src/styles/resume.css": "75f58929d68c18f9bca0e53d14708464c0b46594da8ed5f059f012eb07a92e7c",
-    "src/layouts/Base.astro": "64ae61291632af2458d11572c939a603179bcfb025fe804a8d0b17a592eeb390",
+    "src/layouts/Base.astro": "b019693096ca7bea85cce1e517732a676130932037a18fa4d3a0b735e28b7379",
     "src/styles/global.css": "d007ac95a5fcc1951e503af144c9d8a06f97731771ad5afa77f0ceb7a261c596",
-    "src/styles/site-chrome.css": "22d41278f96452207a5b53bb9b68218b36074f58127270261c9b994416fa4bfc",
+    "src/styles/site-chrome.css": "c534c36d43982997a4c9617b5e220e399552ca7cd212476192909b7158c277f8",
     "public/fonts/resume-noto-sans-tc.woff2": "0dc2b450dcee50df37c763279d4d02576d495f23f9c4a1a56973abcb795114ae",
     "public/fonts/resume-noto-sans-tc-bold.woff2": "0f68f5fd8c8c434fc2f6f844c2eba8fbc0b994ae27c34adf8958f0f4e4826ef2"
   },
-  "pdf": "2bd70e9e65a3542a5f40b66249cd05201938b81a3d2631fedfae7ff6f63bf9e1"
+  "pdf": "2aefea83e46e6fd73c9a6f54684a67b057f4a9b6c50472b2890f02d08ea902a9"
 }

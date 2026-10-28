@@ -11,13 +11,20 @@ export const resumeInputs = [
 ];
 const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 export async function verifyResume(root = process.cwd()) {
-  for (const profile of ['resume', 'teaching']) await verifyDocument(root, profile);
+  for (const profile of ['resume', 'teaching', 'resume-en', 'teaching-en']) await verifyDocument(root, profile);
 }
 async function verifyDocument(root, profile) {
-  const inputs = profile === 'resume' ? resumeInputs : [...resumeInputs.map(file => file
-    .replace('src/data/resume.', 'src/data/teaching.')
+  const kind = profile.startsWith('teaching') ? 'teaching' : 'resume';
+  const english = profile.endsWith('-en');
+  // Mirrors INPUTS in scripts/build-resume-pdf.py.
+  let inputs = resumeInputs;
+  if (kind === 'teaching') inputs = [...resumeInputs.map(file => file
+    .replace('src/data/resume.json', english ? 'src/data/teaching.en.json' : 'src/data/teaching.json')
     .replace('src/pages/resume/', 'src/pages/teaching/')
     .replace('fonts/resume-', 'fonts/teaching-')), 'src/styles/teaching.css'];
+  else if (english) inputs = resumeInputs.map(file => file === 'src/data/resume.json' ? 'src/data/resume.en.json' : file);
+  if (english) inputs = [...inputs.map(file => file.replace('src/pages/', 'src/pages/en/').replace(`fonts/${kind}-`, `fonts/${profile}-`)),
+    `src/styles/${profile}.css`, 'src/styles/en-print.css', 'src/lib/i18n.ts', 'src/data/i18n-config.json'];
   const manifest = JSON.parse(await readFile(path.join(root, `scripts/${profile}-pdf-manifest.json`), 'utf8'));
   if (JSON.stringify(Object.keys(manifest.inputs).sort()) !== JSON.stringify([...inputs].sort())) throw new Error(`${profile} PDF 的來源清單不完整`);
   for (const file of inputs) {

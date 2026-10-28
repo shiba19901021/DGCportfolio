@@ -1,0 +1,16 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ResumeDocument from '../../../components/ResumeDocument.astro';
+import teaching from '../../../data/teaching.en.json';
+import { pathFor } from '../../../lib/works';
+import '../../../styles/resume.css';
+import '../../../styles/teaching.css';
+import '../../../styles/teaching-en.css';
+import '../../../styles/en-print.css';
+---
+<Base lang="en" alt="/teaching/" title={`Ching-Teng Yu | Resume: Course Design and Teaching Collaboration`} description={teaching.summary}>
+  <div class="resume-page">
+    <div class="resume-toolbar"><a href={pathFor('/teaching-en.pdf')} download="Ching-Teng-Yu-Teaching-Resume.pdf">Download PDF<span aria-hidden="true"> ↓</span></a></div>
+    <ResumeDocument data={teaching} teaching lang="en" />
+  </div>
+</Base>

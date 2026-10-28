@@ -8,18 +8,20 @@ type ResumeData = Omit<typeof publicResume, 'earlyExperience'> & {
 interface Props {
   data?: ResumeData;
   teaching?: boolean;
+  lang?: 'zh' | 'en';
 }
 const resume: ResumeData = Astro.props.data ?? publicResume;
-const { teaching = false } = Astro.props;
+const { teaching = false, lang = 'zh' } = Astro.props;
+const labels = lang === 'en' ? { contacts: 'Resume contacts', portfolio: 'Full portfolio: ', comma: ', ' } : { contacts: '履歷聯絡方式', portfolio: '完整作品集：', comma: '，' };
 ---
-<article class:list={['resume-sheet', { 'teaching-sheet': teaching }]} aria-labelledby="resume-name">
+<article class:list={['resume-sheet', { 'teaching-sheet': teaching }]} lang={lang === 'en' ? 'en' : undefined} aria-labelledby="resume-name">
   <header class="resume-header">
     <div class="resume-identity">
       <h1 id="resume-name">{resume.name}</h1>
       <p class="resume-positioning">{resume.positioning}</p>
     </div>
     <p class="resume-summary">{resume.summary}</p>
-    <nav class="resume-contacts" aria-label="履歷聯絡方式">
+    <nav class="resume-contacts" aria-label={labels.contacts}>
       {resume.contacts.map(contact => <a href={contact.href}>{contact.label}</a>)}
     </nav>
   </header>
@@ -32,7 +34,7 @@ const { teaching = false } = Astro.props;
       {resume.cases.map(item => <section class="resume-case">
         <span class="resume-case-number">{item.number}</span>
         <div class="resume-case-content"><h3>{item.title}</h3><p>{item.text}</p></div>
-        <div class="resume-case-action"><a class="resume-case-link" href={item.href} aria-label={`${item.title}，${resume.caseLinkLabel}`}>{resume.caseLinkLabel}</a></div>
+        <div class="resume-case-action"><a class="resume-case-link" href={item.href} aria-label={`${item.title}${labels.comma}${resume.caseLinkLabel}`}>{resume.caseLinkLabel}</a></div>
       </section>)}
     </div>
   </section>
@@ -64,5 +66,5 @@ const { teaching = false } = Astro.props;
       <ul class="resume-certifications">{resume.certifications.map(item => <li>{item}</li>)}</ul>
     </section>
   </div>
-  <footer class="resume-document-footer"><span>完整作品集：</span><a href={resume.portfolio}>{resume.portfolio}</a></footer>
+  <footer class="resume-document-footer"><span>{labels.portfolio}</span><a href={resume.portfolio}>{resume.portfolio}</a></footer>
 </article>

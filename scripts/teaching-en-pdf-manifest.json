@@ -1,0 +1,21 @@
+{
+  "format": "A4 portrait",
+  "pages": 1,
+  "inputs": {
+    "src/data/teaching.en.json": "f2cc4c5fd7157aa887161fb02181adc682a7cae240807b6f12c997fe60ca7bba",
+    "src/components/ResumeDocument.astro": "dbc2e157e4a4ee7db4e51d8a4470a0cbf0074d8c38ad3da62d6867c04b8a31de",
+    "src/pages/en/teaching/index.astro": "12754c93993a5954b36d89dfd5223e6d96d391ec64ade703d08f18bd5dc71e58",
+    "src/styles/resume.css": "75f58929d68c18f9bca0e53d14708464c0b46594da8ed5f059f012eb07a92e7c",
+    "src/layouts/Base.astro": "b019693096ca7bea85cce1e517732a676130932037a18fa4d3a0b735e28b7379",
+    "src/styles/global.css": "d007ac95a5fcc1951e503af144c9d8a06f97731771ad5afa77f0ceb7a261c596",
+    "src/styles/site-chrome.css": "c534c36d43982997a4c9617b5e220e399552ca7cd212476192909b7158c277f8",
+    "public/fonts/teaching-en-noto-sans-tc.woff2": "1fb675e092fff23f4a3328e86f9aed048d728029ba91834ba46684345f412fc4",
+    "public/fonts/teaching-en-noto-sans-tc-bold.woff2": "e1c1bb7fe26e63433c842a6ab1f709fc018b165611795d100a068b1c92ae5414",
+    "src/styles/teaching.css": "f0abbcc7ba3d1583380521c071a99e08765b8cdf0792830514bc4b752308cbdf",
+    "src/styles/teaching-en.css": "1c5cffff9d11f3c5587ee0821023fc2144359605389e3cd24c00b9f5de7ad6a2",
+    "src/styles/en-print.css": "6ac71d326211755859f08e5c7eb27f426e0d549e2556667b74da530053e38a38",
+    "src/lib/i18n.ts": "49f291987dcb682974330e601d699eaac610e12827c28b01f9c711c9737bfcd7",
+    "src/data/i18n-config.json": "4c109899e877e50619c837ff123c08a3d3e15dc302ddd73b179d32fc9e15bcf3"
+  },
+  "pdf": "9a63fbdcb40c1097ec3d3367d0a3a05f5f5b02efdb52bb6c774868ea03d23d47"
+}

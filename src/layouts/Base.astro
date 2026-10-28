@@ -3,24 +3,33 @@ import '../styles/global.css';
 import '../styles/site-chrome.css';
 import { site } from '../data/site';
 import { pathFor } from '../lib/works';
-interface Props { title?: string; description?: string; activeCategory?: string; previewVersion?: string; homeVisual?: boolean; caseVisual?: boolean; }
-const { title = site.title, description = site.positioning, previewVersion = 'V0.6', homeVisual = false, caseVisual = false } = Astro.props;
+import { ui, englishPublic, hasEnglish, type Lang } from '../lib/i18n';
+interface Props { title?: string; description?: string; activeCategory?: string; previewVersion?: string; homeVisual?: boolean; caseVisual?: boolean; lang?: Lang; alt?: string; }
+const { title = site.title, description = site.positioning, previewVersion = 'V0.6', homeVisual = false, caseVisual = false, lang = 'zh', alt } = Astro.props;
+const t = ui[lang];
 const publicRelease = import.meta.env.PORTFOLIO_PUBLIC_ONLY === '1';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const current = Astro.url.pathname.replace(base, '');
+const prefix = lang === 'en' ? '/en' : '';
+const current = Astro.url.pathname.replace(base, '').replace(/^\/en(?=\/)/, '');
+// English pages link to the Chinese page when no English page exists yet.
+const nav = (path: string) => (lang === 'en' && !hasEnglish(path) ? path : `${prefix}${path}`);
 const links = [
-  { href: '/', label: '首頁', active: current === '/' },
-  { href: '/works/', label: '所有作品', active: current.startsWith('/works/') },
-  { href: '/#about', label: '關於我', active: false },
+  { href: nav('/'), label: t.home, active: current === '/' },
+  { href: nav('/works/'), label: t.works + (lang === 'en' && !hasEnglish('/works/') ? t.inChinese : ''), active: current.startsWith('/works/') },
+  { href: nav('/#about'), label: t.about, active: false },
 ];
+// alt = the same page's path in the other language. Hidden on Chinese pages until englishPublic.
+const showSwitch = alt !== undefined && (lang === 'en' || (englishPublic && hasEnglish(alt)));
+const switchTo = lang === 'en' ? pathFor(alt ?? '/') : pathFor(`/en${alt ?? '/'}`);
+const noindex = !publicRelease || (lang === 'en' && !englishPublic);
 ---
 <!doctype html>
-<html lang="zh-Hant-TW">
+<html lang={t.htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    {!publicRelease && <meta name="robots" content="noindex, nofollow" />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta name="theme-color" content={homeVisual || caseVisual ? '#fbf9f4' : '#f4f1e7'} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,18 +38,20 @@ const links = [
     <title>{title}</title>
   </head>
   <body class:list={{ 'home-page': homeVisual, 'case-page-v2': caseVisual }}>
-    <a class="skip-link" href="#main">跳至主要內容</a>
+    <a class="skip-link" href="#main">{t.skip}</a>
     <header class="site-header site-chrome-header">
       <div class="site-chrome-inner wrap">
-      <a class="brand" href={pathFor('/')} aria-label="游鏡騰，回到首頁">游鏡騰<span>方案設計與實作</span></a>
-      <nav aria-label="主要導覽"><ul>{links.map(link => <li><a href={pathFor(link.href)} aria-current={link.active ? 'page' : undefined}>{link.label}</a></li>)}</ul></nav>
+      <a class="brand" href={pathFor(`${prefix}/`)} aria-label={t.brandAria}>{t.brand}<span>{t.brandSub}</span></a>
+      <nav aria-label={t.navAria}><ul>{links.map(link => <li><a href={pathFor(link.href)} aria-current={link.active ? 'page' : undefined}>{link.label}</a></li>)}{showSwitch && <li class="lang-switch" role="group" aria-label={t.switchAria}>{lang === 'en'
+        ? <><a href={switchTo} lang="zh-Hant-TW" aria-label={t.toChinese}>中</a><span aria-hidden="true">／</span><span aria-current="true">EN</span></>
+        : <><span aria-current="true">中</span><span aria-hidden="true">／</span><a href={switchTo} lang="en" aria-label={t.toEnglish}>EN</a></>}</li>}</ul></nav>
       </div>
     </header>
     <main id="main" tabindex="-1"><slot /></main>
     <footer class="site-footer site-chrome-footer">
       <div class="site-chrome-inner wrap">
-      <p>{site.positioning}</p>
-      {!publicRelease && <p class="preview-label">{previewVersion} · 本機閱讀測試版</p>}
+      <p>{lang === 'en' ? t.footer : site.positioning}</p>
+      {!publicRelease && <p class="preview-label">{previewVersion} · {t.preview}</p>}
       </div>
     </footer>
   </body>

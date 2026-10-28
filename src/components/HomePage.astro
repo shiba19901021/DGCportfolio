@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+import WorkRowCard from './WorkRowCard.astro';
+import WorkCompactRow from './WorkCompactRow.astro';
+import { listedWorks } from '../lib/works';
+import { homeSummary, homeText } from '../data/home-i18n';
+import { homeFeatured } from '../data/home-summaries';
+import { localLink, ui, type Lang } from '../lib/i18n';
+import { site } from '../data/site';
+import '../styles/home-v03.css';
+import '../styles/home-editorial.css';
+import '../styles/home-summaries.css';
+interface Props { lang?: Lang; }
+const { lang = 'zh' } = Astro.props;
+const t = homeText[lang];
+const works = await listedWorks();
+const projects = works.filter(work => work.data.category !== 'learning');
+const courses = works.filter(work => work.data.category === 'learning');
+const featured = new Set(homeFeatured);
+const projectCards = projects.filter(work => featured.has(work.id));
+const projectRows = projects.filter(work => !featured.has(work.id));
+const courseCards = courses.filter(work => featured.has(work.id));
+const courseRows = courses.filter(work => !featured.has(work.id));
+const suffix = (path: string) => (localLink(lang, path).zhOnly ? ui[lang].inChinese : '');
+const worksHref = localLink(lang, '/works/').href;
+const summary = (id: string) => {
+  const found = homeSummary(lang, id);
+  if (lang === 'en' && !found) throw new Error(`英文首頁缺少案例摘要：${id}`);
+  return found;
+};
+---
+<Base homeVisual lang={lang} alt="/" title={lang === 'en' ? 'Ching-Teng Yu | Solution Design and Practice' : undefined} description={lang === 'en' ? t.position : undefined}>
+  <div class="home-v03 home-editorial">
+    <section class="home-hero wrap" aria-labelledby="home-title">
+      <h1 id="home-title">{t.slogan}</h1>
+      <p class="home-position">{t.position}</p>
+      <p class="home-directions">{t.directions.map((item, index) => <>{index > 0 && t.directionSep}<span>{item}</span></>)}</p>
+      <div class="home-actions"><a class="home-index-link" href={worksHref}>{t.allWorks}{suffix('/works/')} <span aria-hidden="true">↓</span></a></div>
+      <section class="home-professional" aria-labelledby="professional-title">
+        <h2 id="professional-title">{t.resumeTitle}</h2>
+        <div class="home-resume-directions">
+        {t.resumeCards.map(card => <a class="work-row resume-direction" href={localLink(lang, card.path).href}>
+          <div class="work-row-copy"><h3>{card.title}</h3><p>{card.text}</p></div>
+          <span class="work-row-link"><span class="work-row-arrow" aria-hidden="true">↗</span></span>
+        </a>)}
+        </div>
+      </section>
+    </section>
+
+    <div id="works" class="home-works">
+      <section id="selected" class="home-work-group wrap" aria-labelledby="projects-title">
+        <div class="home-section-heading"><div><h2 id="projects-title">{t.projectsTitle}</h2><p>{t.projectsText}</p></div></div>
+        <div class="home-work-list">{projectCards.map(work => <WorkRowCard work={work} lang={lang} summary={summary(work.id)} />)}</div>
+        {projectRows.length > 0 && <div class="home-work-list home-work-list-compact">{projectRows.map(work => <WorkCompactRow work={work} lang={lang} />)}</div>}
+      </section>
+      <section class="home-work-group wrap" aria-labelledby="courses-title">
+        <div class="home-section-heading"><div><h2 id="courses-title">{t.coursesTitle}</h2><p>{t.coursesText}</p></div></div>
+        <div class="home-work-list">{courseCards.map(work => <WorkRowCard work={work} lang={lang} summary={summary(work.id)} />)}</div>
+        {courseRows.length > 0 && <div class="home-work-list home-work-list-compact">{courseRows.map(work => <WorkCompactRow work={work} lang={lang} />)}</div>}
+      </section>
+      <div class="home-all-works wrap"><a class="home-index-link" href={worksHref}>{t.viewAll}{suffix('/works/')} <span aria-hidden="true">↗</span></a></div>
+    </div>
+
+    <section id="about" class="home-about" aria-labelledby="about-title">
+      <div class="wrap home-about-grid"><div><h2 id="about-title">{t.aboutTitle}</h2><p class="home-about-direction">{t.aboutDirection}</p><p>{t.aboutText}</p><p class="home-work-preference">{t.preference}</p></div>
+      <div id="resume" class="home-resume"><h2>{t.contactTitle}</h2><p>{t.contactText}</p><div class="home-contact-list"><a href={`mailto:${site.email}`}>{t.emailLink} <span aria-hidden="true">↗</span></a><a href={site.linkedin}>LinkedIn <span aria-hidden="true">↗</span></a></div></div></div>
+    </section>
+  </div>
+</Base>

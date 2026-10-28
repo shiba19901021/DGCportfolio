@@ -1,0 +1,15 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ResumeDocument from '../../../components/ResumeDocument.astro';
+import resume from '../../../data/resume.en.json';
+import { pathFor } from '../../../lib/works';
+import '../../../styles/resume.css';
+import '../../../styles/resume-en.css';
+import '../../../styles/en-print.css';
+---
+<Base lang="en" alt="/resume/" title={`Ching-Teng Yu | Resume: Solution Design and Problem Solving`} description={resume.summary}>
+  <div class="resume-page">
+    <div class="resume-toolbar"><a href={pathFor('/resume-en.pdf')} download="Ching-Teng-Yu-Resume.pdf">Download PDF<span aria-hidden="true"> ↓</span></a></div>
+    <ResumeDocument data={resume} lang="en" />
+  </div>
+</Base>

@@ -1,0 +1,5 @@
+/* English teaching resume: own font subset (see scripts/build-resume-pdf.py --profile teaching-en). */
+@font-face { font-family: 'DGC Teaching EN'; src: url('/fonts/teaching-en-noto-sans-tc.woff2') format('woff2'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: 'DGC Teaching EN'; src: url('/fonts/teaching-en-noto-sans-tc-bold.woff2') format('woff2'); font-style: normal; font-weight: 600 800; font-display: swap; }
+.resume-sheet.teaching-sheet[lang=en] { font-family: 'DGC Teaching EN', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; }
+.resume-sheet.teaching-sheet[lang=en] .resume-identity h1 { letter-spacing: .02em; }

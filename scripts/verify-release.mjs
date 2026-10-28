@@ -2,6 +2,7 @@ import { readFile, readdir, stat } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { verifyResume } from './verify-resume.mjs';
+import { verifyI18n } from './verify-i18n.mjs';
 
 async function filesIn(root) {
   const files = [];
@@ -56,7 +57,8 @@ export async function verifyRelease(outDir) {
   for (const [file, html] of pages) {
     const rel = path.relative(outDir, file).split(path.sep).join('/');
     const origin = new URL(`${base}/${rel.replace(/index\.html$/, '')}`, 'https://release.invalid');
-    if (/name="robots" content="noindex/.test(html)) throw new Error(`正式頁仍有 noindex：${rel}`);
+    // English pages stay noindex until englishPublic is true (src/data/i18n-config.json); verify-i18n checks them.
+    if (!rel.startsWith('en/') && /name="robots" content="noindex/.test(html)) throw new Error(`正式頁仍有 noindex：${rel}`);
     for (const match of html.matchAll(/\b(?:href|src|poster)="([^"]+)"/g)) {
       const ref = decode(match[1]);
       const url = new URL(ref, origin);
@@ -76,5 +78,7 @@ export async function verifyRelease(outDir) {
       checked++;
     }
   }
+  const i18n = JSON.parse(await readFile(path.join(root, 'src/data/i18n-config.json'), 'utf8'));
+  await verifyI18n(outDir, { englishPublic: i18n.englishPublic });
   console.log(`正式發布檢查通過：${pages.size} 頁、${expectedWorks} 篇作品、${approved.size} 個核准素材、${checked} 個本地引用；無私人預覽輸出。`);
 }
