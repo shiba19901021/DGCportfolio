@@ -122,7 +122,7 @@ blocks:
     markdown: |-
       The new lesson plan has since been used in real teaching at the center, and the feedback we got later was more positive. We found the problem in trial teaching, redesigned the content, and took it back to the teaching site. So this change did not stay only in the lesson plan document.
 
-      For how the Eco Kitchen was built step by step from the existing site, see the [Eco Kitchen / Extreme Energy-Saving Stove case (in Chinese)](/works/eco-kitchen/) as well.
+      For how the Eco Kitchen was built step by step from the existing site, see the [Eco Kitchen / Extreme Energy-Saving Stove case](/en/works/eco-kitchen/) as well.
   - type: narrative
     id: original-section-5
     title: From trial teaching feedback to formal course programs

@@ -41,7 +41,7 @@ blocks:
     id: original-section-1
     title: From a cooking activity, we found a need for choosing again
     markdown: |-
-      Food Carbon Detective did not start from carbon footprints. It started from how to cook a meal. Early outdoor courses used ways of cooking such as roast chicken in a cardboard box and rocket stoves made from milk powder cans. Later, as stove building and [how the Eco Kitchen was built (in Chinese)](/works/eco-kitchen/) went on, cooking activities slowly added food and farming education and food carbon footprints.
+      Food Carbon Detective did not start from carbon footprints. It started from how to cook a meal. Early outdoor courses used ways of cooking such as roast chicken in a cardboard box and rocket stoves made from milk powder cans. Later, as stove building and [how the Eco Kitchen was built](/en/works/eco-kitchen/) went on, cooking activities slowly added food and farming education and food carbon footprints.
 
       I once used the carbon footprint worksheet from "Xue Senlin" (學森林) as a reference. But after using it, I felt that just choosing food from set options still gave limited interaction, and it was not close enough to daily life. So I started from "What dish do you want to cook today?" Students first imagine a dish, then choose ingredients under different conditions. This links the abstract idea of a food carbon footprint to daily eating.
 
