@@ -43,7 +43,7 @@ const tags = main => Object.fromEntries(['h1', 'h2', 'h3', 'h4', 'img', 'li', 'a
 function numbers(text) {
   const normalized = text.replace(/(\d{4})\.(\d{2})(?!\d)/g, '$1 $2');
   const tokens = [];
-  for (const m of normalized.matchAll(/(\d[\d,]*(?:\.\d+)?)(\s*(?:萬|億|million|billion|thousand))?/gi)) {
+  for (const m of normalized.matchAll(/(\d+(?:,\d{3})*(?:\.\d+)?)(\s*(?:萬|億|million|billion|thousand))?/gi)) {
     const raw = m[1];
     const amount = Boolean(m[2]) || raw.includes(',');
     const value = raw.replaceAll(',', '').replace(/^0+(?=\d)/, '');
