@@ -39,7 +39,7 @@ blocks:
     id: original-section-2
     title: When players began to cooperate, things changed
     markdown: |-
-      In the game, different hunting tools have different chances of success, and a player's skill also affects the result. I linked rules such as hunting probability, food needs, limits on actions, and forest resources, so that tool use, food sharing, and hunting results affect each other. This makes a game setting where it is hard for the community to survive through individual action alone.
+      In the game, different hunting tools have different chances of success, and a player's skill also affects the result. I linked rules such as hunting probability, food needs, limits on actions, and forest resources, so that tool use, food sharing, and hunting results affect each other. This creates a game setting where it is hard for the community to keep surviving through individual action alone.
 
       Using only your own tool, and trading tools so that more skilled players do the hunting, can bring different food results. Food can also be shared. Players need to think about who has enough food, who needs support, and how to divide resources between surviving now and improving future hunting ability. In real teaching, some players began to trade tools, share food, and arrange roles to try to keep more members alive. These choices change who uses the tools, how food is shared, and who can stay in the game.
 
@@ -89,7 +89,7 @@ blocks:
     markdown: |-
       An early version that was too complicated was not adopted. The way of playing was also changed again and again. The hunting result changed from drawing lots to a dice roll, and the game materials changed from white paper and cards to harder cards that last longer, which are easier to recognize on site and to use again.
 
-      Excel can help estimate the difficulty, but real trial plays are still needed. I asked colleagues to help test. Some tried to find gaps in the rules, so I could check the limits and possible results, and keep adjusting. Some trade and sharing strategies that looked like "finding loopholes" were kept so that players could try them.
+      Excel can help estimate the difficulty, but real trial plays are still needed. I asked colleagues to help test. Some tried to find gaps in the rules, so I could check the limits and possible results, and keep adjusting. Some trade and sharing strategies that looked like "using loopholes" were kept so that players could try them.
 
       In real teaching, another problem became clear. With too few hints at the start, players might treat the game as a competition, each chasing their own hunting results, and the whole group would quickly die out from lack of food. I also needed to let players keep trying when early hunting did not go well.
   - type: comparison
@@ -99,7 +99,7 @@ blocks:
       text: Players might each chase their own catch, or be out of the game quickly from lack of food before they understood how to cooperate.
     after:
       label: Adjusted | State the goal clearly and add starting dried meat
-      text: The guidance clearly says this is a cooperation game, and players start with a portion of "dried meat left by the ancestors." This gives a cushion for survival in the first round, and lowers the chance that players drop out when early hunting goes badly.
+      text: The guidance clearly says this is a cooperation game, and players start with a portion of "dried meat left by their ancestors." This gives a cushion for survival in the first round, and lowers the chance that players drop out when early hunting goes badly.
   - type: narrative
     id: player-strategies
     markdown: |-

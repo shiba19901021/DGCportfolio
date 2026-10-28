@@ -9,7 +9,7 @@ summary: A self-made, interactive community simulator for a teacher workshop on 
 blurb: A self-made interactive water resources simulator. Teachers place facilities in class, then see the results of rain and drought.
 role: I designed the course, designed the game rules, built the simulator with AI, led it on site, and adjusted it.
 problem: A teacher workshop needs to talk about how water and people interact, and about design for too much water, too little water, and dirty water. Talking alone makes it hard to feel trade-offs in layout, such as "too many buildings by the river cause floods." I had ideas before, but because of technical limits I could not make a tool that people could actually operate.
-built: I designed the rules for the simulator and built it with GPT Codex. I tested it many times by myself before class.
+built: I designed the rules for the simulator and built it with GPT Codex. I tested it again and again by myself before class.
 steps:
   - The course had about 60 teachers. It began with the history of a stream near the school, and how water and people interact.
   - Then we moved to the simulator. There is a stream in the middle of the map, and participants can build facilities such as houses, schools, farmland, parks, and wetlands.
@@ -21,10 +21,10 @@ usage:
   - The system crashed when 9 groups used it at the same time.
   - On site, I switched to operating it myself on the projector. I asked the whole class what to build by the river, upstream, and downstream, and adjusted and ran the simulation as we listened.
   - "Even so, the key ideas still came through: too many buildings by the river easily cause flooding, and the layout of the downstream area and sewage treatment."
-  - The course was finished smoothly. After class, some teachers gave verbal feedback. They said the game was fun, and that it uses math, language understanding, layout, and judging quantities at the same time, which is very helpful for students' learning.
+  - The course was finished smoothly. After class, a teacher gave verbal feedback. The teacher said the game was fun, and that it uses math, language understanding, layout, and judging quantities at the same time, which is very helpful for students' learning.
 limits:
   - A stress test with many groups at the same time has not been done. The cause of the crash is to be confirmed.
   - "Backup plan on site: operate it together on the projector."
   - For now it is used only in courses, and is not online for the public.
-  - It was built with AI help, so it needs to be maintained and adjusted when models and tools are updated.
+  - It was built with AI help, so the team has to maintain and adjust it on its own when models and tools are updated.
 ---
