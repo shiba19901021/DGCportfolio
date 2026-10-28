@@ -15,6 +15,7 @@ if (lang === 'en' && !summary && !workSummariesEn[work.id]) throw new Error(`英
 if (lang === 'en' && (!title || !alt)) throw new Error(`英文首頁缺少作品標題或圖片說明：${work.id}`);
 const link = lang === 'en' ? localLink('en', `/works/${work.id}/`) : null;
 const href = lang === 'en' ? workHrefEn(work, link!) : workHref(work);
+const shownTitle = title + (link?.zhOnly && !summary ? ui.en.inChinese : '');
 const label = (lang === 'en' ? (work.data.detail ? t.readCase : work.data.category === 'learning' ? t.viewCourse : t.viewProject) : workLinkLabel(work)) + (link?.zhOnly ? ui.en.inChinese : '');
 ---
 <a class:list={['work-row', { 'work-row-detailed': summary }]} href={href}>
@@ -22,7 +23,7 @@ const label = (lang === 'en' ? (work.data.detail ? t.readCase : work.data.catego
     <img src={pathFor(image.src!)} alt={alt} width="640" height="480" loading="lazy" decoding="async" style={{ objectFit: image.fit, objectPosition: image.position }} />
   </div>
   <div class="work-row-copy">
-    <h3>{title}</h3>
+    <h3>{shownTitle}</h3>
     {summary ? <>
       <dl class="work-row-summary">
         <div><dt>{t.problem}</dt><dd>{summary.problem}</dd></div>

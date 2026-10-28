@@ -55,9 +55,9 @@ const en: HomeText = {
     'eco-kitchen': 'A curved stove with four cooking holes and a large work table, finished inside a bamboo shelter',
     rainwater: 'The finished rainwater equipment: a black storage barrel with a raised branch pipe on top, a settling pipe on the right, and three taps at the lower left',
     alishan: 'A participant with a covered face works with tools and plant materials in a forest',
-    workflow: 'An anonymized remake of the third-stage management website, showing business record search, categories, and navigation',
+    workflow: 'An anonymized remake of the third-stage management website, showing business record search, categories, and navigation. The interface text in the image is in Chinese',
     'climate-program': 'Plant pots made by students from plastic bottles, standing in a cardboard box',
-    'food-carbon': 'An open loose-leaf ingredient handbook showing pictures, origin, price, taste, nutrition, and numbers',
+    'food-carbon': 'An open loose-leaf ingredient handbook showing pictures, origin, price, taste, nutrition, and numbers. The text on the cards is in Chinese',
     hunting: 'Students sit around a table in the hunting game and wait for the result. Faces are blurred with a mosaic',
   },
   workTitles: {
@@ -100,7 +100,7 @@ export const homeSummariesEn: Record<string, HomeSummary> = {
 export const homeCompactEn: Record<string, string> = {
   alishan: 'Connected the center\'s lessons before camp with the tribal experience, made clear who leads each area of expertise, and adjusted the plan as transport, group size, and venue changed.',
   'climate-program': 'A team project that brought six courses together. The resource-cycle course was redesigned from trial-teaching observations, and the new lesson plan went into real teaching.',
-  'food-carbon': 'Students choose ingredients twice, with new information shown in a set order, and compare their food choices. This leads to real cooking and resource cycling. From 2025 to 2026: 30+ sessions and 800+ participants in total. Listed in the official course introduction on the Shanlin Youyou website (山林悠遊網).',
+  'food-carbon': 'Students choose ingredients twice, with new information shown in a set order, and compare their food choices. This leads to real cooking and resource cycling. From 2025 to 2026: 30+ sessions and 800+ participants in total. Listed in the official course introduction on Taiwan Forest Recreation (山林悠遊網).',
 };
 
 export function homeSummary(lang: Lang, id: string) {

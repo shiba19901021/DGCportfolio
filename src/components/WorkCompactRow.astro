@@ -11,11 +11,12 @@ const title = lang === 'en' ? t.workTitles[work.id] : (work.data.detailIntro?.ti
 const text = lang === 'en' ? homeCompactEn[work.id] : (homeCompact[work.id] ?? work.data.summary);
 if (lang === 'en' && (!title || !text)) throw new Error(`英文首頁缺少作品標題或簡述：${work.id}`);
 const href = lang === 'en' ? workHrefEn(work, link!) : workHref(work);
+const shownTitle = title + (link?.zhOnly && true ? ui.en.inChinese : '');
 const label = (lang === 'en' ? (work.data.detail ? t.readCase : work.data.category === 'learning' ? t.viewCourse : t.viewProject) : workLinkLabel(work)) + (link?.zhOnly ? ui.en.inChinese : '');
 ---
 <a class="work-row work-row-compact" href={href}>
   <div class="work-row-copy">
-    <h3>{title}</h3>
+    <h3>{shownTitle}</h3>
     <p>{text}</p>
   </div>
   <span class="work-row-link"><span>{label}</span><span class="work-row-arrow" aria-hidden="true">↗</span></span>
