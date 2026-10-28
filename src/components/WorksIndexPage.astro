@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import WorkRowCard from './WorkRowCard.astro';
+import MiniCard from './MiniCard.astro';
+import { listedWorks, pathFor } from '../lib/works';
+import { listedMinis, miniKinds } from '../lib/minis';
+import { worksIndexText } from '../data/works-index-i18n';
+import { localLink, type Lang } from '../lib/i18n';
+import '../styles/home-v03.css';
+import '../styles/home-editorial.css';
+import '../styles/works-index.css';
+import '../styles/minis.css';
+interface Props { lang?: Lang; }
+const { lang = 'zh' } = Astro.props;
+const t = worksIndexText[lang];
+const works = await listedWorks();
+const minis = await listedMinis();
+const miniGroups = (['practice', 'course'] as const)
+  .map(kind => ({ kind, ...miniKinds[kind], title: lang === 'en' ? worksIndexText.en[kind] : miniKinds[kind].title, items: minis.filter(mini => mini.data.kind === kind) }))
+  .filter(group => group.items.length > 0);
+if (lang === 'en') for (const group of miniGroups) if (!group.title) throw new Error(`英文作品頁缺少「${group.kind}」區塊標題，請先在 works-index-i18n.ts 加上英文標題`);
+const groups = [
+  { id: 'projects', title: t.projects, works: works.filter(work => work.data.category !== 'learning') },
+  { id: 'courses', title: t.courses, works: works.filter(work => work.data.category === 'learning') },
+];
+---
+<Base title={t.title} homeVisual lang={lang} alt="/works/" description={lang === 'en' ? 'A solution designer who starts from the problem, uses systems thinking as a tool, and tests ideas in real use.' : undefined}>
+  <div class="home-v03 home-editorial works-index wrap">
+    <header class="works-index-heading"><h1>{t.heading}</h1></header>
+    <div class="works-index-columns">
+      {groups.map(group => <section class="home-work-group" aria-labelledby={`${group.id}-title`}>
+        <div class="home-section-heading"><h2 id={`${group.id}-title`}>{group.title}</h2></div>
+        <div class="home-work-list">{group.works.map(work => <WorkRowCard work={work} lang={lang} />)}</div>
+      </section>)}
+    </div>
+    {miniGroups.length > 0 && <div id="minis" class="works-mini">
+      {miniGroups.map(group => <section class="home-work-group" aria-labelledby={`mini-${group.kind}-title`}>
+        <div class="home-section-heading"><h2 id={`mini-${group.kind}-title`}>{group.title}</h2></div>
+        <ul class="mini-list">{group.items.map(mini => <li><MiniCard mini={mini} lang={lang} /></li>)}</ul>
+      </section>)}
+    </div>}
+    <div class="works-index-return"><a class="home-index-link" href={localLink(lang, '/').href}>{t.back}</a></div>
+  </div>
+</Base>

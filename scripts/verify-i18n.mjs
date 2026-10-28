@@ -75,6 +75,11 @@ export async function verifyI18n(outDir, { englishPublic = false } = {}) {
     if (E.texts.length !== Z.texts.length) errors.push(`${file}：文字區塊數量與中文不同（中文 ${Z.texts.length}／英文 ${E.texts.length}）`);
     if (E.attrs.length !== Z.attrs.length) errors.push(`${file}：圖片說明／aria-label 數量與中文不同（中文 ${Z.attrs.length}／英文 ${E.attrs.length}）`);
     if (!E.meta.title || !E.meta.description) errors.push(`${file}：缺少英文 title 或 description`);
+    for (const [key, value] of Object.entries(E.meta)) {
+      let rest = value;
+      for (const allowed of exceptions.allowCjk) rest = rest.replaceAll(allowed, '');
+      if (/[\u3400-\u9fff]/.test(rest)) errors.push(`${file}：英文頁 ${key} 仍有中文`);
+    }
     const pairs = [];
     if (E.texts.length === Z.texts.length) E.texts.forEach((t, i) => pairs.push([Z.texts[i], t, `文字 #${i + 1}`]));
     if (E.attrs.length === Z.attrs.length) E.attrs.forEach((t, i) => pairs.push([Z.attrs[i], t, `說明 #${i + 1}`]));

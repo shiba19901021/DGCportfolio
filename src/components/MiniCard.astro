@@ -2,8 +2,15 @@
 import MiniIcon from './MiniIcon.astro';
 import { miniHref, type Mini } from '../lib/minis';
 import { pathFor } from '../lib/works';
-interface Props { mini: Mini; }
-const { mini } = Astro.props;
+import { miniCardsEn } from '../data/works-index-i18n';
+import { ui, type Lang } from '../lib/i18n';
+interface Props { mini: Mini; lang?: Lang; }
+const { mini, lang = 'zh' } = Astro.props;
+const en = lang === 'en' ? miniCardsEn[mini.id] : undefined;
+if (lang === 'en' && !en) throw new Error(`英文作品頁缺少小專案卡片文字：${mini.id}`);
+// Mini pages are Chinese-only for now; the title says so.
+const title = en ? en.title + ui.en.inChinese : mini.data.title;
+const text = en ? en.text : (mini.data.blurb ?? mini.data.summary);
 const { image, icon } = mini.data;
 const hasThumb = Boolean(image?.approved || icon);
 ---
@@ -13,6 +20,6 @@ const hasThumb = Boolean(image?.approved || icon);
       ? <img src={pathFor(image.src)} alt={image.alt} width="640" height="480" loading="lazy" decoding="async" />
       : icon && <MiniIcon name={icon} />}
   </div>}
-  <div class="mini-row-copy"><h3>{mini.data.title}</h3><p>{mini.data.blurb ?? mini.data.summary}</p></div>
+  <div class="mini-row-copy"><h3>{title}</h3><p>{text}</p></div>
   <span class="mini-row-arrow" aria-hidden="true">↗</span>
 </a>

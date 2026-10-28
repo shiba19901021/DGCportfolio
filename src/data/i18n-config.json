@@ -1,4 +1,9 @@
 {
   "englishPublic": false,
-  "translatedPaths": ["/", "/resume/", "/teaching/"]
+  "translatedPaths": [
+    "/",
+    "/resume/",
+    "/teaching/",
+    "/works/"
+  ]
 }
