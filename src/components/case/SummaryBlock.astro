@@ -7,7 +7,7 @@ const { block, work, statistics = false } = Astro.props;
 const items = block.items.filter(item => item.label.trim() && caseText(item.value, work));
 // Split source text only for presentation. Keep every character, including separators;
 // fall back to the ordinary summary if a value does not match this metric format.
-const metrics = items.map(item => caseText(item.value, work).match(/^(\d+\+?)(\s+)([^，]+)(，?)(.*)$/));
+const metrics = items.map(item => caseText(item.value, work).match(/^(\d+\+?)(\s+)([^，,]+)([，,]?)(.*)$/));
 const showStatistics = statistics && metrics.every(Boolean);
 ---
 {items.length > 0 && <section id={block.id} class="case-block case-summary" data-module="summary">

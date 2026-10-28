@@ -92,7 +92,7 @@ export async function verifyI18n(outDir, { englishPublic = false } = {}) {
       let rest = enText;
       for (const allowed of exceptions.allowCjk) rest = rest.replaceAll(allowed, '');
       if (/[\u3400-\u9fff]/.test(rest)) errors.push(`${label}：英文頁仍有未翻譯的中文`);
-      if (CJK.test(zhText) && !/[A-Za-z0-9]/.test(enText) && !/^[|／｜–—↗↓→]+$/.test(enText.trim())) errors.push(`${label}：中文有內容，英文沒有對應文字`);
+      if (CJK.test(zhText) && !/[A-Za-z0-9]/.test(enText) && !/^[|,，／｜–—↗↓→]+$/.test(enText.trim())) errors.push(`${label}：中文有內容，英文沒有對應文字`);
       const zn = numbers(zhText); const en = numbers(enText);
       const ignored = new Set(exceptions.numbers.filter(x => x.page === file).map(x => x.token));
       const left = en.filter(x => !x.amount && !ignored.has(x.value));
