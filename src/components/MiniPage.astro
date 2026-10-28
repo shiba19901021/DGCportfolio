@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import { miniKinds, miniUi, miniKindTitleEn, type Mini } from '../lib/minis';
+import { pathFor } from '../lib/works';
+import { localLink, type Lang } from '../lib/i18n';
+import '../styles/home-v03.css';
+import '../styles/home-editorial.css';
+import '../styles/minis.css';
+// The English entry has the same shape as the Chinese one (checked at build).
+interface Props { mini: Mini; lang?: Lang; }
+const { mini, lang = 'zh' } = Astro.props;
+const d = mini.data;
+const t = miniUi[lang];
+const kindTitle = lang === 'en' ? miniKindTitleEn[d.kind] : miniKinds[d.kind].title;
+const worksLink = lang === 'en' ? `${localLink('en', '/works/').href}#minis` : pathFor('/works/#minis');
+---
+<Base title={lang === 'en' ? `${d.title} | ${kindTitle} | Ching-Teng Yu` : `${d.title}｜${kindTitle}｜游鏡騰`} description={d.summary} homeVisual lang={lang} alt={`/minis/${mini.id}/`}>
+  <div class="home-v03 home-editorial mini-page wrap">
+    <nav aria-label={t.crumbAria} class="breadcrumb mini-breadcrumb"><a href={localLink(lang, '/').href}>{t.home}</a><span aria-hidden="true">／</span><a href={worksLink}>{kindTitle}</a></nav>
+    <header class="mini-header">
+      <h1>{d.title}</h1>
+      <p class="mini-lead">{d.summary}</p>
+      {d.role && <p class="mini-role"><strong>{t.role}</strong>{d.role}</p>}
+    </header>
+    <section class="mini-section" aria-labelledby="mini-problem"><h2 id="mini-problem">{t.problem}</h2><p>{d.problem}</p></section>
+    <section class="mini-section" aria-labelledby="mini-steps"><h2 id="mini-steps">{t.steps}</h2>{d.built && <p class="mini-built">{d.built}</p>}<ol class="mini-steps">{d.steps.map(step => <li>{step}</li>)}</ol></section>
+    {d.estimate && <section class="mini-section" aria-labelledby="mini-estimate"><h2 id="mini-estimate">{t.estimate}</h2>{d.estimate.split('\n').map(line => <p class="mini-estimate-line">{line}</p>)}<p class="mini-note">{t.note}</p></section>}
+    {d.usage.length > 0 && <section class="mini-section" aria-labelledby="mini-usage"><h2 id="mini-usage">{t.usage}</h2><ul class="mini-usage">{d.usage.map(item => <li>{item}</li>)}</ul></section>}
+    {d.limits.length > 0 && <section class="mini-section" aria-labelledby="mini-limits"><h2 id="mini-limits">{t.limits}</h2><ul class="mini-limits">{d.limits.map(item => <li>{item}</li>)}</ul></section>}
+    {d.image?.approved
+      ? <figure class="mini-figure"><img src={pathFor(d.image.src)} alt={d.image.alt} loading="lazy" decoding="async" /><figcaption>{d.image.caption}</figcaption></figure>
+      : null}
+    <p class="mini-return"><a class="home-index-link" href={worksLink}>{t.back(d.kind)}</a></p>
+  </div>
+</Base>

@@ -22,16 +22,4 @@ export const workSummariesEn: Record<string, string> = {
   hunting: 'Turned cooperation, limited resources, and environmental ethics into choices in a game, and adjusted the guidance, difficulty, and game materials after trial plays and real teaching.',
 };
 
-// English card text for the small projects (zh: title and blurb/summary in src/content/minis/*.md).
-export const miniCardsEn: Record<string, { title: string; text: string }> = {
-  'questionnaire-ocr': {
-    title: 'Questionnaire Recognition and Data Preparation',
-    text: 'A helper tool built with AI that turns scans of paper questionnaires into data in a set format. A person then checks the results.',
-  },
-  'community-building-simulator': {
-    title: 'Community Building Simulator',
-    text: 'A self-made interactive water resources simulator. Teachers place facilities in class, then see the results of rain and drought.',
-  },
-};
-
 export const worksText = (lang: Lang) => worksIndexText[lang];

@@ -1,0 +1,12 @@
+---
+import MiniPage from '../../../components/MiniPage.astro';
+import { listedMinis, englishMinis, type Mini } from '../../../lib/minis';
+export async function getStaticPaths() {
+  const zh = new Set((await listedMinis()).map(mini => mini.id));
+  const english = await englishMinis();
+  for (const id of english.keys()) if (!zh.has(id)) throw new Error(`英文小專案對應的中文版未公開：${id}`);
+  return [...english.values()].map(mini => ({ params: { id: mini.id }, props: { mini: mini as unknown as Mini } }));
+}
+const { mini } = Astro.props;
+---
+<MiniPage mini={mini} lang="en" />

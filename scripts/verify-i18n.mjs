@@ -49,7 +49,11 @@ function numbers(text) {
     const value = raw.replaceAll(',', '').replace(/^0+(?=\d)/, '');
     tokens.push({ value, amount });
   }
-  for (const m of text.matchAll(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+\d{4}/gi)) tokens.push({ value: String(MONTHS[m[1].toLowerCase()]), amount: false });
+  // English month names count as the month number: "April", "May 2026", "Jun 2018".
+  const FULL = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+  let rest = text;
+  rest = rest.replace(/\b(January|February|March|April|June|July|August|September|October|November|December)\b/g, (m) => { tokens.push({ value: String(FULL.indexOf(m.toLowerCase()) + 1), amount: false }); return ' '; });
+  rest = rest.replace(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\.?(?=\s+\d{4})/g, (m, a) => { tokens.push({ value: String(MONTHS[a.slice(0, 3).toLowerCase()]), amount: false }); return ' '; });
   return tokens;
 }
 
@@ -99,7 +103,7 @@ export async function verifyI18n(outDir, { englishPublic = false } = {}) {
       }
       for (const token of left) errors.push(`${label}：英文有數字 ${token.value}，中文沒有`);
       if (zn.some(x => x.amount) !== en.some(x => x.amount)) warnings.push(`${label}：金額寫法不同（萬／million／千分位），請人工確認`);
-      for (const m of zhText.matchAll(/([二兩三四五六七八九]|十[一二]?)(?=[套天人位場份次個小時年月階])|(一)(?=[套天人位場份次小時年月階])/g)) {
+      for (const m of zhText.matchAll(/([二兩三四五六七八九]|十[一二]?)(?=[套天人位場份次個小時年月階])|(一)(?=[套天人位場次小時年月階])/g)) {
         const digit = m[1] ?? m[2];
         const value = ZH_DIGITS[digit] ?? (digit === '十' ? 10 : 10 + (ZH_DIGITS[digit[1]] ?? 0));
         if (!new RegExp(`\\b(${value}|${EN_WORDS[value] ?? value})\\b`, 'i').test(enText)) warnings.push(`${label}：中文「${m[0]}」，英文找不到 ${value} 或 ${EN_WORDS[value]}`);

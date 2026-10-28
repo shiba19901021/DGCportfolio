@@ -2,19 +2,19 @@
 import MiniIcon from './MiniIcon.astro';
 import { miniHref, type Mini } from '../lib/minis';
 import { pathFor } from '../lib/works';
-import { miniCardsEn } from '../data/works-index-i18n';
-import { ui, type Lang } from '../lib/i18n';
-interface Props { mini: Mini; lang?: Lang; }
-const { mini, lang = 'zh' } = Astro.props;
-const en = lang === 'en' ? miniCardsEn[mini.id] : undefined;
-if (lang === 'en' && !en) throw new Error(`英文作品頁缺少小專案卡片文字：${mini.id}`);
-// Mini pages are Chinese-only for now; the title says so.
-const title = en ? en.title + ui.en.inChinese : mini.data.title;
-const text = en ? en.text : (mini.data.blurb ?? mini.data.summary);
+import { ui, localLink, type Lang } from '../lib/i18n';
+interface Props { mini: Mini; lang?: Lang; english?: Mini; }
+const { mini, lang = 'zh', english } = Astro.props;
+if (lang === 'en' && !english) throw new Error(`英文作品頁缺少小專案英文版：${mini.id}`);
+const shown = lang === 'en' ? english! : mini;
+// Until the English page exists, the card links to the Chinese page and says so.
+const link = lang === 'en' ? localLink('en', `/minis/${mini.id}/`) : null;
+const title = shown.data.title + (link?.zhOnly ? ui.en.inChinese : '');
+const text = shown.data.blurb ?? shown.data.summary;
 const { image, icon } = mini.data;
 const hasThumb = Boolean(image?.approved || icon);
 ---
-<a class:list={['mini-row', { 'mini-row-bare': !hasThumb }]} href={miniHref(mini)}>
+<a class:list={['mini-row', { 'mini-row-bare': !hasThumb }]} href={link ? link.href : miniHref(mini)}>
   {hasThumb && <div class="mini-row-thumb">
     {image?.approved
       ? <img src={pathFor(image.src)} alt={image.alt} width="640" height="480" loading="lazy" decoding="async" />

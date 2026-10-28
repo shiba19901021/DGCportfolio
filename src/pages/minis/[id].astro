@@ -1,35 +1,10 @@
 ---
-import Base from '../../layouts/Base.astro';
-import { listedMinis, miniKinds, miniEstimateNote } from '../../lib/minis';
-import { pathFor } from '../../lib/works';
-import '../../styles/home-v03.css';
-import '../../styles/home-editorial.css';
-import '../../styles/minis.css';
-
+import MiniPage from '../../components/MiniPage.astro';
+import { listedMinis } from '../../lib/minis';
 export async function getStaticPaths() {
   const all = await listedMinis();
   return all.map(mini => ({ params: { id: mini.id }, props: { mini } }));
 }
 const { mini } = Astro.props;
-const d = mini.data;
-const kind = miniKinds[d.kind];
 ---
-<Base title={`${d.title}｜${kind.title}｜游鏡騰`} description={d.summary} homeVisual>
-  <div class="home-v03 home-editorial mini-page wrap">
-    <nav aria-label="所在位置" class="breadcrumb mini-breadcrumb"><a href={pathFor('/')}>首頁</a><span aria-hidden="true">／</span><a href={pathFor('/works/#minis')}>{kind.title}</a></nav>
-    <header class="mini-header">
-      <h1>{d.title}</h1>
-      <p class="mini-lead">{d.summary}</p>
-      {d.role && <p class="mini-role"><strong>我的角色：</strong>{d.role}</p>}
-    </header>
-    <section class="mini-section" aria-labelledby="mini-problem"><h2 id="mini-problem">原本的問題</h2><p>{d.problem}</p></section>
-    <section class="mini-section" aria-labelledby="mini-steps"><h2 id="mini-steps">做法與流程</h2>{d.built && <p class="mini-built">{d.built}</p>}<ol class="mini-steps">{d.steps.map(step => <li>{step}</li>)}</ol></section>
-    {d.estimate && <section class="mini-section" aria-labelledby="mini-estimate"><h2 id="mini-estimate">處理時間</h2>{d.estimate.split('\n').map(line => <p class="mini-estimate-line">{line}</p>)}<p class="mini-note">{miniEstimateNote}</p></section>}
-    {d.usage.length > 0 && <section class="mini-section" aria-labelledby="mini-usage"><h2 id="mini-usage">使用狀況</h2><ul class="mini-usage">{d.usage.map(item => <li>{item}</li>)}</ul></section>}
-    {d.limits.length > 0 && <section class="mini-section" aria-labelledby="mini-limits"><h2 id="mini-limits">風險與限制</h2><ul class="mini-limits">{d.limits.map(item => <li>{item}</li>)}</ul></section>}
-    {d.image?.approved
-      ? <figure class="mini-figure"><img src={pathFor(d.image.src)} alt={d.image.alt} loading="lazy" decoding="async" /><figcaption>{d.image.caption}</figcaption></figure>
-      : null}
-    <p class="mini-return"><a class="home-index-link" href={pathFor('/works/#minis')}>← {kind.back}</a></p>
-  </div>
-</Base>
+<MiniPage mini={mini} lang="zh" />
