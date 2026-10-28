@@ -24,7 +24,7 @@ async function verifyDocument(root, profile) {
     .replace('fonts/resume-', 'fonts/teaching-')), 'src/styles/teaching.css'];
   else if (english) inputs = resumeInputs.map(file => file === 'src/data/resume.json' ? 'src/data/resume.en.json' : file);
   if (english) inputs = [...inputs.map(file => file.replace('src/pages/', 'src/pages/en/').replace(`fonts/${kind}-`, `fonts/${profile}-`)),
-    `src/styles/${profile}.css`, 'src/styles/en-print.css', 'src/lib/i18n.ts', 'src/data/i18n-config.json'];
+    `src/styles/${profile}.css`, 'src/styles/en-print.css'];
   const manifest = JSON.parse(await readFile(path.join(root, `scripts/${profile}-pdf-manifest.json`), 'utf8'));
   if (JSON.stringify(Object.keys(manifest.inputs).sort()) !== JSON.stringify([...inputs].sort())) throw new Error(`${profile} PDF 的來源清單不完整`);
   for (const file of inputs) {

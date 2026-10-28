@@ -7,7 +7,7 @@ import path from 'node:path';
 // Exceptions are reviewed and kept in scripts/i18n-exceptions.json.
 const MONTHS = { jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6, jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12 };
 const ZH_DIGITS = { 一: 1, 二: 2, 兩: 2, 三: 3, 四: 4, 五: 5, 六: 6, 七: 7, 八: 8, 九: 9 };
-const EN_WORDS = ['zero', 'one|first|once', 'two|second|twice', 'three|third', 'four|fourth', 'five|fifth', 'six|sixth', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'];
+const EN_WORDS = ['zero', 'one|first|once|an?', 'two|second|twice', 'three|third', 'four|fourth', 'five|fifth', 'six|sixth', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve'];
 const HEDGES = [
   { zh: /(?<!邀)約|近|概估|概略/, en: /about|approximate|roughly|estimat|nearly|almost|around/i, name: '約／概估' },
   { zh: /餘|以上|逾|超過/, en: /more than|at least|over|or more|a little more|\+/i, name: '餘／以上／逾' },

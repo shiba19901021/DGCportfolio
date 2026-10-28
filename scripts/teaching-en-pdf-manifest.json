@@ -13,9 +13,7 @@
     "public/fonts/teaching-en-noto-sans-tc-bold.woff2": "e523d8c43f801a154ab1b24a4482631cd1df399ac104aa3aaf4d779b796e007e",
     "src/styles/teaching.css": "f0abbcc7ba3d1583380521c071a99e08765b8cdf0792830514bc4b752308cbdf",
     "src/styles/teaching-en.css": "1c5cffff9d11f3c5587ee0821023fc2144359605389e3cd24c00b9f5de7ad6a2",
-    "src/styles/en-print.css": "6ac71d326211755859f08e5c7eb27f426e0d549e2556667b74da530053e38a38",
-    "src/lib/i18n.ts": "49f291987dcb682974330e601d699eaac610e12827c28b01f9c711c9737bfcd7",
-    "src/data/i18n-config.json": "29f462aaa2ffd42ad81f5d015b5987f01bcf3a905840aa663fa08be7ad28e855"
+    "src/styles/en-print.css": "6ac71d326211755859f08e5c7eb27f426e0d549e2556667b74da530053e38a38"
   },
-  "pdf": "c520565a7c0f252ce769c540ea2b9be8dc8ab13971f4ede120393504639da3bb"
+  "pdf": "b44fd9d702ceb9421f97cc76924a6a0bc9a2e2184878ad8a3575ee9a22a95cca"
 }

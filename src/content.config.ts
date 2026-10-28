@@ -4,9 +4,7 @@ import { glob } from 'astro/loaders';
 import { caseBlockSchema } from './data/case-blocks';
 
 const problem = z.enum(['clarify', 'coordinate', 'flow', 'iterate']);
-const works = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/works' }),
-  schema: z.object({
+const workSchema = z.object({
     title: z.string(),
     category: z.enum(['project', 'learning', 'tool', 'practice']),
     order: z.number(),
@@ -37,7 +35,12 @@ const works = defineCollection({
       approved: z.boolean(),
       position: z.string().default('50% 50%'),
     }).optional(),
-  }),
+});
+const works = defineCollection({ loader: glob({ pattern: '**/*.md', base: './src/content/works' }), schema: workSchema });
+// English versions of the case pages: same ids, blocks, images and structure as the Chinese file (checked at build, see lib/works.ts).
+const worksEn = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/works-en' }),
+  schema: workSchema.extend({ topics: z.array(z.string()).default([]) }),
 });
 
 // 小專案：順手做出來、解決實際問題的小工具與小製作。獨立於 works，不影響首頁與既有案例。
@@ -63,4 +66,4 @@ const minis = defineCollection({
   }),
 });
 
-export const collections = { works, minis };
+export const collections = { works, worksEn, minis };

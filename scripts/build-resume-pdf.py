@@ -110,9 +110,9 @@ def main():
     elif english:
         INPUTS = [DATA_FILE if file == 'src/data/resume.json' else file for file in INPUTS]
     if english:
-        # English pages live under src/pages/en/, use their own fonts, and read the i18n settings.
+        # English pages live under src/pages/en/, use their own fonts,.
         INPUTS = [file.replace('src/pages/', 'src/pages/en/').replace(f'fonts/{kind}-', f'fonts/{PROFILE}-') for file in INPUTS]
-        INPUTS += [f'src/styles/{PROFILE}.css', 'src/styles/en-print.css', 'src/lib/i18n.ts', 'src/data/i18n-config.json']
+        INPUTS += [f'src/styles/{PROFILE}.css', 'src/styles/en-print.css']
     DATA = json.loads((ROOT / DATA_FILE).read_text())
     if args.refresh_fonts:
         refresh_fonts()

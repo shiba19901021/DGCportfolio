@@ -44,3 +44,44 @@ export function workLinkLabel(work: Work) {
 export function workHrefEn(work: Work, link: { href: string; zhOnly: boolean }) {
   return link.zhOnly ? workHref(work) : link.href;
 }
+
+// ---- English case pages -------------------------------------------------------------
+// An English case file (src/content/works-en/<id>.md) must mirror its Chinese file: same block ids and
+// types, same images (src, approved, fit...), same related ids. Only the text differs. Checked at build.
+const KEEP = new Set(['id', 'type', 'src', 'approved', 'preview', 'ratio', 'fit', 'position', 'layout', 'columns', 'source', 'x', 'y',
+  'category', 'order', 'featured', 'visibility', 'detail', 'problems']);
+function skeleton(value: unknown, key = ''): unknown {
+  if (typeof value === 'string') return KEEP.has(key) || key === 'problems' ? value : 'T';
+  if (Array.isArray(value)) return value.map(item => skeleton(item, key));
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.entries(value as Record<string, unknown>)
+      .filter(([k]) => !['topics', 'home', 'contexts', 'detailIntro'].includes(k))
+      .map(([k, v]) => [k, skeleton(v, k)]));
+  }
+  return value;
+}
+export function assertMirror(zh: Work, en: CollectionEntry<'worksEn'>) {
+  const a = JSON.stringify(skeleton({ ...zh.data, related: zh.data.related.map(r => ({ id: r.id, reason: 'T' })) }));
+  const b = JSON.stringify(skeleton({ ...en.data, related: en.data.related.map(r => ({ id: r.id, reason: 'T' })) }));
+  if (a !== b) {
+    const pa = JSON.parse(a); const pb = JSON.parse(b);
+    const keys = new Set([...Object.keys(pa), ...Object.keys(pb)]);
+    const differing = [...keys].filter(k => JSON.stringify(pa[k]) !== JSON.stringify(pb[k]));
+    throw new Error(`英文案例與中文案例結構不一致：${zh.id}（${differing.join('、')}）`);
+  }
+  if (en.data.detailIntro && !zh.data.detailIntro) throw new Error(`英文案例多出 detailIntro：${zh.id}`);
+  if (!en.data.detailIntro && zh.data.detailIntro) throw new Error(`英文案例缺少 detailIntro：${zh.id}`);
+}
+
+/** English case entries keyed by id, each checked against its Chinese counterpart. */
+export async function englishWorks() {
+  const zhAll = await getCollection('works');
+  const result = new Map<string, CollectionEntry<'worksEn'>>();
+  for (const en of await getCollection('worksEn')) {
+    const zh = zhAll.find(work => work.id === en.id);
+    if (!zh) throw new Error(`英文案例沒有對應的中文案例：${en.id}`);
+    assertMirror(zh, en);
+    result.set(en.id, en);
+  }
+  return result;
+}

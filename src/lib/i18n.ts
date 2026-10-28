@@ -35,3 +35,9 @@ export function localLink(lang: Lang, path: string) {
   if (lang === 'en' && hasEnglish(path)) return { href: pathFor(`/en${path}`), zhOnly: false };
   return { href: pathFor(path), zhOnly: lang === 'en' };
 }
+
+// Case page strings.
+export const caseUi = {
+  zh: { crumbAria: '所在位置', home: '首頁', role: '我的角色：', back: '← 返回所有作品', teaching: '課程設計與教學合作 ↗', related: '接著探索', relatedAria: '的相關作品' },
+  en: { crumbAria: 'Breadcrumb', home: 'Home', role: 'My role: ', back: '← Back to All Works', teaching: 'Course Design and Teaching Collaboration ↗', related: 'Keep exploring', relatedAria: ': related works' },
+} as const;

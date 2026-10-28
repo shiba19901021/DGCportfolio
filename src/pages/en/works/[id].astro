@@ -1,0 +1,14 @@
+---
+import CasePage from '../../../components/CasePage.astro';
+import { listedWorks, englishWorks, type Work } from '../../../lib/works';
+export async function getStaticPaths() {
+  const all = await listedWorks();
+  const english = await englishWorks();
+  const zhIds = new Set(all.filter(w => w.data.detail).map(w => w.id));
+  for (const id of english.keys()) if (!zhIds.has(id)) throw new Error(`英文案例對應的中文案例未公開：${id}`);
+  const allEn = [...english.values()] as unknown as Work[];
+  return [...english.values()].map(work => ({ params: { id: work.id }, props: { work: work as unknown as Work, all: allEn } }));
+}
+const { work, all } = Astro.props;
+---
+<CasePage work={work} all={all} lang="en" />
