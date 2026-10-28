@@ -28,9 +28,9 @@
 - 尚無英文版的連結指向中文頁，並標 "(in Chinese)"。
 
 ## 上線開關（單一開關：`englishPublic`）
-`src/data/i18n-config.json` 的 `englishPublic` 控制所有上線行為，目前為 `false`：
+`src/data/i18n-config.json` 的 `englishPublic` 控制所有上線行為，目前為 `true`（已上線）；改回 `false` 即可全部收回：
 
-| | `false`（目前） | `true`（上線） |
+| | `false` | `true`（目前） |
 |---|---|---|
 | 中文頁的 EN 按鈕 | 不顯示 | 有英文版的頁面顯示 |
 | 英文頁 `noindex` | 有 | 移除 |
