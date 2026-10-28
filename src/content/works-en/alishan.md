@@ -38,14 +38,14 @@ blocks:
       - label: Main participants
         value: Students in grade four and above in elementary school.
       - label: Site and partners
-        value: The center. It has worked with two tribes.
+        value: A nature education center. It has worked with two tribes.
   - type: narrative
     id: partnership-roles
     title: What should the center teach, and what should the tribe teach?
     markdown: |-
       The project began because the center needed to develop courses related to Indigenous peoples. Before arranging any activity, I first faced one question: what should the center's teachers teach? And who should explain the tribe's own culture and knowledge of the mountains and forest?
 
-      I did not think it was right for center teachers to look up information, learn a few activities, and teach the tribe's own culture in place of tribal teachers. But if we only bought a ready-made experience tour, the center's own environmental education and learning guidance would not really be part of it.
+      I did not think it was appropriate for center teachers to look up information, learn a few activities, and teach the tribe's own culture in place of tribal teachers. But if we only bought a ready-made experience tour, the center's own environmental education and learning guidance would not really be part of it.
 
       Through my supervisor, we got in touch with a tribe and learned about the culture and mountain life that its teachers were already teaching. Step by step, I arranged the partnership as: "We teach what we should teach, and they teach what they should teach."
 
@@ -154,7 +154,7 @@ blocks:
 
       As the camp ran each year, the team kept adjusting the activities, their order, and transport, and also got used to how each other works. Hands-on work such as fish traps, and the pick-up arrangements, were added or fixed little by little while the camp was running.
 
-      I also started a LINE group for parents on my own, to give information before the trip, reminders about gear, and a way to reach us. During the camp, after the main activities, we shared a few photos and short notes, so parents knew what their children were doing. Parents once said this made them feel more at ease and involved. Later, other camps also used a similar way.
+      I also started a LINE group for parents on my own, to give information before the trip, reminders about gear, and a way to reach us. During the camp, after the main activities, we shared a small number of photos and short notes, so parents knew what their children were doing. Parents once said this made them feel more at ease and involved. Later, other camps also used a similar way.
 
       Later, some students joined again and brought their siblings. Some parents signed up by themselves after their child took part, and a school teacher booked an extra camp. The lessons, the division of work, and the administrative steps built up year by year. I am still the main contact for partners, and I keep adjusting the arrangements for each camp. From a trial of the lessons, to a camp that can be adjusted for different numbers of students and different partnership conditions, this camp slowly became an education program that the center can run again and again, and not just a one-time activity.
 ---

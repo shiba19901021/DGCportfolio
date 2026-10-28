@@ -34,14 +34,14 @@ blocks:
 
       Players form groups and play members of a community that lives on forest resources. They need to get food and share resources to keep the community alive. But hunting is affected by tools, probability, and a limited number of actions. Trying again and again does not always bring success.
 
-      In early teaching, some players hunted on their own, did not have enough food, and were out of the game quickly. How to get enough food, and how to share it, became a problem players had to face from the start.
+      In early teaching, there were players who hunted on their own, did not have enough food, and were out of the game quickly. How to get enough food, and how to share it, became a problem players had to face from the start.
   - type: narrative
     id: original-section-2
     title: When players began to cooperate, things changed
     markdown: |-
       In the game, different hunting tools have different chances of success, and a player's skill also affects the result. I linked rules such as hunting probability, food needs, limits on actions, and forest resources, so that tool use, food sharing, and hunting results affect each other. This creates a game setting where it is hard for the community to keep surviving through individual action alone.
 
-      Using only your own tool, and trading tools so that more skilled players do the hunting, can bring different food results. Food can also be shared. Players need to think about who has enough food, who needs support, and how to divide resources between surviving now and improving future hunting ability. In real teaching, some players began to trade tools, share food, and arrange roles to try to keep more members alive. These choices change who uses the tools, how food is shared, and who can stay in the game.
+      Using only your own tool, and trading tools so that more skilled players do the hunting, can bring different food results. Food can also be shared. Players need to think about who has enough food, who needs support, and how to divide resources between surviving now and improving future hunting ability. In real teaching, there were also players who began to trade tools, share food, and arrange roles to try to keep more members alive. These choices change who uses the tools, how food is shared, and who can stay in the game.
 
       When teaching, I first make the shared goal of surviving together clear, but I do not directly teach players how to trade tools, share food, or arrange roles. I leave these specific strategies for players to find through trying, results, and discussion. I want players to understand, from the survival needs and results in the game, why cooperation is a reasonable and important choice, and not only because the teacher told them "cooperation is important."
 
@@ -87,7 +87,7 @@ blocks:
     id: original-section-6
     title: Make the game hard, but not so hard that players cannot keep playing
     markdown: |-
-      An early version that was too complicated was not adopted. The way of playing was also changed again and again. The hunting result changed from drawing lots to a dice roll, and the game materials changed from white paper and cards to harder cards that last longer, which are easier to recognize on site and to use again.
+      An early version that was too complicated was not adopted. The way of playing also kept being changed. The hunting result changed from drawing lots to a dice roll, and the game materials changed from white paper and cards to harder cards that last longer, which are easier to recognize on site and to use again.
 
       Excel can help estimate the difficulty, but real trial plays are still needed. I asked colleagues to help test. Some tried to find gaps in the rules, so I could check the limits and possible results, and keep adjusting. Some trade and sharing strategies that looked like "using loopholes" were kept so that players could try them.
 

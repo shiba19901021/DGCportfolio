@@ -167,11 +167,11 @@ blocks:
     markdown: |-
       The course is listed in the [official course introduction on Taiwan Forest Recreation (山林悠遊網)](https://recreation.forest.gov.tw/Education/Course?id=CK-A21516). Colleagues and the teaching team prepare the materials, lead groups, and teach on site together, and then keep adjusting based on how the course is used. Some partner organizations have also come back with different students. The arrangements are also adjusted for each group's age, needs, time, and conditions on site.
 
-      Over many sessions, I saw that after students get the new information, they think again about where ingredients come from and their environmental impact, and the discussion moves from "what do I want to eat" to "why did I choose this." Teachers and volunteers who helped also once said that the form of game plus cooking makes an abstract idea easier to bring into class discussion.
+      Over many sessions, I saw that after students get the new information, they think again about where ingredients come from and their environmental impact, and the discussion moves from "what do I want to eat" to "why did I choose this." Teachers and volunteers who helped also once said that the form of game plus cooking makes abstract ideas easier to bring into class discussion.
 
       ### Writing up the practice as an English presentation
 
-      On 13 September 2026, I shared the practical experience of this course in the 11:00 online session in English at the 37th Annual Conference of the Japanese Society of Environmental Education (JSFEE). The abstract number is 37F07. The official title is:
+      On 13 September 2026, I shared the practical experience of this course in the 11:00 online session in English at the 37th Annual Meeting of the Japanese Society for Environmental Education (JSFEE). The abstract number is 37F07. The official title is:
 
       **Learning Low-Carbon Living Through Play: A Practice Report on the "Food Carbon Detective" Program at Chukou Nature Education Center, Taiwan**
 
