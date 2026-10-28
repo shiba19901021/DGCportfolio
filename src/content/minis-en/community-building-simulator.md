@@ -20,7 +20,7 @@ usage:
   - Usually only I tested it. This was the first time many groups used it at the same time.
   - The system crashed when 9 groups used it at the same time.
   - On site, I switched to operating it myself on the projector. I asked the whole class what to build by the river, upstream, and downstream, and adjusted and ran the simulation as we listened.
-  - "Even so, the key ideas still came through: too many buildings by the river easily cause flooding, and the layout of the downstream area and sewage treatment."
+  - "Even so, the key ideas still came through: too many buildings by the river easily cause flooding, and the layout of the downstream area and sewage treatment matters."
   - The course was finished smoothly. After class, a teacher gave verbal feedback. The teacher said the game was fun, and that it uses math, language understanding, layout, and judging quantities at the same time, which is very helpful for students' learning.
 limits:
   - A stress test with many groups at the same time has not been done. The cause of the crash is to be confirmed.

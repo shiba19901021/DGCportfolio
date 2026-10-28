@@ -13,7 +13,7 @@
     {
       "number": "01",
       "title": "Eco Kitchen: Bringing Many Needs and Resources Together",
-      "text": "The site had an unused outdoor classroom and multiple needs, such as the role of the site and food and farming education. I brought together space, energy, water, and teaching needs, and turned the old space into an outdoor eco kitchen that can keep being used.",
+      "text": "The site had an unused outdoor classroom and multiple needs, such as the site's purpose and food and farming education. I brought together space, energy, water, and teaching needs, and turned the old space into an outdoor eco kitchen that can be used for a long time.",
       "href": "https://shiba19901021.github.io/DGCportfolio/en/works/eco-kitchen/"
     },
     {
@@ -25,7 +25,7 @@
     {
       "number": "03",
       "title": "Workflow Improvement: Less Repeated Work and Less Admin Load",
-      "text": "Data was spread out, and staff had to organize it again and make statistics across sheets, which added to the admin load. I reviewed how the data relates and how the work flows, and used existing tools to improve the statistics. Data preparation and chart making for reports went from several hours to about one hour or less (estimated from actual work).",
+      "text": "Data was spread out, and staff had to organize it again and prepare statistics across sheets, which added to the admin load. I reviewed how the data relates and how the work flows, and used existing tools to improve the statistics. Data preparation and chart making for reports went from several hours to about one hour or less (estimated from actual work).",
       "href": "https://shiba19901021.github.io/DGCportfolio/en/works/workflow/"
     },
     {
@@ -55,7 +55,7 @@
     { "title": "Environmental Education Specialist", "period": "2014 – 2015" },
     { "title": "Health Management Specialist", "period": "2015 – 2018" }
   ],
-  "educationHeading": "Education and Certifications",
+  "educationHeading": "Education",
   "education": {
     "name": "National University of Tainan",
     "period": "2010 – 2014",
@@ -63,7 +63,7 @@
   },
   "certificationsHeading": "Certifications and Training",
   "certifications": [
-    "iPAS Net-Zero Planning Manager (Intermediate / Junior)",
+    "iPAS Net-Zero Planning Manager (Intermediate and Beginner levels)",
     "Environmental Education Personnel Certification, Ministry of Environment",
     "Permaculture Design Certificate (PDC)",
     "Permaculture Teacher Training"

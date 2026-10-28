@@ -8,7 +8,7 @@ export const homeFeatured: string[] = ['eco-kitchen', 'rainwater', 'workflow', '
 export const homeCompact: Record<string, string> = {
   alishan: '串接中心前導與部落體驗，釐清專業主導權，在交通、人數與場地變動中調整方案。',
   'climate-program': '統整六套課程的團隊研發，依試教觀察重新設計資源循環課程，讓新版教案進入實際教學。',
-  'food-carbon': '以兩次選材安排資訊出現的順序，讓學生比較食物選擇，並延伸到實際料理與資源循環。2025–2026 年累計 30+ 場、800+ 人參與，已列入山林悠遊網官方課程介紹。',
+  'food-carbon': '以兩次選材安排資訊出現的順序，讓學生比較食物選擇，並延伸到實際料理與資源循環。2025–2026 年累計 30+ 場、800+ 人次參與，已列入山林悠遊網官方課程介紹。',
 };
 
 export const homeSummaries: Record<string, HomeSummary> = {

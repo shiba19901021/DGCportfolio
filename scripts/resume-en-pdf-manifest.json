@@ -2,17 +2,17 @@
   "format": "A4 portrait",
   "pages": 1,
   "inputs": {
-    "src/data/resume.en.json": "92bd38c08c2ad7e392a2921699a6193f8b463526e373e4487356c0c01075d735",
+    "src/data/resume.en.json": "d10df9ee6895774dd235f3d829fb2b12dc9895b9744a56b5f8fa130ab8608359",
     "src/components/ResumeDocument.astro": "dbc2e157e4a4ee7db4e51d8a4470a0cbf0074d8c38ad3da62d6867c04b8a31de",
     "src/pages/en/resume/index.astro": "52106424e4080ce1685015628271783a7aad00433a9ba8a73c148b4101874e35",
     "src/styles/resume.css": "75f58929d68c18f9bca0e53d14708464c0b46594da8ed5f059f012eb07a92e7c",
     "src/layouts/Base.astro": "b1fea063597e6d5b8fbf6c96e4aa7354f5ac1d30afeccd901ab1f4148f7e2a89",
     "src/styles/global.css": "d007ac95a5fcc1951e503af144c9d8a06f97731771ad5afa77f0ceb7a261c596",
     "src/styles/site-chrome.css": "c534c36d43982997a4c9617b5e220e399552ca7cd212476192909b7158c277f8",
-    "public/fonts/resume-en-noto-sans-tc.woff2": "87a76dc87e064e90ef0d9fd10368acc94a406bd7f5ae5954ec9486beaa5b9013",
-    "public/fonts/resume-en-noto-sans-tc-bold.woff2": "7e62db91eec9385b9497daa338327fcea7f6d35c0c4478e1fd8744e432141277",
+    "public/fonts/resume-en-noto-sans-tc.woff2": "52c3ff7729bda31248a3c8927ea981087b8d73e8ac52e164456dc9b9b15fb0f6",
+    "public/fonts/resume-en-noto-sans-tc-bold.woff2": "9ea11a66e3ade332841cef25667e318d8ecf87900124955a3f71addd68687b05",
     "src/styles/resume-en.css": "6d2114e30244d84940dde62ecc0296733d4931b7fee019ffa9ec8f64974c6333",
     "src/styles/en-print.css": "6ac71d326211755859f08e5c7eb27f426e0d549e2556667b74da530053e38a38"
   },
-  "pdf": "f5063d54bc98d9e9184a8179cf52780095e6c953f88c68e6dd376bd0e2c53ede"
+  "pdf": "9016a79109c5cab7ebc74c72ab6f8d5da96410299e6c0bbada8f0b80cc2cb8a2"
 }

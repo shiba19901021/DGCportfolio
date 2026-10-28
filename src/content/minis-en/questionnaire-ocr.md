@@ -7,7 +7,7 @@ order: 1
 visibility: public
 summary: A helper tool built with AI that turns scans of paper questionnaires into data in a set format. A person then checks the results.
 role: I found the problem, designed the process, built the tool with AI, handed it over, and adjusted it.
-problem: There were many paper questionnaires filled in by students (anonymous). Everything was typed in by hand, one by one. The checked answers and the handwritten text all had to be entered into a data table.
+problem: There were many anonymous paper questionnaires filled in by students. Everything was typed in by hand, one by one. Both the checked boxes and the handwritten answers had to be entered into a data table.
 built: The tool was built with AI help. The first version used Google AI Studio. I found it hard to use, so I rewrote it with Antigravity and connected it to the Gemini API.
 steps:
   - Before scanning, a person checks the questionnaires. Scribbled ones, ones with personal information, and ones written too faintly are picked out. If needed, faint handwriting is traced over with a black pen, so the tool can read it.

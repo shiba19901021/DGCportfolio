@@ -8,7 +8,7 @@ detail: true
 detailIntro:
   title: Climate Resilience Course Program Development
   subtitle: From course prototypes at different levels of maturity to a program the team can keep using
-  introduction: This development work started from the teaching experience the center had built up. The team put six climate resilience courses in order together. I was in charge of pulling together the direction and the division of work, and after trial teaching I also redesigned the new lesson plan for Resource Cycle. This made me check again whether students who finished the activities also understood the idea the course wanted to teach.
+  introduction: This development work started from the teaching experience the center had built up. The team worked together to organize six climate resilience courses. I was in charge of pulling together the direction and the division of work, and after trial teaching I also redesigned the new lesson plan for Resource Cycle. This made me check again whether students who finished the activities also understood the idea the course wanted to teach.
 topics:
   - Course development
   - Teamwork
@@ -45,7 +45,7 @@ blocks:
 
       These prototypes and the direction of the development are also closely related to my long experience with permaculture design. I am used to looking at food, water, energy, growing, resource cycling, and living space together: what resources does cooking need? Where do the used water and the food waste go? What other ways of doing things are there in daily life? These relationships became the base of the courses. They were then turned into things students can observe, try, and discuss, and different topics were connected under the frame of resilience in daily life.
 
-      Through a related program of the Ministry of Environment, we put the existing base into six formal courses. What we had to do was more than write the activities into documents. We had to connect the teaching goals, the order of activities, the materials, and the way of operating clearly, so other teachers can understand and use them. Which parts to keep and which to rearrange had to be checked in real teaching.
+      Through a related program of the Ministry of Environment, we turned this existing base into six formal courses. What we had to do was more than write the activities into documents. We had to connect the teaching goals, the order of activities, the materials, and the way of operating clearly, so other teachers can understand and use them. Which parts to keep and which to rearrange had to be checked in real teaching.
   - type: narrative
     id: original-section-2
     title: How can six courses move the team in the same direction?
@@ -54,12 +54,12 @@ blocks:
 
       I was directly in charge of improving Food Carbon Detective and Balcony Green Treasure Box. The other four were mainly developed by colleagues. I took part in the overall direction and checking the content. After trial teaching, I redesigned the new teaching content of Resource Cycle. The six courses each have different topics and activities. The names link to the official introductions:
 
-      - **[Food Carbon Detective](https://recreation.forest.gov.tw/Education/Course?id=CK-A21516)**: talks about the environmental impact of food through ingredient choices and real cooking.
-      - **[Balcony Green Treasure Box](https://recreation.forest.gov.tw/Education/Course?id=CK-A21512)**: learns about using resources in daily life through growing, composting, and working with materials.
-      - **[Green Home Evolution](https://recreation.forest.gov.tw/Education/Course?id=CK-A21511)**: thinks about green buildings and living space by observing the home environment.
-      - **[Resource Cycle: The Forest Never Ends](https://recreation.forest.gov.tw/Education/Course?id=CK-A21514)**: follows where resources come from, how they are used, and where they go.
-      - **[Green and Lively: Turning Energy](https://recreation.forest.gov.tw/Education/Course?id=CK-A21513)**: looks at building designs such as daylight, ventilation, and temperature control, and talks about energy use.
-      - **[Decoding Natural Energy](https://recreation.forest.gov.tw/Education/Course?id=CK-A21515)**: understands the principles and adjusts the design by working with and testing natural energy such as solar power.
+      - **[Food Carbon Detective](https://recreation.forest.gov.tw/Education/Course?id=CK-A21516)**: Students talk about the environmental impact of food through choosing ingredients and real cooking.
+      - **[Balcony Green Treasure Box](https://recreation.forest.gov.tw/Education/Course?id=CK-A21512)**: Students learn how resources are used in daily life through growing, composting, and working with materials.
+      - **[Green Home Evolution](https://recreation.forest.gov.tw/Education/Course?id=CK-A21511)**: Students observe the home environment and think about green buildings and living space.
+      - **[Resource Cycle: The Forest Never Ends](https://recreation.forest.gov.tw/Education/Course?id=CK-A21514)**: Students follow where resources come from, how they are used, and where they go.
+      - **[Green and Lively: Turning Energy](https://recreation.forest.gov.tw/Education/Course?id=CK-A21513)**: Students look at building design, such as daylight, ventilation, and temperature control, and talk about energy use.
+      - **[Decoding Natural Energy](https://recreation.forest.gov.tw/Education/Course?id=CK-A21515)**: Students work with and test natural energy such as solar power, to understand how it works and improve their designs.
 
       When we talked about each lesson, I used three questions to check the content: What should students understand? Do the activities lead toward this goal? Can one activity connect to the next? This let the team talk about specific teaching arrangements, and not only compare which activity is more fun.
 
@@ -142,7 +142,7 @@ blocks:
   - type: narrative
     id: trial-scope
     markdown: |-
-      Besides the eight trial sessions in the original plan, we also counted six courses that schools booked and paid for themselves and agreed to use as trial teaching. We included them in the tests and feedback, for fourteen sessions and 300 or more participant visits in total.
+      Besides the eight trial sessions in the original plan, we also counted six sessions that schools booked and paid for themselves and agreed to use as trial teaching. We included them in the tests and feedback, for fourteen sessions and 300 or more participant visits in total.
 
       I combined student questionnaires, teacher feedback, and observations on site, and kept revising after talking with colleagues. Overall, the development went through about five to six rounds of changes, handled according to the problems of each course. In the end, six formal programs were completed, with lesson plans, flow, and materials organized for the center's later teaching.
   - type: summary

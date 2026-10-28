@@ -13,7 +13,7 @@
     {
       "number": "01",
       "title": "Climate Resilience Course Development: Course Structure and Quality Across Courses",
-      "text": "I took part in developing six climate resilience courses, bringing together an abstract topic, learning needs, and teamwork. I was in charge of the development structure, trial teaching, and quality integration. I led the improvement of two courses and one new lesson plan, and revised them based on feedback.",
+      "text": "I took part in developing six climate resilience courses, bringing together an abstract topic, learning needs, and teamwork. I was in charge of the development structure, trial teaching, and keeping quality consistent across courses. I led the improvement of two courses and one new lesson plan, and revised them based on feedback.",
       "href": "https://shiba19901021.github.io/DGCportfolio/en/works/climate-program/"
     },
     {
@@ -43,7 +43,7 @@
       "name": "Global Environmental Enhancement Inc.",
       "period": "Jun 2018 – Present",
       "role": "Environmental Education Teacher / On-site Supervisor",
-      "text": "Based at a nature education center, I develop environmental and sustainability courses, design materials and teaching activities, teach on site, and work with the team. I adjust courses for different audiences and teaching feedback."
+      "text": "Based at a nature education center, I develop environmental and sustainability courses, design materials and teaching activities, teach on site, and work with the team. I adjust courses based on the audience and teaching feedback."
     },
     {
       "name": "Freelance Instructor / Permaculture Design Consultant",
@@ -56,12 +56,12 @@
     { "title": "Environmental Education Specialist", "period": "2014 – 2015" },
     { "title": "Health Management Specialist", "period": "2015 – 2018" }
   ],
-  "educationHeading": "Education and Certifications",
+  "educationHeading": "Education",
   "education": { "name": "National University of Tainan", "period": "2010 – 2014", "degree": "Bachelor's degree, Department of Ecology and Environmental Resources" },
   "certificationsHeading": "",
   "certifications": [
     "Environmental Education Personnel Certification, Ministry of Environment",
-    "iPAS Net-Zero Planning Manager (Intermediate / Junior)",
+    "iPAS Net-Zero Planning Manager (Intermediate and Beginner levels)",
     "Permaculture Design Certificate (PDC)",
     "Permaculture Teacher Training"
   ],

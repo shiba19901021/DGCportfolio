@@ -128,7 +128,7 @@ blocks:
     markdown: |-
       The course does not stop at the table game. In the full one-day course, students learn about and gather local ingredients, and then go into the Eco Kitchen to prepare ingredients, share the work, and cook over a wood fire. Food that was only compared in the materials becomes material in their hands that must be washed, cut, and cooked. Pruned branches from the site also become fuel they can use.
 
-      The real cooking is arranged by season, buying, materials, people, and safety conditions. It does not buy everything on the menu chosen in the game. The game lets students practice comparing, and the cooking lets them meet the real materials and limits on site.
+      The real cooking depends on the season, what can be bought, materials, people, and safety. We do not buy every ingredient on the menu chosen in the game. The game lets students practice comparing, and the cooking lets them meet the real materials and limits on site.
 
       After the meal, the learning continues to washing and cleaning up: raw food waste goes into compost, and gray water from washing goes to plants. Students follow things from where the ingredients come from, to cooking and energy use, to where things go after use. Then they go back to talk about how these practices relate to daily life.
   - type: gallery
@@ -167,7 +167,7 @@ blocks:
     markdown: |-
       The course is listed in the [official course introduction on Taiwan Forest Recreation (山林悠遊網)](https://recreation.forest.gov.tw/Education/Course?id=CK-A21516). Colleagues and the teaching team prepare the materials, lead groups, and teach on site together, and then keep adjusting based on how the course is used. Some partner organizations have also come back with different students. The arrangements are also adjusted for each group's age, needs, time, and conditions on site.
 
-      Over many sessions, I saw that after students get the new information, they think again about where ingredients come from and their environmental impact, and the discussion moves from "what do I want to eat" to "why did I choose this." Teachers and volunteers who helped also once said that the form of game plus cooking makes abstract ideas easier to bring into class discussion.
+      Over many sessions, I saw that after students get the new information, they think again about where ingredients come from and their environmental impact, and the discussion moves from "what do I want to eat" to "why did I choose this." Teachers and support volunteers have also said that the mix of game and cooking makes abstract ideas easier to bring into class discussion.
 
       ### Writing up the practice as an English presentation
 

@@ -18,7 +18,7 @@ problems:
   - iterate
 summary: Started from the idea of "collecting rain" and worked out that it was for teaching and display. Connected existing materials, student help in building, and digital explanation, and fixed the water path after the water-release test.
 challenge: The school wanted to collect rainwater, but the purpose would affect the size of the equipment, the layout, and how students could take part.
-decision: Used the existing collection point and planned the route around the camera and the existing pipes. After water was released, the first flush of rain might enter the barrel too early, so the branch pipe into the barrel was raised.
+decision: Used the existing collection point and planned the route to fit the existing pipes and avoid the camera. After water was released, the first flush of rain might enter the barrel too early, so the branch pipe into the barrel was raised.
 delivered: The physical system and an interactive website were completed. Students took part in assembly and observation, while adults did the work at height and other higher-risk work. The water-release test and the fix were done.
 boundary: Student guide training and later handover are not counted as finished results.
 role: I was in charge of the site assessment and the plan. I arranged the student hands-on work and adjusted the pipes based on the test. The interactive teaching tool was made with AI help. Adults did the work at height.
@@ -175,7 +175,7 @@ blocks:
           - An interactive teaching website and a simple operating manual were completed.
       - label: Planned use
         items:
-          - To be used as teaching display and extra water equipment, for watering and suitable cleaning on campus.
+          - To be used as teaching display and extra water equipment, for watering and light cleaning on campus.
       - label: Next steps
         items:
           - Student guide training is planned to be finished by the end of November 2026.

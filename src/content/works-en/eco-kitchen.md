@@ -37,7 +37,7 @@ blocks:
       - label: Site
         value: A nature education center, using the existing semi-outdoor bamboo shed
       - label: Progress and building
-        value: The idea came about in 2020. In about 2023, the conditions to move forward were in place. The main building was finished in 2024, and it opened at the end of that year.
+        value: The idea first came up around 2020. In about 2023, the conditions to move forward were in place. The main building was finished in 2024, and it opened at the end of that year.
       - label: Building cost
         value: About NT$80,000 or a little more, kept within NT$100,000, covering building materials and workshop costs
       - label: Building together
@@ -57,13 +57,13 @@ blocks:
     id: starting-point
     title: First came the idea of a stove, then a chance to move forward
     markdown: |-
-      Before the center raised its later need for special development, I had already learned and built energy-saving stoves outside. Back at the center, I saw that teaching tools such as the rocket stoves made from milk powder cans were slowly aging. I wanted to build a stove that could really be used for cooking, and also use it to upgrade the existing sustainability education courses.
+      Before the center later started developing its own special features, I had already learned and built energy-saving stoves outside. Back at the center, I saw that teaching tools such as the rocket stoves made from milk powder cans were slowly aging. I wanted to build a stove that could really be used for cooking, and also use it to upgrade the existing sustainability education courses.
 
       Later, the nature education center began to think about the direction of its next ten years. Besides the shared themes of forest and animal conservation, it wanted to develop special features that suit the conditions of each site. The energy-saving stove I had wanted to push happened to fit this need.
 
-      The center also had a semi-outdoor teaching bamboo shed that had been unused for a long time and was rarely used. It felt like a waste to take it down, but keeping it needed upkeep, and no suitable use had been found. If the stove and the cooking lessons were placed here, the covered space of the bamboo shed could be reused, and this facility would have a use again.
+      The center also had a semi-outdoor teaching bamboo shed that had been left unused for a long time. It felt like a waste to take it down, but keeping it needed upkeep, and no suitable use had been found. If the stove and the cooking lessons were placed here, the covered space of the bamboo shed could be reused, and this facility would have a use again.
 
-      After the idea was raised, a suitable program and way of buying still had to be found. I moved it forward step by step through a proposal, site planning, and links to the courses, until the administrative conditions were in place, and then the main building began.
+      After the idea was raised, a suitable funding program and way of buying still had to be found. I moved it forward step by step through a proposal, site planning, and links to the courses, until the administrative conditions were in place, and then the main building began.
   - type: narrative
     id: connected-needs
     title: How the needs on the site were connected one by one
@@ -82,7 +82,7 @@ blocks:
 
       The center already had experience with composting, so I used leftover materials to build a compost bin for raw food waste from preparing food, such as fruit peels and vegetable stems. Water from washing goes through pre-treatment and then is led to a gray water garden planted with banana, ginger lily, turmeric, and other plants, for the plants to use.
 
-      The gray water garden mainly uses leftover materials, with the needed pipe parts bought extra. In use, larger solid scraps are caught first, and a washing agent that can break down is used. My supervisor later also paid attention to how kitchen drainage is handled, and this design happened to meet that need.
+      The gray water garden mainly uses leftover materials, with the needed pipe parts bought extra. In use, larger solid scraps are caught first, and soap that breaks down naturally is used. My supervisor later also paid attention to how kitchen drainage is handled, and this design happened to meet that need.
 
       Composting and gray water treatment were added one after another as the project moved on. From the stove and the work tables to washing and planting, each part was planned from the problems that real use would meet.
   - type: gallery
@@ -112,7 +112,7 @@ blocks:
     markdown: |-
       ### Choosing stone that is easier to lay
 
-      The site has stones, but most are round and hard to stack, and picking and shaping them also takes labor. In the end I spent about NT$25,000 on flatter stone that suits laying, so participants could build more easily and the schedule was also protected. The base is raised with stone, to reduce long-term damp in the earth above.
+      The site has stones, but most are round and hard to stack, and picking and shaping them also takes labor. In the end I spent about NT$25,000 on flatter stone that suits laying, so participants could build more easily and the work could stay on schedule. The base is raised with stone, to reduce long-term damp in the earth above.
 
       The earth material came through a friend, and the work table tops use wood left over from the center's earlier treehouse project. During the building, bricks were also added at some positions, depending on progress and conditions on site.
 
@@ -162,14 +162,14 @@ blocks:
     markdown: |-
       During the workshop, we used the center's existing lodging space and tents, and the team arranged the meals together. Through reusing existing resources, using natural building skills, and working together with participants, the actual building cost ended up at about NT$80,000 or a little more, kept within NT$100,000. This includes materials, tools, workshop meals, and supplies. This is the amount actually paid. It is not the market cost of building that would result if all existing labor, participants' time, and the opportunity cost of resources were priced. The value of this result is not only finishing a usable kitchen at low cost, but also using a different way of carrying out the work to depend less on outsourced building, so the building process itself became a chance to learn natural building.
 
-      In Taiwan there are few formal contractors for natural building, and there is no written quote to compare with. During the building, two participants who had taken natural building jobs gave a verbal estimate based on the size of this project (a stove with four cooking holes, made larger for group use, and work tables built with building methods). They said that outsourcing all of it would cost at least NT$800,000. They also said that a single kiln built at another site (without cooking holes and a table top) cost about NT$200,000. These are all informal verbal estimates, not formal quotes, and outsourcing costs also include building labor and other costs. The building cost of about NT$80,000 or a little more in this project is for materials, tools, workshop meals, and supplies. My planning and building time, and the finishing time of colleagues and interns, were part of work done during work hours and were not converted into money.
+      In Taiwan there are few formal contractors for natural building, and there is no written quote to compare with. During the building, two participants who had taken natural building jobs gave a verbal estimate based on the size of this project (a stove with four cooking holes, made larger for group use, and work tables built using construction methods). They said that outsourcing all of it would cost at least NT$800,000. They also said that a single kiln built at another site (without cooking holes and a table top) cost about NT$200,000. These are all informal verbal estimates, not formal quotes, and outsourcing costs also include building labor and other costs. The building cost of about NT$80,000 or a little more in this project is for materials, tools, workshop meals, and supplies. My planning and building time, and the finishing time of colleagues and interns, were part of work done during work hours and were not converted into money.
 
       After the main work was finished in about eight days, the earth still needed to dry, so it could not be used right after the workshop ended. About two months later, I finished the lime surface treatment, repairs, and finishing with colleagues and interns, and it officially opened at the end of 2024.
   - type: narrative
     id: ongoing-use
     title: After it was finished, where it keeps being used
     markdown: |-
-      After the eco kitchen opened, it has kept being used. It supports courses such as [Food Carbon Detective](/en/works/food-carbon/), resource cycling, and Balcony Green Treasure Box, and is also used for volunteer training, adult courses, workshops, and site tours.
+      Since it opened, the eco kitchen has stayed in use. It supports courses such as [Food Carbon Detective](/en/works/food-carbon/), resource cycling, and Balcony Green Treasure Box, and is also used for volunteer training, adult courses, workshops, and site tours.
 
       Cooking, washing, composting, and planting all happen in the same site, so teachers can take learners to understand where materials, energy, and resources go through real work. This experience of promoting permaculture practice and the eco kitchen at the center also became what I shared at IPC15.
   - type: gallery
