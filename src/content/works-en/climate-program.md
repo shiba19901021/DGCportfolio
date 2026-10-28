@@ -63,7 +63,7 @@ blocks:
 
       When we talked about each lesson, I used three questions to check the content: What should students understand? Do the activities lead toward this goal? Can one activity connect to the next? This let the team talk about specific teaching arrangements, and not only compare which activity is more fun.
 
-      For how Food Carbon Detective handles ingredient choices, feedback on information, and cooking, see the [separate case (in Chinese)](/works/food-carbon/) for it.
+      For how Food Carbon Detective handles ingredient choices, feedback on information, and cooking, see the [separate case](/en/works/food-carbon/) for it.
   - type: gallery
     id: course-example
     layout: pair

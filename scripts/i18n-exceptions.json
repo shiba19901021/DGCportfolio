@@ -1,5 +1,9 @@
 {
   "_note": "Reviewed exceptions for scripts/verify-i18n.mjs. allowCjk: Chinese text that may stay inside English pages (proper names). numbers: number tokens that may differ between a Chinese page and its English page.",
-  "allowCjk": ["游鏡騰", "山林悠遊網"],
+  "allowCjk": [
+    "游鏡騰",
+    "山林悠遊網",
+    "學森林"
+  ],
   "numbers": []
 }
