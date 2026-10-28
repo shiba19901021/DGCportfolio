@@ -2,16 +2,19 @@
 import type { Work } from '../lib/works';
 import { workHref } from '../lib/works';
 import { caseUi, localLink, type Lang } from '../lib/i18n';
+import { homeText } from '../data/home-i18n';
 interface Props { work: Work; all: Work[]; lang?: Lang; }
 const { work, all, lang = 'zh' } = Astro.props;
 const t = caseUi[lang];
 const href = (target: Work) => (lang === 'en' ? localLink('en', `/works/${target.id}/`).href : workHref(target));
 const related = work.data.related.flatMap(r => {
   const target = all.find(w => w.id === r.id);
-  return target ? [{ work: target, reason: r.reason }] : [];
+  if (target) return [{ href: href(target), title: target.data.title, reason: r.reason }];
+  const enTitle = lang === 'en' ? homeText.en.workTitles[r.id] : undefined;
+  return enTitle ? [{ href: localLink('en', `/works/${r.id}/`).href, title: `${enTitle} (in Chinese)`, reason: r.reason }] : [];
 });
 ---
 {related.length > 0 && <aside class="related" aria-label={`${work.data.title}${t.relatedAria}`}>
   <h3>{t.related}</h3>
-  <ul>{related.map(r => <li><a href={href(r.work)}>{r.work.data.title}</a><p>{r.reason}</p></li>)}</ul>
+  <ul>{related.map(r => <li><a href={r.href}>{r.title}</a><p>{r.reason}</p></li>)}</ul>
 </aside>}
