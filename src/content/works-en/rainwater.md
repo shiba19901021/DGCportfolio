@@ -19,8 +19,8 @@ problems:
 summary: Started from the idea of "collecting rain" and worked out that it was for teaching and display. Connected existing materials, student help in building, and digital explanation, and fixed the water path after the water-release test.
 challenge: The school wanted to collect rainwater, but the purpose would affect the size of the equipment, the layout, and how students could take part.
 decision: Used the existing collection point and planned the route around the camera and the existing pipes. After water was released, the first flush of rain might enter the barrel too early, so the branch pipe into the barrel was raised.
-delivered: The physical system and an interactive website were completed. Students took part in the safe building work that had been set aside for them, and the water-release test and the fix were done.
-boundary: How well it collects in real rain is still to be tracked. Student guide training and later handover are not counted as finished results.
+delivered: The physical system and an interactive website were completed. Students took part in assembly and observation, while adults did the work at height and other higher-risk work. The water-release test and the fix were done.
+boundary: Student guide training and later handover are not counted as finished results.
 role: I was in charge of the site assessment and the plan. I arranged the student hands-on work and adjusted the pipes based on the test. The interactive teaching tool was made with AI help. Adults did the work at height.
 related: []
 contexts: {}

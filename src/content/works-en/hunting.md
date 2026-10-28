@@ -118,5 +118,5 @@ blocks:
 
       I am in charge of this simulation and discussion, so that students first go through choices and results under limited resources. After entering the tribe, culture, life in the mountains and forest, and real hunting experience are still led by tribal teachers.
 
-      Hunting Miracle is already used in the lessons before the camp, and it keeps being adjusted through trial plays and real use. To see how this learning connects to the experiences that follow, you can next read about the [Alishan Hunter Growth Camp (in Chinese)](/works/alishan/) case.
+      Hunting Miracle is already used in the lessons before the camp, and it keeps being adjusted through trial plays and real use. To see how this learning connects to the experiences that follow, you can next read about the [Alishan Hunter Growth Camp](/en/works/alishan/) case.
 ---
