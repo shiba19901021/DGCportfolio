@@ -22,6 +22,12 @@ const links = [
 const showSwitch = alt !== undefined && (lang === 'en' || (englishPublic && hasEnglish(alt)));
 const switchTo = lang === 'en' ? pathFor(alt ?? '/') : pathFor(`/en${alt ?? '/'}`);
 const noindex = !publicRelease || (lang === 'en' && !englishPublic);
+// hreflang pairs and canonical are written only while englishPublic is true and the page has an English counterpart.
+// Pages with no English version (projects, learning, explore) get none of these. x-default points to the Chinese page.
+const pair = englishPublic && alt !== undefined && hasEnglish(alt);
+const absolute = (path: string) => new URL(pathFor(path), Astro.site).href;
+const zhUrl = pair ? absolute(alt!) : '';
+const enUrl = pair ? absolute(`/en${alt}`) : '';
 ---
 <!doctype html>
 <html lang={t.htmlLang}>
@@ -30,6 +36,10 @@ const noindex = !publicRelease || (lang === 'en' && !englishPublic);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {pair && <link rel="canonical" href={lang === 'en' ? enUrl : zhUrl} />}
+    {pair && <link rel="alternate" hreflang="zh-Hant-TW" href={zhUrl} />}
+    {pair && <link rel="alternate" hreflang="en" href={enUrl} />}
+    {pair && <link rel="alternate" hreflang="x-default" href={zhUrl} />}
     <meta name="theme-color" content={homeVisual || caseVisual ? '#fbf9f4' : '#f4f1e7'} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

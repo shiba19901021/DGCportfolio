@@ -6,11 +6,11 @@
     "src/components/ResumeDocument.astro": "dbc2e157e4a4ee7db4e51d8a4470a0cbf0074d8c38ad3da62d6867c04b8a31de",
     "src/pages/resume/index.astro": "e6d7d2a184d81bd505ca2867cf84c2c9b73716b0dd3953d144a533e53709377e",
     "src/styles/resume.css": "75f58929d68c18f9bca0e53d14708464c0b46594da8ed5f059f012eb07a92e7c",
-    "src/layouts/Base.astro": "b019693096ca7bea85cce1e517732a676130932037a18fa4d3a0b735e28b7379",
+    "src/layouts/Base.astro": "b1fea063597e6d5b8fbf6c96e4aa7354f5ac1d30afeccd901ab1f4148f7e2a89",
     "src/styles/global.css": "d007ac95a5fcc1951e503af144c9d8a06f97731771ad5afa77f0ceb7a261c596",
     "src/styles/site-chrome.css": "c534c36d43982997a4c9617b5e220e399552ca7cd212476192909b7158c277f8",
     "public/fonts/resume-noto-sans-tc.woff2": "0dc2b450dcee50df37c763279d4d02576d495f23f9c4a1a56973abcb795114ae",
     "public/fonts/resume-noto-sans-tc-bold.woff2": "0f68f5fd8c8c434fc2f6f844c2eba8fbc0b994ae27c34adf8958f0f4e4826ef2"
   },
-  "pdf": "2aefea83e46e6fd73c9a6f54684a67b057f4a9b6c50472b2890f02d08ea902a9"
+  "pdf": "3b99e9cd9dbe9526c7c1e8a83082bef8f28232ace653ff93e13bf7294adf6470"
 }

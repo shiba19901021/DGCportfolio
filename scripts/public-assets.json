@@ -181,18 +181,18 @@
   },
   {
     "path": "resume-en.pdf",
-    "sha256": "7b80e30103c8ce7211f184c2f6edb7179c2502c3873305808b46ef61bd5063b7"
+    "sha256": "f5063d54bc98d9e9184a8179cf52780095e6c953f88c68e6dd376bd0e2c53ede"
   },
   {
     "path": "resume.pdf",
-    "sha256": "2aefea83e46e6fd73c9a6f54684a67b057f4a9b6c50472b2890f02d08ea902a9"
+    "sha256": "3b99e9cd9dbe9526c7c1e8a83082bef8f28232ace653ff93e13bf7294adf6470"
   },
   {
     "path": "teaching-en.pdf",
-    "sha256": "b44fd9d702ceb9421f97cc76924a6a0bc9a2e2184878ad8a3575ee9a22a95cca"
+    "sha256": "c59bd5bd01e976f97f8f58256313b620feb3800c5fd58919e4006ebb6932ef11"
   },
   {
     "path": "teaching.pdf",
-    "sha256": "3515d56ad9827e5ccec19271045ee8830cbcb6e576dd9028543b556572a41a1d"
+    "sha256": "f8de1d3e0e2a08510749ea8a98732575c198a63bfbb82fc3912b548827394549"
   }
 ]

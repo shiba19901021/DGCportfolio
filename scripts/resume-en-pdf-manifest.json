@@ -2,11 +2,11 @@
   "format": "A4 portrait",
   "pages": 1,
   "inputs": {
-    "src/data/resume.en.json": "30f299e4b20077157c9edfd3b265e062af94b2e9d91fa055215b4bd15585ff47",
+    "src/data/resume.en.json": "92bd38c08c2ad7e392a2921699a6193f8b463526e373e4487356c0c01075d735",
     "src/components/ResumeDocument.astro": "dbc2e157e4a4ee7db4e51d8a4470a0cbf0074d8c38ad3da62d6867c04b8a31de",
     "src/pages/en/resume/index.astro": "52106424e4080ce1685015628271783a7aad00433a9ba8a73c148b4101874e35",
     "src/styles/resume.css": "75f58929d68c18f9bca0e53d14708464c0b46594da8ed5f059f012eb07a92e7c",
-    "src/layouts/Base.astro": "b019693096ca7bea85cce1e517732a676130932037a18fa4d3a0b735e28b7379",
+    "src/layouts/Base.astro": "b1fea063597e6d5b8fbf6c96e4aa7354f5ac1d30afeccd901ab1f4148f7e2a89",
     "src/styles/global.css": "d007ac95a5fcc1951e503af144c9d8a06f97731771ad5afa77f0ceb7a261c596",
     "src/styles/site-chrome.css": "c534c36d43982997a4c9617b5e220e399552ca7cd212476192909b7158c277f8",
     "public/fonts/resume-en-noto-sans-tc.woff2": "87a76dc87e064e90ef0d9fd10368acc94a406bd7f5ae5954ec9486beaa5b9013",
@@ -14,5 +14,5 @@
     "src/styles/resume-en.css": "6d2114e30244d84940dde62ecc0296733d4931b7fee019ffa9ec8f64974c6333",
     "src/styles/en-print.css": "6ac71d326211755859f08e5c7eb27f426e0d549e2556667b74da530053e38a38"
   },
-  "pdf": "7b80e30103c8ce7211f184c2f6edb7179c2502c3873305808b46ef61bd5063b7"
+  "pdf": "f5063d54bc98d9e9184a8179cf52780095e6c953f88c68e6dd376bd0e2c53ede"
 }

@@ -87,7 +87,7 @@ blocks:
     id: original-section-6
     title: Make the game hard, but not so hard that players cannot keep playing
     markdown: |-
-      An early version that was too complicated was not adopted. The way of playing also kept being changed. The hunting result changed from drawing lots to a dice roll, and the game materials changed from white paper and cards to harder cards that last longer, which are easier to recognize on site and to use again.
+      An early version that was too complicated was not adopted. I also kept revising the gameplay afterward. The hunting result changed from drawing lots to a dice roll, and the game materials changed from white paper and cards to harder cards that last longer, which are easier to recognize on site and to use again.
 
       Excel can help estimate the difficulty, but real trial plays are still needed. I asked colleagues to help test. Some tried to find gaps in the rules, so I could check the limits and possible results, and keep adjusting. Some trade and sharing strategies that looked like "using loopholes" were kept so that players could try them.
 

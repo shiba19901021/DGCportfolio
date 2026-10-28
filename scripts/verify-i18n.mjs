@@ -117,6 +117,44 @@ export async function verifyI18n(outDir, { englishPublic = false } = {}) {
       chineseLinks.get(file).add(ref);
     }
   }
+  // Launch switch (englishPublic): hreflang, canonical, EN button and sitemap must all follow the same flag.
+  const hreflangOf = html => Object.fromEntries([...html.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)"/g)].map(m => [m[1], decode(m[2])]));
+  let sitemap = null;
+  try { sitemap = await readFile(path.join(outDir, 'sitemap.xml'), 'utf8'); } catch { /* none */ }
+  for (const file of files) {
+    const html = await readFile(path.join(outDir, file), 'utf8');
+    const hl = hreflangOf(html);
+    const isEn = file.startsWith('en/');
+    const hasSwitch = /class="lang-switch"/.test(html);
+    if (!englishPublic) {
+      if (Object.keys(hl).length || /<link rel="canonical"/.test(html)) errors.push(`${file}：英文版尚未公開，不應有 hreflang 或 canonical`);
+      if (!isEn && hasSwitch) errors.push(`${file}：英文版尚未公開，中文頁不應顯示 EN 按鈕`);
+      continue;
+    }
+    const counterpart = isEn ? file.slice(3) : `en/${file}`;
+    const paired = files.includes(isEn ? file.slice(3) : `en/${file}`) && (isEn || englishFiles.includes(`en/${file}`));
+    if (!paired) {
+      if (Object.keys(hl).length || hasSwitch) errors.push(`${file}：沒有對應英文頁，不應有 hreflang 或語言切換`);
+      continue;
+    }
+    for (const key of ['zh-Hant-TW', 'en', 'x-default']) if (!hl[key]) errors.push(`${file}：缺少 hreflang ${key}`);
+    if (hl['x-default'] && hl['x-default'] !== hl['zh-Hant-TW']) errors.push(`${file}：x-default 應指向中文頁`);
+    const zhUrl = hl['zh-Hant-TW']; const enUrl = hl.en;
+    if (zhUrl && enUrl && (!enUrl.includes('/en/') || enUrl.replace('/en/', '/') !== zhUrl)) errors.push(`${file}：hreflang 中英文網址不成對（${zhUrl}／${enUrl}）`);
+    const canonical = html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
+    if (canonical !== (isEn ? enUrl : zhUrl)) errors.push(`${file}：canonical 應指向自己`);
+    const other = hreflangOf(await readFile(path.join(outDir, counterpart), 'utf8'));
+    if (JSON.stringify(other) !== JSON.stringify(hl)) errors.push(`${file}：與 ${counterpart} 的 hreflang 不一致`);
+    if (!hasSwitch) errors.push(`${file}：英文版已公開，應顯示語言切換`);
+  }
+  if (!englishPublic && sitemap) errors.push('英文版尚未公開，不應產生 sitemap.xml');
+  if (englishPublic) {
+    if (!sitemap) errors.push('英文版已公開，缺少 sitemap.xml');
+    else for (const file of englishFiles) {
+      const loc = `${file.replace(/index\.html$/, '')}`;
+      if (!sitemap.includes(`${base}/${loc}</loc>`)) errors.push(`sitemap.xml 缺少 ${file}`);
+    }
+  }
   if (errors.length) throw new Error(`中英文對照檢查失敗（${errors.length} 項）：\n- ${errors.join('\n- ')}`);
   for (const warning of warnings) console.warn(`i18n 提醒：${warning}`);
   console.log(`中英文對照檢查通過：${englishFiles.length} 頁；${warnings.length} 項提醒（不擋部署）。`);
