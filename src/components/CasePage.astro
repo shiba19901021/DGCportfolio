@@ -38,11 +38,14 @@ const climateProgram = work.id === 'climate-program';
 const foodCarbon = work.id === 'food-carbon';
 const hunting = work.id === 'hunting';
 const caseV2 = rainwater || ecoKitchen || alishan || work.id === 'workflow' || climateProgram || foodCarbon || hunting;
+// 30-second summary at the top of each case: the four short fields already kept in each case file.
+const brief = [d.challenge, d.decision, d.delivered, d.boundary].map((text, i) => ({ label: t.briefItems[i], text })).filter(item => item.text?.trim());
 ---
 <Base title={`${intro?.title ?? d.title}${lang === 'en' ? ' | Ching-Teng Yu' : '｜游鏡騰'}`} description={d.summary} activeCategory={d.category} previewVersion={intro ? "V0.7" : "V0.6"} caseVisual={caseV2} lang={lang} alt={`/works/${work.id}/`}>
   {modular ? <div class:list={['case-v03', { 'case-v2': caseV2, 'case-eco-kitchen': ecoKitchen, 'case-alishan': alishan, 'case-climate-program': climateProgram, 'case-food-carbon': foodCarbon, 'case-hunting': hunting }]}>
     <header class="wrap case-v03-header"><nav aria-label={t.crumbAria} class="breadcrumb"><a href={localLinkFor(lang, '/').href}>{t.home}</a><span aria-hidden="true">／</span>{lang === 'en' ? <a href={localLinkFor(lang, '/works/').href}>{caseUiWorks}</a> : <a href={pathFor(parent.path)}>{parent.label}</a>}</nav>{!caseV2 && <p class="eyebrow">{parent.label} · 完整案例</p>}<h1>{intro?.title ?? d.title}</h1><p class="lead">{intro?.subtitle ?? d.summary}</p>{intro && <div class="case-reading"><p>{intro.introduction}</p></div>}<p class="case-header-role"><strong>{t.role}</strong>{d.role}</p>{d.image?.approved && <div class="case-hero-photo"><CaseFigure image={{ ...d.image, preview: false, annotations: [], ratio: 'wide', fit: 'cover', placeholder: '' }} eager /></div>}</header>
     {!caseV2 && blocks.some(block => block.title) && <nav class="wrap case-v03-toc" aria-label="案例內容"><ul>{blocks.filter(block => block.title).map(block => <li><a href={`#${block.id}`}>{block.title}</a></li>)}</ul></nav>}
+    {caseV2 && brief.length > 0 && <section class="wrap case-brief" aria-labelledby="case-brief-title"><h2 id="case-brief-title">{t.brief}</h2><dl>{brief.map(item => <div><dt>{item.label}</dt><dd>{item.text}</dd></div>)}</dl></section>}
     <article class="wrap case-modules">{rainwater ? <RainwaterModules work={work} /> : <CaseModules work={work}><Content slot="body" /></CaseModules>}</article>
     <div class="wrap case-v03-end"><RelatedWorks work={work} all={all} lang={lang} /><div class="case-next">{caseV2 ? <a class="text-link" href={localLinkFor(lang, '/works/').href}>{t.back}</a> : <><a class="text-link" href={pathFor(parent.path)}>← 回到{parent.label}</a><a class="text-link" href={pathFor('/explore/')}>從問題繼續探索 ↗</a></>}{(climateProgram || foodCarbon || hunting) && <TeachingCooperationLink lang={lang} />}</div></div>
   </div> : <>
