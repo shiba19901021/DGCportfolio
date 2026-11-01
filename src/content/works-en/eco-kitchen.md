@@ -19,8 +19,9 @@ problems:
 summary: Brought an unused space, old teaching tools, and scattered resources together into one site. It was built through a team workshop, and the lessons from the failed kiln went back into the design.
 challenge: An unused bamboo shed, aging teaching tools, and the need for a special site were scattered, and the building also had to suit beginners and damp conditions.
 decision: Laid out the site by how it is used for cooking, supplying firewood, washing, and recycling resources, and organized the building through a workshop and a division of work by skills.
-delivered: The main building and the later finishing were completed, and the site is used for cooking and resource-cycling activities.
+delivered: "Built the stove, work tables, firewood storage, compost bin, and gray water garden, turning an unused bamboo shed into an eco kitchen where real cooking happens."
 boundary: It was built by many people together. The "extreme energy-saving" in the existing name does not mean a verified energy-saving ratio, and the overall benefit has not been measured.
+inUse: "Since it opened at the end of 2024, it has been used for courses such as Food Carbon Detective, as well as volunteer training, adult courses, workshops, and site tours."
 role: I started the idea and made the proposal, designed the system and the kiln, bought materials, taught in the workshop, and directed the building. Participants, colleagues, and interns built and finished it together.
 related:
   - id: food-carbon
@@ -169,7 +170,7 @@ blocks:
     id: ongoing-use
     title: After it was finished, where it keeps being used
     markdown: |-
-      Since it opened, the eco kitchen has stayed in use. It supports courses such as [Food Carbon Detective](/en/works/food-carbon/), resource cycling, and Balcony Green Treasure Box, and is also used for volunteer training, adult courses, workshops, and site tours.
+      Since it opened, the eco kitchen has stayed in use. It supports courses such as [Food Carbon Detective](/en/works/food-carbon/), resource cycling, and Balcony Green Treasure Box, and is also used for volunteer training, adult courses, workshops, and site tours. "Extreme energy-saving" is the name the stove has kept, and its energy-saving ratio has not been measured.
 
       Cooking, washing, composting, and planting all happen in the same site, so teachers can take learners to understand where materials, energy, and resources go through real work. This experience of promoting permaculture practice and the eco kitchen at the center also became what I shared at IPC15.
   - type: gallery

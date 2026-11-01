@@ -38,6 +38,6 @@ export function localLink(lang: Lang, path: string) {
 
 // Case page strings.
 export const caseUi = {
-  zh: { crumbAria: '所在位置', home: '首頁', role: '我的角色：', back: '← 返回所有作品', teaching: '課程設計與教學合作 ↗', related: '接著探索', relatedAria: '的相關作品', brief: '專案概要', briefItems: ['原始問題', '關鍵決策', '完成內容', '成果說明與限制'] },
-  en: { crumbAria: 'Breadcrumb', home: 'Home', role: 'My role: ', back: '← Back to All Works', teaching: 'Course Design and Teaching Collaboration ↗', related: 'Keep exploring', relatedAria: ': related works', brief: 'Project overview', briefItems: ['The problem', 'Key decisions', 'What was delivered', 'Limits of the results'] },
+  zh: { crumbAria: '所在位置', home: '首頁', role: '我的角色：', back: '← 返回所有作品', teaching: '課程設計與教學合作 ↗', related: '接著探索', relatedAria: '的相關作品', brief: '專案概要', briefItems: ['原始問題', '關鍵決策', '完成成果', '實際使用'] },
+  en: { crumbAria: 'Breadcrumb', home: 'Home', role: 'My role: ', back: '← Back to All Works', teaching: 'Course Design and Teaching Collaboration ↗', related: 'Keep exploring', relatedAria: ': related works', brief: 'Project overview', briefItems: ['The problem', 'Key decisions', 'Results', 'How it is used'] },
 } as const;

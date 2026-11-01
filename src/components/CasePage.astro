@@ -42,7 +42,7 @@ const caseV2 = rainwater || ecoKitchen || alishan || work.id === 'workflow' || c
 // The case's own 'overview' summary block (site, period, scale...) joins the same area, so there is one overview, not two.
 const overview = caseV2 ? blocks.find(block => block.type === 'summary' && block.id === 'overview') : undefined;
 const brief = [
-  ...[d.challenge, d.decision, d.delivered, d.boundary].map((text, i) => ({ label: t.briefItems[i], text })),
+  ...[d.challenge, d.decision, d.delivered, d.inUse].map((text, i) => ({ label: t.briefItems[i], text })),
   ...(overview?.type === 'summary' ? overview.items.map(item => ({ label: item.label, text: caseText(item.value, work) })) : []),
 ].filter(item => item.label.trim() && item.text?.trim());
 const skip = overview ? [overview.id] : [];

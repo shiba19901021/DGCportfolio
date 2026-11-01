@@ -19,8 +19,9 @@ problems:
 summary: Used two rounds of choosing ingredients to set the order in which information appears, so students compare food choices, and then extended this to real cooking and resource cycling.
 challenge: After students learn the food carbon footprint results, how can they get a chance to compare and choose again?
 decision: Students first choose ingredients from their own life experience. Then the relative carbon levels made for teaching are shown, so the new information goes into the second choice.
-delivered: Completed an ingredient game, teaching tools, and a cooking course that are still in use. As of 2026, 30 or more sessions and more than 800 participant visits in total, and the experience was written up as an English practice report.
+delivered: "Completed an ingredient game, an ingredient handbook, a teaching website, and a cooking course that are still in use. As of 2026, 30 or more sessions and more than 800 participant visits in total."
 boundary: Levels 1 to 10 are a relative comparison made for teaching. Observations in class show how students think again about ingredients. They are not a follow-up on long-term eating habits.
+inUse: "Listed in the official course introduction on Taiwan Forest Recreation (山林悠遊網), and the practice was presented in English at the 2026 Annual Meeting of the Japanese Society for Environmental Education (JSFEE)."
 role: I was mainly in charge of the core course design, research on ingredient information, the game rules, the teaching tools, and the relative carbon levels. I took part in teaching and kept adjusting, and also wrote up the practice experience as an English presentation. Colleagues and the team took part in trial plays, feedback, preparing materials, leading groups, and teaching on site.
 related:
   - id: climate-program
@@ -150,20 +151,8 @@ blocks:
         ratio: natural
         fit: contain
   - type: narrative
-    id: original-section-8
-    title: Used again and again, then written up to share with others
-    markdown: |-
-      Course statistics up to 2026
-  - type: summary
-    id: course-counts
-    columns: two
-    items:
-      - label: Sessions in total
-        value: At least 30
-      - label: Participant visits in total
-        value: At least 800
-  - type: narrative
     id: course-use-and-sharing
+    title: Used again and again, then written up to share with others
     markdown: |-
       The course is listed in the [official course introduction on Taiwan Forest Recreation (山林悠遊網)](https://recreation.forest.gov.tw/Education/Course?id=CK-A21516). Colleagues and the teaching team prepare the materials, lead groups, and teach on site together, and then keep adjusting based on how the course is used. Some partner organizations have also come back with different students. The arrangements are also adjusted for each group's age, needs, time, and conditions on site.
 

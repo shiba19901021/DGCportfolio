@@ -14,8 +14,9 @@ problems:
 summary: First mapped where data comes from and which tasks use it. Then used formulas and linked sheets to reduce repeated upkeep, while keeping the document output that is needed.
 challenge: Business records, statistics, work logs, and documents use the same information, but it was kept in many places and checked again and again.
 decision: Redesigned how data is sourced and used, with formulas and linked sheets, while keeping the documents and print formats that colleagues need.
-delivered: Existing data can be used across workflows, and it produces reports, charts, and search information. One of the business statistics is done in about one hour or less. This is a rough estimate from the original draft, and it applies only to that task.
+delivered: "Data can be reused across workflows to produce reports, charts, and search information. One business statistics task went from several hours to about one hour or less (a rough estimate from actual work)."
 boundary: Some interfaces were made with AI help. This does not mean every system syncs automatically. The original internal forms and real business data are not shown.
+inUse: "About five colleagues in the office use the related business forms. I maintain the management website and keep adjusting it based on real use."
 role: I noticed repeated work in the workflow, designed how data is linked and how documents are handled, and built the management interface with AI. I kept adjusting it based on real use.
 related: []
 contexts: {}
@@ -62,7 +63,7 @@ blocks:
     id: keep-familiar-input
     title: No forced change of tools. Let the data keep moving to the next step
     markdown: |-
-      Spreadsheets let the data be reused. But there was still room to simplify how to search management information and how to prepare report statistics and charts. I used AI to help build a management website. I decided which functions were needed from the real work, then tested and adjusted how the data is shown and how it is used.
+      Spreadsheets let the data be reused. But there was still room to simplify how to search management information and how to prepare report statistics and charts. I used AI to help build a management website. I decided which functions were needed from the real work, then tested and adjusted how the data is shown and how it is used. Some interfaces were made with AI help, and not every system syncs automatically.
 
       At first, I wanted my colleague to enter business records directly on the website. But the colleague who actually keeps the records was more used to Google Sheets and felt the original tables were easier to control. I did not ask the colleague to give up a familiar tool. Instead, I separated data entry from later analysis.
 

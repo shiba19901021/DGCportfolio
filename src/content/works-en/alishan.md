@@ -18,8 +18,9 @@ problems:
 summary: Connected the center's lessons before camp with the tribal experience, made clear who leads each area of expertise, and adjusted the plan as transport, group size, and venue changed.
 challenge: Respect for the tribe's own culture, how ready the students are, transport, recruiting, and operating costs all affect each other.
 decision: The center and the tribe each lead their own expert content. Transport is adjusted to the number of students who sign up. When the venue changed, the core learning and the safety arrangements were kept.
-delivered: The plan has been run for many years. The venue was once contacted again and the arrangements adjusted, so the activity went ahead as scheduled.
+delivered: "Since a trial began in about 2021, it has kept being adjusted into a three-day, two-night structure: preparation at the center on day one, and learning in the tribe on days two and three. When the partner venue changed suddenly, a replacement plan was arranged in about two to three days, and the camp ran with the adjusted schedule."
 boundary: Culture and life in the mountains and forest are led by tribal teachers. The total number of camps and participants is not used here, and verbal feedback cannot be used to infer the overall results.
+inUse: "It has become an education program the center can run again and again. Some students joined again and brought their siblings, and a school teacher booked an extra camp."
 role: I led the overall structure, the contact with partners, the budget, recruiting, communication with parents, and leading the groups on site. Colleagues took part in the lessons, and tribal teachers led the content on site.
 related:
   - id: hunting

@@ -18,8 +18,9 @@ problems:
 summary: Turned cooperation, limited resources, and environmental ethics into choices in a game, and adjusted the guidance, difficulty, and game materials after trial plays and real teaching.
 challenge: How can students understand cooperation, limited resources, and environmental ethics through their own choices and results?
 decision: Let tool roles, food sharing, and forest resources affect each other, then adjust the cooperation hints and starting resources based on trial plays and teaching experience.
-delivered: A simulation game and physical game materials were completed. They are already used in the lessons before the Alishan Hunter Growth Camp, and went through many version changes.
+delivered: "Completed a simulation game and durable physical game materials, adjusted many times through Excel probability estimates, trial plays with colleagues, and real teaching."
 boundary: The game is used for learning about cooperation and environmental ethics before entering the tribe. Tribal culture, life in the mountains and forest, and real hunting experience are led by tribal teachers.
+inUse: "Used in the introductory lessons on the first day of the Alishan Hunter Growth Camp, and keeps being adjusted through trial plays and real use."
 role: I was mainly in charge of the learning goals, the game mechanics and rules, the Excel probability estimates, making the game materials, and adjusting the teaching on site. Colleagues helped with trial plays and with finding problems in the rules.
 related:
   - id: alishan

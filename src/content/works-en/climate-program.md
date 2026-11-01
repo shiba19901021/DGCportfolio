@@ -19,8 +19,9 @@ problems:
 summary: Led a team to develop six courses, redesigned the resource cycle course from what we saw in trial teaching, and put the new lesson plan into real teaching.
 challenge: The center already had course prototypes at different levels of maturity. They needed to become formal programs with clear goals and connected activities, which other teachers could also use easily.
 decision: Checked the activities and their order against the learning goals, combined the team's division of work and trial teaching feedback, and redesigned the resource cycle course around how resources move through the site.
-delivered: The team completed six formal courses, with fourteen trial sessions and 300 or more participant visits in total. The new lesson plan for the resource cycle course has been used in the center's later teaching.
+delivered: "The team completed six formal courses, through fourteen trial sessions, 300 or more participant visits, and about five to six rounds of changes."
 boundary: The six courses were completed by the team together. I was directly in charge of improving two of them, and after trial teaching I redesigned the new lesson plan for the resource cycle course.
+inUse: "The new resource cycle lesson plan I redesigned is used in the center's real teaching, and later feedback was more positive. Courses such as Food Carbon Detective are also still in use."
 role: I was the lead for course development. I was directly in charge of improving Food Carbon Detective and Balcony Green Treasure Box, and after trial teaching I redesigned the new lesson plan for Resource Cycle.
 related:
   - id: food-carbon
@@ -145,16 +146,6 @@ blocks:
       Besides the eight trial sessions in the original plan, we also counted six sessions that schools booked and paid for themselves and agreed to use as trial teaching. We included them in the tests and feedback, for fourteen sessions and 300 or more participant visits in total.
 
       I combined student questionnaires, teacher feedback, and observations on site, and kept revising after talking with colleagues. Overall, the development went through about five to six rounds of changes, handled according to the problems of each course. In the end, six formal programs were completed, with lesson plans, flow, and materials organized for the center's later teaching.
-  - type: summary
-    id: project-outcomes
-    columns: three
-    items:
-      - label: Formal courses
-        value: 6 courses, completed by the team together
-      - label: Real trial sessions
-        value: 14 sessions, including 6 booked and paid for by schools that agreed to use them as trial teaching
-      - label: Overall participation
-        value: 300 or more participant visits
   - type: narrative
     id: continued-use
     markdown: |-

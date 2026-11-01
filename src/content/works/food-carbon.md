@@ -19,8 +19,9 @@ problems:
 summary: 以兩次選材安排資訊出現的順序，讓學生比較食物選擇，並延伸到實際料理與資源循環。
 challenge: 知道食物碳足跡的結果之後，如何讓學生有機會重新比較與選擇？
 decision: 先讓學生依生活經驗選材，再揭露教學用相對碳等級，讓新資訊進入第二次選擇。
-delivered: 完成持續使用的食材遊戲、教具與料理課程；截至 2026 年，累積 30 場以上、超過 800 參與人次，並整理為英文實務發表。
+delivered: "完成持續使用的食材遊戲、食材手冊、教學網站與料理課程；截至 2026 年累積 30 場以上、超過 800 參與人次。"
 boundary: 1–10 級是教學用的相對比較；課堂觀察呈現學生如何重新考慮食材，並非長期飲食行為的追蹤。
+inUse: "已列入山林悠遊網官方課程介紹，並於 2026 年在日本環境教育學會年次大會以英文發表實務經驗。"
 role: 主責課程核心設計、食材資訊研究、遊戲規則、教具與相對碳等級設計，參與教學並持續調整，也將實務經驗整理為英文發表；同事與團隊參與試玩、回饋、教材準備、分組帶領及現場教學。
 related:
   - id: climate-program
@@ -155,20 +156,8 @@ blocks:
         ratio: natural
         fit: contain
   - type: narrative
-    id: original-section-8
-    title: 反覆使用，再把經驗整理成對外分享
-    markdown: |-
-      截至 2026 年既有課程統計
-  - type: summary
-    id: course-counts
-    columns: two
-    items:
-      - label: 累積課程場次
-        value: 30+
-      - label: 累積參與人次
-        value: 800+
-  - type: narrative
     id: course-use-and-sharing
+    title: 反覆使用，再把經驗整理成對外分享
     markdown: |-
       課程已列入[山林悠遊網的官方課程介紹](https://recreation.forest.gov.tw/Education/Course?id=CK-A21516)。同事與教師團隊共同準備教材、分組帶領及現場教學，再依使用經驗持續調整；部分合作單位也再次帶不同學生參與。活動安排也會依各團體的年齡、需求、時間與現場條件調整。
 

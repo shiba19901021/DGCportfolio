@@ -25,6 +25,7 @@ const workSchema = z.object({
     decision: z.string(),
     delivered: z.string(),
     boundary: z.string(),
+    inUse: z.string().optional(),
     role: z.string(),
     related: z.array(z.object({ id: z.string(), reason: z.string() })).default([]),
     contexts: z.record(z.string(), z.object({
