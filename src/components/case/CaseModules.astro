@@ -8,9 +8,9 @@ import GalleryBlock from './GalleryBlock.astro';
 import TimelineBlock from './TimelineBlock.astro';
 import ComparisonBlock from './ComparisonBlock.astro';
 import ResultsBlock from './ResultsBlock.astro';
-interface Props { work: Work; blocks?: CaseBlock[]; }
-const { work } = Astro.props;
-const blocks = Astro.props.blocks ?? visibleBlocks(work);
+interface Props { work: Work; blocks?: CaseBlock[]; skip?: string[]; }
+const { work, skip = [] } = Astro.props;
+const blocks = (Astro.props.blocks ?? visibleBlocks(work)).filter(block => !skip.includes(block.id));
 ---
 {blocks.map(block => <>
   {block.type === 'summary' && <SummaryBlock block={block} work={work} statistics={work.id === 'climate-program' && block.id === 'project-outcomes'} />}

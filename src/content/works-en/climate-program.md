@@ -19,7 +19,7 @@ problems:
 summary: Led a team to develop six courses, redesigned the resource cycle course from what we saw in trial teaching, and put the new lesson plan into real teaching.
 challenge: The center already had course prototypes at different levels of maturity. They needed to become formal programs with clear goals and connected activities, which other teachers could also use easily.
 decision: Checked the activities and their order against the learning goals, combined the team's division of work and trial teaching feedback, and redesigned the resource cycle course around how resources move through the site.
-delivered: The team completed six formal courses, with 14 trial sessions and 300 or more participant visits in total. The new lesson plan for the resource cycle course has been used in the center's later teaching.
+delivered: The team completed six formal courses, with fourteen trial sessions and 300 or more participant visits in total. The new lesson plan for the resource cycle course has been used in the center's later teaching.
 boundary: The six courses were completed by the team together. I was directly in charge of improving two of them, and after trial teaching I redesigned the new lesson plan for the resource cycle course.
 role: I was the lead for course development. I was directly in charge of improving Food Carbon Detective and Balcony Green Treasure Box, and after trial teaching I redesigned the new lesson plan for Resource Cycle.
 related:

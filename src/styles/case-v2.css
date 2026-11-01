@@ -122,8 +122,8 @@
 }
 
 /* 30-second summary under the case header: no boxes, whitespace only. */
-.case-v2 .case-brief { margin-block: 2.5rem 1rem; }
-.case-v2 .case-brief > h2 { font-size: .8125rem; font-weight: 650; letter-spacing: .08em; color: var(--muted); margin: 0 0 1.25rem; border: 0; padding: 0; }
+.case-v2 .case-brief { margin-block: 2.5rem 3rem; }
+.case-v2 .case-brief > h2 { font-size: clamp(1.5rem, 2.7vw, 1.875rem); line-height: 1.6; margin: 0 0 1.75rem; border: 0; padding: 0; }
 .case-v2 .case-brief dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 3rem; margin: 0; }
 .case-v2 .case-brief dl > div { border: 0; background: none; padding: 0; min-width: 0; }
 .case-v2 .case-brief dt { font-size: .875rem; font-weight: 650; margin-bottom: .45rem; }

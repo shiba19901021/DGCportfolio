@@ -3,9 +3,9 @@ import type { Work } from '../../lib/works';
 import { visibleBlocks } from '../../lib/case-blocks';
 import CaseModules from './CaseModules.astro';
 import DecisionBlock from './DecisionBlock.astro';
-interface Props { work: Work; }
-const { work } = Astro.props;
-const blocks = visibleBlocks(work);
+interface Props { work: Work; skip?: string[]; }
+const { work, skip = [] } = Astro.props;
+const blocks = visibleBlocks(work).filter(block => !skip.includes(block.id));
 // Only pair these adjacent source blocks; never move or duplicate source content.
 const studentIndex = blocks.findIndex(block => block.id === 'student-participation');
 const pairStudents = studentIndex >= 0 && blocks[studentIndex + 1]?.id === 'student-illustration';
