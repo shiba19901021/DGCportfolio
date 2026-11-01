@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import WorkRowCard from './WorkRowCard.astro';
 import WorkCompactRow from './WorkCompactRow.astro';
-import { listedWorks } from '../lib/works';
+import { listedWorks, pathFor } from '../lib/works';
 import { homeSummary, homeText } from '../data/home-i18n';
 import { homeFeatured } from '../data/home-summaries';
 import { localLink, ui, type Lang } from '../lib/i18n';
@@ -63,7 +63,7 @@ const summary = (id: string) => {
 
     <section id="about" class="home-about" aria-labelledby="about-title">
       <div class="wrap home-about-grid"><div><h2 id="about-title">{t.aboutTitle}</h2><p class="home-about-direction">{t.aboutDirection}</p><p>{t.aboutText}</p><p class="home-work-preference">{t.preference}</p></div>
-      <div id="resume" class="home-resume"><h2>{t.contactTitle}</h2><p>{t.contactText}</p><div class="home-contact-list"><a href={`mailto:${site.email}`}>{t.emailLink} <span aria-hidden="true">↗</span></a><a href={site.linkedin}>LinkedIn <span aria-hidden="true">↗</span></a></div></div></div>
+      <div id="resume" class="home-resume"><img class="home-portrait" src={pathFor('/images/profile/ching-teng-yu.webp')} alt={t.photoAlt} width="480" height="576" loading="lazy" decoding="async" /><h2>{t.contactTitle}</h2><p>{t.contactText}</p><div class="home-contact-list"><a href={`mailto:${site.email}`}>{t.emailLink} <span aria-hidden="true">↗</span></a><a href={site.linkedin}>LinkedIn <span aria-hidden="true">↗</span></a></div></div></div>
     </section>
   </div>
 </Base>

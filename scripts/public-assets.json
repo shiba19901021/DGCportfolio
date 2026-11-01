@@ -136,6 +136,14 @@
     "sha256": "f1c878f09fbb84bce37459f71bcc92161ba28bdd6abb514b53660ab3795f74f5"
   },
   {
+    "path": "images/profile/ching-teng-yu.jpg",
+    "sha256": "7e4c9fda4e969205d0eb7b6c45ddbab49f50597137a309a3761ddb62a076a3d7"
+  },
+  {
+    "path": "images/profile/ching-teng-yu.webp",
+    "sha256": "da55fba0186d63f170e3aa1516b6aa7a81caf31f50b846716b06a0e2410c1716"
+  },
+  {
     "path": "images/rainwater/broken-joint.jpg",
     "sha256": "5039e06743a3c6e25fe069ee40bbbc348df2318243091588162f301fb0973d5b"
   },
@@ -181,18 +189,18 @@
   },
   {
     "path": "resume-en.pdf",
-    "sha256": "9016a79109c5cab7ebc74c72ab6f8d5da96410299e6c0bbada8f0b80cc2cb8a2"
+    "sha256": "16be0e33b93dee12416d9875c772f09669f0f055247cd690b43fcc6eaa41d704"
   },
   {
     "path": "resume.pdf",
-    "sha256": "3b99e9cd9dbe9526c7c1e8a83082bef8f28232ace653ff93e13bf7294adf6470"
+    "sha256": "6f8ddb54166d968f541c2be032235a85aad383843357dc961ee9106c44725b44"
   },
   {
     "path": "teaching-en.pdf",
-    "sha256": "5d27b0cc19454e09d04182d35eb915a6421e689825c67e7e65f35496993ba87f"
+    "sha256": "d7f34817bedfa823424325f372453bdba9374a7eb8b0cd5074a7b764be928b2c"
   },
   {
     "path": "teaching.pdf",
-    "sha256": "f8de1d3e0e2a08510749ea8a98732575c198a63bfbb82fc3912b548827394549"
+    "sha256": "43b0acb5aeffd50babe6cfb0a876763f0108be80c46d368b7b9205386818ba91"
   }
 ]

@@ -140,3 +140,7 @@ body.home-page:has(.home-editorial) {
 
 
 .home-editorial .home-all-works { display: flex; justify-content: flex-end; padding-top: 1.5rem; }
+
+/* Portrait in the contact column. */
+.home-editorial .home-portrait { display: block; width: 132px; height: auto; border-radius: 4px; margin: 0 0 1.25rem; }
+@media (max-width: 700px) { .home-editorial .home-portrait { width: 112px; } }

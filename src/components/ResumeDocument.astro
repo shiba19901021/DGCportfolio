@@ -15,7 +15,8 @@ const { teaching = false, lang = 'zh' } = Astro.props;
 const labels = lang === 'en' ? { contacts: 'Resume contacts', portfolio: 'Full portfolio: ', comma: ', ' } : { contacts: '履歷聯絡方式', portfolio: '完整作品集：', comma: '，' };
 ---
 <article class:list={['resume-sheet', { 'teaching-sheet': teaching }]} lang={lang === 'en' ? 'en' : undefined} aria-labelledby="resume-name">
-  <header class="resume-header">
+  <header class:list={['resume-header', { 'has-photo': lang === 'zh' }]}>
+    {lang === 'zh' && <figure class="resume-photo" data-zh-only><img src={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/images/profile/ching-teng-yu.jpg`} alt="游鏡騰的大頭照" width="600" height="720" /></figure>}
     <div class="resume-identity">
       <h1 id="resume-name">{resume.name}</h1>
       <p class="resume-positioning">{resume.positioning}</p>

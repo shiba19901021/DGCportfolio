@@ -8,7 +8,7 @@ export interface HomeText {
   allWorks: string; resumeTitle: string; resumeCards: { path: string; title: string; text: string }[];
   projectsTitle: string; projectsText: string; coursesTitle: string; coursesText: string; viewAll: string;
   aboutTitle: string; aboutDirection: string; aboutText: string; preference: string;
-  contactTitle: string; contactText: string; emailLink: string;
+  contactTitle: string; contactText: string; emailLink: string; photoAlt: string;
   problem: string; approach: string; outcome: string;
   readCase: string; viewCourse: string; viewProject: string; cardImageAlt: Record<string, string>; workTitles: Record<string, string>;
 }
@@ -28,7 +28,7 @@ const zh: HomeText = {
   aboutTitle: '關於我', aboutDirection: '從現場經驗，走向下一個方案。',
   aboutText: '我的背景涵蓋環境教育、永續實務、場域建置與跨組織合作。希望將累積的問題分析與方案設計經驗，應用到更廣泛的工作。',
   preference: '偏好遠端或彈性工作，可配合必要場勘與現場協作。',
-  contactTitle: '聯絡方式', contactText: '歡迎跨領域方案設計、課程研發、教學及專案合作邀約。', emailLink: 'Email 聯絡',
+  contactTitle: '聯絡方式', contactText: '歡迎跨領域方案設計、課程研發、教學及專案合作邀約。', emailLink: 'Email 聯絡', photoAlt: '游鏡騰的大頭照',
   problem: '問題｜', approach: '做法｜', outcome: '成果｜',
   readCase: '閱讀完整案例', viewCourse: '查看課程摘要', viewProject: '查看專案摘要', cardImageAlt: {}, workTitles: {},
 };
@@ -48,7 +48,7 @@ const en: HomeText = {
   aboutTitle: 'About Me', aboutDirection: 'From field experience to the next solution.',
   aboutText: 'My background covers environmental education, sustainability practice, site building, and work across organizations. I want to use my experience in problem analysis and solution design in a wider range of work.',
   preference: 'I prefer remote or flexible work. I can join site visits and on-site work when needed.',
-  contactTitle: 'Contact', contactText: 'I welcome invitations for cross-field solution design, course development, teaching, and project work.', emailLink: 'Email me',
+  contactTitle: 'Contact', contactText: 'I welcome invitations for cross-field solution design, course development, teaching, and project work.', emailLink: 'Email me', photoAlt: 'Portrait photo of Ching-Teng Yu',
   problem: 'Problem | ', approach: 'Approach | ', outcome: 'Result | ',
   readCase: 'Read the full case', viewCourse: 'View course summary', viewProject: 'View project summary',
   cardImageAlt: {

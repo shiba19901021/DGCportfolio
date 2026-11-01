@@ -28,7 +28,8 @@ async function htmlFiles(root, dir = root) {
 }
 
 function parts(html) {
-  const main = /<main[\s\S]*?<\/main>/.exec(html)?.[0] ?? '';
+  // Chinese-only elements (the résumé photo; English résumés have no photo) are marked data-zh-only and left out of the comparison.
+  const main = (/<main[\s\S]*?<\/main>/.exec(html)?.[0] ?? '').replace(/<figure[^>]*data-zh-only[\s\S]*?<\/figure>/g, '');
   const clean = main.replace(/<(script|style)[\s\S]*?<\/\1>/g, '');
   const attrs = [...clean.matchAll(/\s(?:alt|aria-label)="([^"]*)"/g)].map(m => decode(m[1]));
   const texts = clean.split(/<[^>]+>/).map(t => decode(t).replace(/\s+/g, ' ').trim()).filter(Boolean);

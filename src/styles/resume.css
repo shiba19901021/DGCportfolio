@@ -10,6 +10,10 @@
 .resume-sheet p, .resume-sheet h1, .resume-sheet h2, .resume-sheet h3 { margin: 0; }
 .resume-sheet a { color: #864e29; }
 .resume-header { margin-bottom: 1.75rem; }
+.resume-header.has-photo { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 1.75rem; }
+.resume-header.has-photo > :not(.resume-photo) { grid-column: 1; }
+.resume-photo { grid-column: 2; grid-row: 1 / span 3; margin: 0; align-self: start; }
+.resume-photo img { display: block; width: 112px; height: auto; border-radius: 4px; }
 .resume-identity { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1.25rem; border-bottom: 1.5px solid #292E32; padding-bottom: .75rem; margin-bottom: .85rem; }
 .resume-identity h1 { font-size: 2rem; letter-spacing: .06em; }
 .resume-sheet .resume-positioning { color: #B9784F; font-weight: 700; font-size: 1.25rem; }
@@ -46,6 +50,8 @@
   .resume-page { padding: 1rem .65rem 1.5rem; }
   .resume-sheet { padding: 1.4rem 1.1rem; }
   .resume-identity { display: block; }
+  .resume-header.has-photo { column-gap: 1rem; }
+  .resume-photo img { width: 84px; }
   .resume-sheet .resume-positioning { font-size: 1.125rem; margin-top: .5rem; }
   .resume-bottom-grid { grid-template-columns: minmax(0,1fr); gap: 1.75rem; }
   .resume-case { gap: .25rem .65rem; }
@@ -60,6 +66,10 @@
   .resume-page { padding: 0; background: none; }
   .resume-sheet { width: 210mm; min-height: 297mm; margin: 0; padding: 15mm 18mm 13mm; display: flex; flex-direction: column; font-size: 13px; line-height: 1.6; print-color-adjust: exact; }
   .resume-header { margin-bottom: 22px; }
+  .resume-header.has-photo { column-gap: 14px; margin-bottom: 12px; }
+  .resume-header.has-photo .resume-identity { margin-bottom: 8px; }
+  .resume-header.has-photo .resume-contacts { margin-top: 4px; }
+  .resume-photo img { width: 20mm; border-radius: 2px; }
   .resume-identity { flex-wrap: nowrap; padding-bottom: 10px; margin-bottom: 12px; gap: 16px; }
   .resume-identity h1 { font-size: 30px; letter-spacing: 2px; }
   .resume-sheet .resume-positioning { font-size: 20px; letter-spacing: .5px; }
