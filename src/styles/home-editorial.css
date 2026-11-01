@@ -141,6 +141,11 @@ body.home-page:has(.home-editorial) {
 
 .home-editorial .home-all-works { display: flex; justify-content: flex-end; padding-top: 1.5rem; }
 
-/* Portrait in the contact column. */
-.home-editorial .home-portrait { display: block; width: 132px; height: auto; border-radius: 4px; margin: 0 0 1.25rem; }
-@media (max-width: 700px) { .home-editorial .home-portrait { width: 112px; } }
+/* Portrait in the contact column: photo on the left, contact text on its right, so both home-about columns end at about the same height. */
+.home-editorial .home-resume { display: grid; grid-template-columns: 132px minmax(0, 1fr); column-gap: 1.75rem; align-items: start; }
+.home-editorial .home-resume > * { grid-column: 2; }
+.home-editorial .home-resume > .home-portrait { grid-column: 1; grid-row: 1 / span 3; display: block; width: 100%; height: auto; border-radius: 4px; margin: 0; }
+.home-editorial .home-resume > h2 { margin-top: 0; }
+@media (max-width: 700px) {
+  .home-editorial .home-resume { grid-template-columns: 96px minmax(0, 1fr); column-gap: 1.25rem; }
+}
