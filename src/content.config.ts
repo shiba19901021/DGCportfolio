@@ -49,7 +49,7 @@ const miniSchema = z.object({
     title: z.string(),
     kind: z.enum(['practice', 'course']),
     category: z.enum(['workflow-ai', 'interactive', 'hands-on', 'course-mini']).optional(),
-    icon: z.enum(['questionnaire', 'simulator']).optional(),
+    icon: z.enum(['questionnaire', 'simulator', 'email']).optional(),
     order: z.number(),
     visibility: z.enum(['preview', 'public']).default('preview'),
     summary: z.string(),
