@@ -1,6 +1,6 @@
 ---
 // 簡單線條圖案，替代照片。目前只有問卷；新增時在此加一個 name。
-interface Props { name: 'questionnaire' | 'simulator' | 'email'; }
+interface Props { name: 'questionnaire' | 'simulator' | 'email' | 'registration'; }
 const { name } = Astro.props;
 ---
 {name === 'questionnaire' && <svg viewBox="0 0 92 69" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
@@ -28,3 +28,12 @@ const { name } = Astro.props;
   <rect x="58" y="38" width="24" height="16" rx="2" /><path d="M58 40l12 8 12-8" />
   <path d="M55 22v28" class="mini-icon-accent" />
 </svg>}
+{name === 'registration' && <svg viewBox="0 0 92 69" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+  <rect x="10" y="12" width="14" height="18" rx="2" /><path d="M14 18h6M14 23h6" />
+  <rect x="10" y="38" width="14" height="18" rx="2" /><path d="M14 44h6M14 49h6" />
+  <path d="M27 21c6 0 8 13 14 13M27 47c6 0 8-13 14-13" class="mini-icon-accent" />
+  <rect x="46" y="16" width="34" height="36" rx="2" />
+  <path d="M46 25h34M46 34h34M46 43h34M57 16v36" />
+  <path d="M68 29.5l2 2 3.5-3.5" class="mini-icon-accent" />
+</svg>}
+

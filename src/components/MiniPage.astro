@@ -23,6 +23,7 @@ const worksLink = lang === 'en' ? `${localLink('en', '/works/').href}#minis` : p
       {d.role && <p class="mini-role"><strong>{t.role}</strong>{d.role}</p>}
     </header>
     <section class="mini-section" aria-labelledby="mini-problem"><h2 id="mini-problem">{t.problem}</h2><p>{d.problem}</p></section>
+    {d.decisions.length > 0 && <section class="mini-section" aria-labelledby="mini-decisions"><h2 id="mini-decisions">{t.decisions}</h2><ol class="mini-decisions">{d.decisions.map(item => <li><h3>{item.title}</h3><p>{item.text}</p></li>)}</ol></section>}
     <section class="mini-section" aria-labelledby="mini-steps"><h2 id="mini-steps">{t.steps}</h2>{d.built && <p class="mini-built">{d.built}</p>}<ol class="mini-steps">{d.steps.map(step => <li>{step}</li>)}</ol></section>
     {d.estimate && <section class="mini-section" aria-labelledby="mini-estimate"><h2 id="mini-estimate">{t.estimate}</h2>{d.estimate.split('\n').map(line => <p class="mini-estimate-line">{line}</p>)}<p class="mini-note">{t.note}</p></section>}
     {d.usage.length > 0 && <section class="mini-section" aria-labelledby="mini-usage"><h2 id="mini-usage">{t.usage}</h2><ul class="mini-usage">{d.usage.map(item => <li>{item}</li>)}</ul></section>}

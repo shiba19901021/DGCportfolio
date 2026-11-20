@@ -49,7 +49,7 @@ const miniSchema = z.object({
     title: z.string(),
     kind: z.enum(['practice', 'course']),
     category: z.enum(['workflow-ai', 'interactive', 'hands-on', 'course-mini']).optional(),
-    icon: z.enum(['questionnaire', 'simulator', 'email']).optional(),
+    icon: z.enum(['questionnaire', 'simulator', 'email', 'registration']).optional(),
     order: z.number(),
     visibility: z.enum(['preview', 'public']).default('preview'),
     summary: z.string(),
@@ -57,6 +57,8 @@ const miniSchema = z.object({
     role: z.string().optional(),
     problem: z.string(),
     built: z.string().optional(),
+    // Optional: the design decisions and why they were made, shown before the steps.
+    decisions: z.array(z.object({ title: z.string(), text: z.string() })).default([]),
     steps: z.array(z.string()).min(1).max(5),
     estimate: z.string().optional(),
     usage: z.array(z.string()).default([]),

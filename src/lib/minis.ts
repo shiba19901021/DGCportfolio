@@ -30,8 +30,8 @@ export const miniHref = (mini: Mini) => pathFor(`/minis/${mini.id}/`);
 // src/content/minis-en/<id>.md mirrors the Chinese file: same fields and the same number of steps, usage
 // items, limits and estimate lines. Only the text differs. Checked at build.
 export const miniUi = {
-  zh: { crumbAria: '所在位置', home: '首頁', role: '我的角色：', problem: '原本的問題', steps: '做法與流程', estimate: '處理時間', usage: '使用狀況', limits: '風險與限制', note: miniEstimateNote, back: (kind: keyof typeof miniKinds) => `← ${miniKinds[kind].back}` },
-  en: { crumbAria: 'Breadcrumb', home: 'Home', role: 'My role: ', problem: 'The Original Problem', steps: 'Approach and Process', estimate: 'Time Needed', usage: 'How It Has Been Used', limits: 'Risks and Limits', note: 'Rough estimate based on actual work experience', back: (_kind: keyof typeof miniKinds) => '← Back to More Projects' },
+  zh: { crumbAria: '所在位置', home: '首頁', role: '我的角色：', problem: '原本的問題', decisions: '關鍵決策', steps: '做法與流程', estimate: '處理時間', usage: '使用狀況', limits: '風險與限制', note: miniEstimateNote, back: (kind: keyof typeof miniKinds) => `← ${miniKinds[kind].back}` },
+  en: { crumbAria: 'Breadcrumb', home: 'Home', role: 'My role: ', problem: 'The Original Problem', decisions: 'Key Decisions', steps: 'Approach and Process', estimate: 'Time Needed', usage: 'How It Has Been Used', limits: 'Risks and Limits', note: 'Rough estimate based on actual work experience', back: (_kind: keyof typeof miniKinds) => '← Back to More Projects' },
 } as const;
 export const miniKindTitleEn = { practice: 'More Projects', course: '' } as const;
 
@@ -45,7 +45,7 @@ export async function englishMinis() {
     const same = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
     const bad = [
       ['kind', z.kind !== e.kind], ['category', z.category !== e.category], ['icon', z.icon !== e.icon], ['order', z.order !== e.order],
-      ['visibility', z.visibility !== e.visibility], ['steps', z.steps.length !== e.steps.length], ['usage', z.usage.length !== e.usage.length],
+      ['visibility', z.visibility !== e.visibility], ['steps', z.steps.length !== e.steps.length], ['decisions', z.decisions.length !== e.decisions.length], ['usage', z.usage.length !== e.usage.length],
       ['limits', z.limits.length !== e.limits.length], ['estimate', (z.estimate?.split('\n').length ?? 0) !== (e.estimate?.split('\n').length ?? 0)],
       ['role', Boolean(z.role) !== Boolean(e.role)], ['built', Boolean(z.built) !== Boolean(e.built)], ['blurb', Boolean(z.blurb) !== Boolean(e.blurb)],
       ['image', !same(z.image && { src: z.image.src, approved: z.image.approved }, e.image && { src: e.image.src, approved: e.image.approved })],
