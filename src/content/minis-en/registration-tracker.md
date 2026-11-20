@@ -7,7 +7,7 @@ order: 4
 visibility: public
 summary: A Google Sheets prototype that brings data scattered across several registration forms and a separate register into one sheet, which creates to-dos automatically and shows how far each learner has come.
 role: I analyzed the existing files, decided the approach, designed the structure, built the prototype with AI, and showed it in person.
-problem: "A training organization took registrations through several online forms (open classes, advanced courses, courses for past students, internships, and refresher training), and also kept its own certificate register with formulas. For a learner, registration, assessment, internship, and getting the certificate are really one process, but it was split across different forms. The organization also wanted sign-in sheets, insurance data sheets, automatic emails after registration, reminders when certificates expire, and statistics across courses."
+problem: "A training organization took registrations through several online registration forms for different courses, and also kept its own certificate register with formulas. For a learner, registration, assessment, internship, and getting the certificate are really one process, but it was split across different forms. The organization also wanted sign-in sheets, insurance data sheets, automatic emails after registration, reminders when certificates expire, and statistics across courses."
 decisions:
   - title: Leave the original data alone, and keep manual work to a minimum
     text: The registration forms and original data stay as they are, and the forms were not rebuilt. Only one sheet needs to be filled in by hand, and everything else is automated. When something needs a person, the system shows a reminder.
@@ -26,11 +26,10 @@ steps:
   - "Other features: choose a session to create a sign-in sheet and an insurance data sheet automatically (cancelled learners are left out), certificate expiry reminders, and emails that are previewed before sending."
 usage:
   - This is a prototype tested with data for about a hundred fake learners. It is not a live system.
-  - I showed it to the organization in person in November 2026.
+  - In November 2026, it was run on the organization's computer, worked as expected, and was shown to them in person.
   - They liked the design and decided to first build their own version based on it.
 limits:
   - Business rules are left for the organization to decide. The prototype only makes assumptions, for example about retake limits and deadlines, how the certification rate is counted, and how old data is imported.
   - After handover, the organization maintains it. The files and data belong to them, and I do not touch their permission settings.
   - Emails are in test mode by default and are not sent to learners directly.
-  - How the scripts run on the organization's real spreadsheet has not been confirmed.
 ---
